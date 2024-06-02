@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckxgwal6qi36j"]
+
+[ext_resource type="Script" path="res://scenes/cutscenes/intro.gd" id="1_lfug0"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_lfug0")
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0

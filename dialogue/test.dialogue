@@ -1,0 +1,18 @@
+~ test
+
+Test Character: [[Hi|Hello|Howdy]], this is some dialogue.
+: Here are some choices (no character).
+- First one
+	Test Character: You picked the first one.
+- Second one
+	Test Character: You picked the second one.
+- Start again => test
+- End the conversation => before
+Test Character: asdf.\n asdf
+
+~ before
+set State.phase = 1
+
+=> END
+
+
