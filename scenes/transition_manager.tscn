@@ -1,7 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://273jjweunsd3"]
+[gd_scene load_steps=8 format=3 uid="uid://273jjweunsd3"]
 
 [ext_resource type="Script" path="res://scenes/transition_manager.gd" id="1_pvx1f"]
 [ext_resource type="AudioStream" uid="uid://crvwofhjdnu7q" path="res://assets/sounds/loadingsound.wav" id="2_yynjn"]
+
+[sub_resource type="Animation" id="Animation_fnypr"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_bjrxv"]
 resource_name = "FadeOut"
@@ -98,12 +125,14 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gulxa"]
 _data = {
+"FadeIn": SubResource("Animation_fnypr"),
 "FadeOut": SubResource("Animation_bjrxv"),
 "RESET": SubResource("Animation_8roaf"),
 "START": SubResource("Animation_qdqvt")
 }
 
-[node name="TransitionManager" type="Node"]
+[node name="TransitionManager" type="CanvasLayer"]
+layer = 100
 script = ExtResource("1_pvx1f")
 
 [node name="ScreenBlocker" type="ColorRect" parent="."]
@@ -127,4 +156,5 @@ autoplay = "START"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_yynjn")
 volume_db = -10.0
-autoplay = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

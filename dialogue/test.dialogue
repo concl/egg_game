@@ -3,6 +3,7 @@
 Test Character: [[Hi|Hello|Howdy]], this is some dialogue.
 : Here are some choices (no character).
 - First one
+	set State.test = Vector2(1,2,3,4)
 	Test Character: You picked the first one.
 - Second one
 	Test Character: You picked the second one.

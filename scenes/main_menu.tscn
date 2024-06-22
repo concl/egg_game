@@ -156,6 +156,5 @@ layout_mode = 2
 [connection signal="pressed" from="Main/PanelContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="toggled" from="Options/Panel/VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="transitioned" from="TransitionManager" to="." method="_on_transition_manager_transitioned"]
-[connection signal="animation_finished" from="TransitionManager/AnimationPlayer" to="TransitionManager" method="_on_animation_player_animation_finished"]
 
 [editable path="TransitionManager"]
