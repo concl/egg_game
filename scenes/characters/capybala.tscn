@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcj7fvp4r65h3"]
+
+[ext_resource type="Texture2D" uid="uid://8c72s6byvijj" path="res://assets/images/Capibala_the_third_Position_1.png" id="1_n7kvo"]
+[ext_resource type="Texture2D" uid="uid://c2mchqrirqdtg" path="res://assets/images/Capibala2.png" id="2_enunh"]
+
+[node name="Capybala" type="Node2D"]
+
+[node name="Default" type="Node2D" parent="."]
+
+[node name="DefaultSprite" type="Sprite2D" parent="Default"]
+texture = ExtResource("1_n7kvo")
+
+[node name="Nervous" type="Node2D" parent="."]
+scale = Vector2(1.1645, 1.1645)
+
+[node name="NervousSprite" type="Sprite2D" parent="Nervous"]
+texture = ExtResource("2_enunh")

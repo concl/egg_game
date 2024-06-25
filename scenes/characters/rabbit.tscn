@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ua4vc0y0m18q"]
+
+[ext_resource type="Texture2D" uid="uid://b5bbmahi6xexd" path="res://assets/images/Rapper_Rabbit_Position_1.png" id="1_glw0g"]
+[ext_resource type="Texture2D" uid="uid://dxun6xfri7o1w" path="res://assets/images/Rapper_Rabbit_Position_2.png" id="2_883er"]
+[ext_resource type="Texture2D" uid="uid://qkittogjdywf" path="res://assets/images/Rapper_Rabbit_Position3.png" id="3_riv54"]
+
+[node name="Rabbit" type="Node2D"]
+
+[node name="Default" type="Node2D" parent="."]
+
+[node name="DefaultSprite" type="Sprite2D" parent="Default"]
+texture = ExtResource("1_glw0g")
+
+[node name="Thinking" type="Node2D" parent="."]
+visible = false
+
+[node name="ThinkingSprite" type="Sprite2D" parent="Thinking"]
+texture = ExtResource("2_883er")
+
+[node name="Happy" type="Node2D" parent="."]
+visible = false
+
+[node name="HappySprite" type="Sprite2D" parent="Happy"]
+texture = ExtResource("3_riv54")

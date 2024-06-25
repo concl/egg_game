@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvv42fe551l8v"]
+
+[ext_resource type="Texture2D" uid="uid://drhyd0o413wnl" path="res://assets/images/OP.png" id="1_wbp47"]
+
+[node name="Op" type="Node2D"]
+
+[node name="Default" type="Node2D" parent="."]
+
+[node name="DefaultSprite" type="Sprite2D" parent="Default"]
+texture = ExtResource("1_wbp47")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckxgwal6qi36j"]
+[gd_scene load_steps=4 format=3 uid="uid://ckxgwal6qi36j"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/intro.gd" id="1_lfug0"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="2_q6ajq"]
+[ext_resource type="PackedScene" uid="uid://lt4cml3g6r4t" path="res://dialogue/characters.tscn" id="2_yffu3"]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_lfug0")
@@ -15,6 +16,8 @@ mouse_filter = 2
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Characters" parent="." instance=ExtResource("2_yffu3")]
 
 [node name="TransitionManager" parent="." instance=ExtResource("2_q6ajq")]
 
