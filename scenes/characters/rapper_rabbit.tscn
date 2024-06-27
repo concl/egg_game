@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bty5jtx8i8rma"]
+
+[ext_resource type="PackedScene" uid="uid://bqf2xlvlvpgr" path="res://scenes/characters/character.tscn" id="1_v80ny"]
+[ext_resource type="Texture2D" uid="uid://b5bbmahi6xexd" path="res://assets/images/Rapper_Rabbit_Position_1.png" id="2_jpafo"]
+[ext_resource type="Texture2D" uid="uid://dxun6xfri7o1w" path="res://assets/images/Rapper_Rabbit_Position_2.png" id="3_csnow"]
+[ext_resource type="Texture2D" uid="uid://qkittogjdywf" path="res://assets/images/Rapper_Rabbit_Position3.png" id="4_ovjhr"]
+
+[node name="RapperRabbit" instance=ExtResource("1_v80ny")]
+
+[node name="Default" type="Node2D" parent="." index="1"]
+
+[node name="DefaultSprite" type="Sprite2D" parent="Default" index="0"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("2_jpafo")
+
+[node name="Thinking" type="Node2D" parent="." index="2"]
+visible = false
+
+[node name="ThinkingSprite" type="Sprite2D" parent="Thinking" index="0"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("3_csnow")
+
+[node name="Happy" type="Node2D" parent="." index="3"]
+visible = false
+
+[node name="HappySprite" type="Sprite2D" parent="Happy" index="0"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("4_ovjhr")

@@ -11,6 +11,7 @@ script = ExtResource("1_nbuue")
 [node name="Default" type="Node2D" parent="." index="1"]
 
 [node name="DefaultSprite" type="Sprite2D" parent="Default" index="0"]
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_n7kvo")
 
 [node name="Nervous" type="Node2D" parent="." index="2"]
@@ -18,4 +19,5 @@ visible = false
 scale = Vector2(1.1645, 1.1645)
 
 [node name="NervousSprite" type="Sprite2D" parent="Nervous" index="0"]
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("2_gbo8m")

@@ -10,12 +10,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    print(State.test)
-    print(State.phase)
+    pass
 
-func rearrange():
+func _process_changes():
+    var changes = State.changes
+    State.changes = []
     
-    for x in State.changes:
-        pass
+    # mutate list / play animations
+    for x in changes:
+        name = x["name"]
+        if name == "AddCharacter":
+            characters.append(x.character)
+        elif name == "MoveCharacter":
+            pass
     
-    
+    # handle changed positions
+            
+            
+    print(characters)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="Texture2D" uid="uid://bca5mtr82qqaw" path="res://assets/images/text_balloon.png" id="2_8wdhl"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="PackedScene" uid="uid://lt4cml3g6r4t" path="res://dialogue/characters.tscn" id="2_w2j4t"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -59,6 +60,8 @@ Panel/styles/panel = SubResource("StyleBoxTexture_88vpx")
 [node name="TextBalloon" type="CanvasLayer"]
 layer = 99
 script = ExtResource("1_36de5")
+
+[node name="Characters" parent="." instance=ExtResource("2_w2j4t")]
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
@@ -145,5 +148,6 @@ response_template = NodePath("ResponseExample")
 layout_mode = 2
 text = "Response example"
 
+[connection signal="next_message" from="." to="Characters" method="_process_changes"]
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

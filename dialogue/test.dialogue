@@ -1,5 +1,5 @@
 ~ test
-
+set State.changes = [{"name":"AddCharacter", "character":"Capybala", "state":"Default"}]
 Test Character: [[Hi|Hello|Howdy]], this is some dialogue.
 : Here are some choices (no character).
 - First one
@@ -9,7 +9,9 @@ Test Character: [[Hi|Hello|Howdy]], this is some dialogue.
 	Test Character: You picked the second one.
 - Start again => test
 - End the conversation => before
-Test Character: asdf.\n asdf
+Test Character: 
+	asdf.\n asdf
+Test Long message: fajhsl;fjdslfj;ldsajfllkdjfl;jkdlfjldasjgkl;sdfjg;lsdfjgl;ksdjgldsjfldjs;lgjlkgj;dlkfjg;lkdfjglkrjlkgjr;lakjgoiwjigeoigjrojagojgiojoigrejiognreo;vnoriejviorenjgiorejgioprejn;iognreiognreo;inv;ioreiortengorednvorevorengorenoniogrenvionweaopivnaero;inv;woajngo;reajgio;raewjnmvoiaernvoiperngoip;ernjv;oeairnr;ioeanv;oreanv;oireajfg;o
 
 ~ before
 set State.phase = 1

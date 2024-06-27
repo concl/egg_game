@@ -1,12 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvv42fe551l8v"]
+[gd_scene load_steps=3 format=3 uid="uid://clvqm22g3lgda"]
 
+[ext_resource type="PackedScene" uid="uid://bqf2xlvlvpgr" path="res://scenes/characters/character.tscn" id="1_i0mcg"]
 [ext_resource type="Texture2D" uid="uid://drhyd0o413wnl" path="res://assets/images/OP.png" id="1_wbp47"]
 
-[node name="Op" type="Node2D"]
+[node name="Op" instance=ExtResource("1_i0mcg")]
 
-[node name="Default" type="Node2D" parent="."]
+[node name="Default" type="Node2D" parent="." index="1"]
 
-[node name="DefaultSprite" type="Sprite2D" parent="Default"]
+[node name="DefaultSprite" type="Sprite2D" parent="Default" index="0"]
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_wbp47")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
