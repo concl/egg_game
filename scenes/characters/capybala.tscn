@@ -1,17 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcj7fvp4r65h3"]
+[gd_scene load_steps=5 format=3 uid="uid://cp41u47gcffyk"]
 
+[ext_resource type="PackedScene" uid="uid://bqf2xlvlvpgr" path="res://scenes/characters/character.tscn" id="1_1tkbf"]
 [ext_resource type="Texture2D" uid="uid://8c72s6byvijj" path="res://assets/images/Capibala_the_third_Position_1.png" id="1_n7kvo"]
-[ext_resource type="Texture2D" uid="uid://c2mchqrirqdtg" path="res://assets/images/Capibala2.png" id="2_enunh"]
+[ext_resource type="Script" path="res://scenes/characters/capybala.gd" id="1_nbuue"]
+[ext_resource type="Texture2D" uid="uid://dvlo4lf63xud4" path="res://assets/images/Capibala_Nervous.png" id="2_gbo8m"]
 
-[node name="Capybala" type="Node2D"]
+[node name="Capybala" instance=ExtResource("1_1tkbf")]
+script = ExtResource("1_nbuue")
 
-[node name="Default" type="Node2D" parent="."]
+[node name="Default" type="Node2D" parent="." index="1"]
 
-[node name="DefaultSprite" type="Sprite2D" parent="Default"]
+[node name="DefaultSprite" type="Sprite2D" parent="Default" index="0"]
 texture = ExtResource("1_n7kvo")
 
-[node name="Nervous" type="Node2D" parent="."]
+[node name="Nervous" type="Node2D" parent="." index="2"]
+visible = false
 scale = Vector2(1.1645, 1.1645)
 
-[node name="NervousSprite" type="Sprite2D" parent="Nervous"]
-texture = ExtResource("2_enunh")
+[node name="NervousSprite" type="Sprite2D" parent="Nervous" index="0"]
+texture = ExtResource("2_gbo8m")

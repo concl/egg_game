@@ -12,6 +12,7 @@ extends CanvasLayer
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
 signal next_message()
+signal ended()
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -34,6 +35,7 @@ var dialogue_line: DialogueLine:
 
         # The dialogue has finished so close the balloon
         if not next_dialogue_line:
+            ended.emit()
             queue_free()
             return
 
@@ -102,17 +104,19 @@ func _notification(what: int) -> void:
 
 ## Start some dialogue
 func start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array = []) -> void:
+    next_message.emit()
     temporary_game_states =  [self] + extra_game_states
     is_waiting_for_input = false
     resource = dialogue_resource
     self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
-    next_message.emit()
+    
 
 
 ## Go to the next line
 func next(next_id: String) -> void:
-    self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
     next_message.emit()
+    self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
+    
 
 
 #region Signals

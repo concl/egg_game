@@ -15,7 +15,7 @@ func _process(delta):
 
 func rearrange():
     
-    for x in characters:
+    for x in State.changes:
         pass
     
     

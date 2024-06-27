@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://btpudlg70xors"]
+[gd_scene load_steps=4 format=3 uid="uid://btpudlg70xors"]
 
+[ext_resource type="Script" path="res://scenes/characters/character_class.gd" id="1_3nfrr"]
 [ext_resource type="Texture2D" uid="uid://dsfvjguxfohju" path="res://assets/images/The_Eggspert.png" id="1_8uv4u"]
 [ext_resource type="Texture2D" uid="uid://7je2vmxs2j2u" path="res://assets/images/The_Eggspert_Position_2.png" id="2_8xc8w"]
 
 [node name="Eggspert" type="Node2D"]
+script = ExtResource("1_3nfrr")
 
 [node name="Default" type="Node2D" parent="."]
 
@@ -15,3 +17,5 @@ visible = false
 
 [node name="InvestigatingSprite" type="Sprite2D" parent="Investigating"]
 texture = ExtResource("2_8xc8w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

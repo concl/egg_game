@@ -2,7 +2,12 @@ extends Node2D
 
 class_name Character
 
-var anim_player: AnimationPlayer
+@onready var animation_player = $AnimationPlayer
 
 
+func _ready():
+    animation_player.play("enter")
+    
+func change_loc():
+    pass
 

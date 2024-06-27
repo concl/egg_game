@@ -8,3 +8,5 @@
 
 [node name="DefaultSprite" type="Sprite2D" parent="Default"]
 texture = ExtResource("1_wbp47")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
