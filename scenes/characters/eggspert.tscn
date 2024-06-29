@@ -6,15 +6,17 @@
 
 [node name="Eggspert" instance=ExtResource("1_teufo")]
 
-[node name="Default" type="Node2D" parent="." index="1"]
+[node name="Default" type="Node2D" parent="Sprites" index="0"]
 
-[node name="TheEggspert" type="Sprite2D" parent="Default" index="0"]
+[node name="TheEggspert" type="Sprite2D" parent="Sprites/Default" index="0"]
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_8uv4u")
+offset = Vector2(0, -3152)
 
-[node name="Investigating" type="Node2D" parent="." index="2"]
+[node name="Investigating" type="Node2D" parent="Sprites" index="1"]
 visible = false
 
-[node name="TheEggspertPosition2" type="Sprite2D" parent="Investigating" index="0"]
+[node name="TheEggspertPosition2" type="Sprite2D" parent="Sprites/Investigating" index="0"]
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("2_8xc8w")
+offset = Vector2(0, -3136)

@@ -12,5 +12,4 @@ script = ExtResource("1_jcpra")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="MainScene" type="Sprite2D" parent="."]
-scale = Vector2(0.3335, 0.3333)
 texture = ExtResource("2_muq6v")

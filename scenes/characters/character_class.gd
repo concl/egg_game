@@ -2,14 +2,42 @@ extends Node2D
 
 class_name Character
 
+const PATH = preload("res://scenes/characters/path.tres")
+
 @onready var animation_player = $AnimationPlayer
+var from
+var to
+var moving = false
+var time_since = 0
+var move_factor = 4
 
 func _init():
     pass
 
 func _ready():
-    animation_player.play("enter")
-    
-func change_loc():
     pass
 
+func _process(delta):
+    if moving:
+        time_since += delta * move_factor
+        if global_position.x == to:
+            moving = false
+            time_since = 0
+            return
+        global_position.x = from + (to - from) * PATH.sample(time_since)
+        
+
+func change_loc(pos):
+    from = global_position.x
+    to = pos
+    moving = true
+
+func play_animation(animation_name):
+    animation_player.play(animation_name)
+
+func exit_scene():
+    animation_player.play("exit")
+    await animation_player.animation_finished
+    queue_free()
+    
+    

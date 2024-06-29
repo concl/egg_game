@@ -1,0 +1,15 @@
+
+~ tutorial
+
+Test: This is a tutorial
+set State.changes = [{"name":"AddCharacter", "character":"Capybala"}, {"name":"AddCharacter", "character":"Eggspert"}]
+Test: I am cpbala
+=> END
+
+~ part
+Test: Asdafgsdlagjafjg;as
+=> END
+
+~ sjfdgklg
+Character: dlsjafljsa
+set State.variable = ""

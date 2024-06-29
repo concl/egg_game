@@ -7,22 +7,25 @@
 
 [node name="RapperRabbit" instance=ExtResource("1_v80ny")]
 
-[node name="Default" type="Node2D" parent="." index="1"]
+[node name="Default" type="Node2D" parent="Sprites" index="0"]
 
-[node name="DefaultSprite" type="Sprite2D" parent="Default" index="0"]
+[node name="DefaultSprite" type="Sprite2D" parent="Sprites/Default" index="0"]
 scale = Vector2(0.175, 0.175)
 texture = ExtResource("2_jpafo")
+offset = Vector2(0, -3120)
 
-[node name="Thinking" type="Node2D" parent="." index="2"]
+[node name="Thinking" type="Node2D" parent="Sprites" index="1"]
 visible = false
 
-[node name="ThinkingSprite" type="Sprite2D" parent="Thinking" index="0"]
+[node name="ThinkingSprite" type="Sprite2D" parent="Sprites/Thinking" index="0"]
 scale = Vector2(0.175, 0.175)
 texture = ExtResource("3_csnow")
+offset = Vector2(0, -3108.57)
 
-[node name="Happy" type="Node2D" parent="." index="3"]
+[node name="Happy" type="Node2D" parent="Sprites" index="2"]
 visible = false
 
-[node name="HappySprite" type="Sprite2D" parent="Happy" index="0"]
+[node name="HappySprite" type="Sprite2D" parent="Sprites/Happy" index="0"]
 scale = Vector2(0.175, 0.175)
 texture = ExtResource("4_ovjhr")
+offset = Vector2(0.000244141, -3108.57)

@@ -1,8 +1,8 @@
 
 extends Character
 
-@onready var nervous = $Nervous
-@onready var default = $Default
+@onready var default = $Sprites/Default
+@onready var nervous = $Sprites/Nervous
 
 var test = 0
 var current_expression = "Default"
@@ -17,11 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    print('asdf')
-    if test == 30:
-        return
-    print(global_position)
-    test += 1
+    super(delta)
 
 func set_expression(name):
     

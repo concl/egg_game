@@ -1,16 +1,21 @@
 ~ test
 set State.changes = [{"name":"AddCharacter", "character":"Capybala", "state":"Default"}]
 Test Character: [[Hi|Hello|Howdy]], this is some dialogue.
+set State.changes = [{"name":"AddCharacter", "character":"Rabbit", "state":"Default"}]
+: test
+set State.changes = [{"name":"AddCharacter", "character":"Owlivia", "state":"Default"}]
 : Here are some choices (no character).
 - First one
 	set State.test = Vector2(1,2,3,4)
 	Test Character: You picked the first one.
 - Second one
+	set State.changes = [{"name":"MoveCharacter", "character":"Capybala", "position":1}]
 	Test Character: You picked the second one.
 - Start again => test
 - End the conversation => before
-Test Character: 
-	asdf.\n asdf
+set State.changes = [{"name":"RemoveCharacter", "character":"Capybala"}]
+Test Character: asdf.\n asdf
+set State.changes = [{"name":"AddCharacter", "character":"Capybala"}, {"name":"AddCharacter", "character":"Eggspert"}]
 Test Long message: fajhsl;fjdslfj;ldsajfllkdjfl;jkdlfjldasjgkl;sdfjg;lsdfjgl;ksdjgldsjfldjs;lgjlkgj;dlkfjg;lkdfjglkrjlkgjr;lakjgoiwjigeoigjrojagojgiojoigrejiognreo;vnoriejviorenjgiorejgioprejn;iognreiognreo;inv;ioreiortengorednvorevorengorenoniogrenvionweaopivnaero;inv;woajngo;reajgio;raewjnmvoiaernvoiperngoip;ernjv;oeairnr;ioeanv;oreanv;oireajfg;o
 
 ~ before
