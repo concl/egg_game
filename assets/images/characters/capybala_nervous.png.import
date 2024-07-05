@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btghd8exy48gc"
-path="res://.godot/imported/Nanny_Goose_Position_1.png-ad996b74723f43a8cd4db51d733112c2.ctex"
+uid="uid://dvlo4lf63xud4"
+path="res://.godot/imported/capybala_nervous.png-109a3545cbe05252c2b3940358ecdeed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Nanny_Goose_Position_1.png"
-dest_files=["res://.godot/imported/Nanny_Goose_Position_1.png-ad996b74723f43a8cd4db51d733112c2.ctex"]
+source_file="res://assets/images/characters/capybala_nervous.png"
+dest_files=["res://.godot/imported/capybala_nervous.png-109a3545cbe05252c2b3940358ecdeed.ctex"]
 
 [params]
 

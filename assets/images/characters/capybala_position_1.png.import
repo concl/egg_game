@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drhyd0o413wnl"
-path="res://.godot/imported/OP.png-c67c02dad052eabfa1c05adfbacf07b8.ctex"
+uid="uid://8c72s6byvijj"
+path="res://.godot/imported/capybala_position_1.png-781fc5bc85e8666baaf831436722784d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/OP.png"
-dest_files=["res://.godot/imported/OP.png-c67c02dad052eabfa1c05adfbacf07b8.ctex"]
+source_file="res://assets/images/characters/capybala_position_1.png"
+dest_files=["res://.godot/imported/capybala_position_1.png-781fc5bc85e8666baaf831436722784d.ctex"]
 
 [params]
 

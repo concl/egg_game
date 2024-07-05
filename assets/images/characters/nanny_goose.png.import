@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rrtw2471g3ds"
-path="res://.godot/imported/op_small.png-d0dd080f315a5395c63ad5e9c5898270.ctex"
+uid="uid://btghd8exy48gc"
+path="res://.godot/imported/nanny_goose.png-5fcc0921b3585ae260ecdd25e29ba087.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/op_small.png"
-dest_files=["res://.godot/imported/op_small.png-d0dd080f315a5395c63ad5e9c5898270.ctex"]
+source_file="res://assets/images/characters/nanny_goose.png"
+dest_files=["res://.godot/imported/nanny_goose.png-5fcc0921b3585ae260ecdd25e29ba087.ctex"]
 
 [params]
 

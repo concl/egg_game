@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsfvjguxfohju"
-path="res://.godot/imported/The_Eggspert.png-fee65af6bb2c42f8a8dedc4a0a151cf2.ctex"
+uid="uid://dkym443ifcd5m"
+path="res://.godot/imported/nanny_goose_small.png-7e225059c412b436947ebe03851cd906.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/The_Eggspert.png"
-dest_files=["res://.godot/imported/The_Eggspert.png-fee65af6bb2c42f8a8dedc4a0a151cf2.ctex"]
+source_file="res://assets/images/characters/nanny_goose_small.png"
+dest_files=["res://.godot/imported/nanny_goose_small.png-7e225059c412b436947ebe03851cd906.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkym443ifcd5m"
-path="res://.godot/imported/nanny_goose_small.png-d2f27dc1563e43c145e46c6a182d5373.ctex"
+uid="uid://dxun6xfri7o1w"
+path="res://.godot/imported/rapper_rabbit_position_2.png-0875ac35f29fcacbcbcaad2da0dea7b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/nanny_goose_small.png"
-dest_files=["res://.godot/imported/nanny_goose_small.png-d2f27dc1563e43c145e46c6a182d5373.ctex"]
+source_file="res://assets/images/characters/rapper_rabbit_position_2.png"
+dest_files=["res://.godot/imported/rapper_rabbit_position_2.png-0875ac35f29fcacbcbcaad2da0dea7b7.ctex"]
 
 [params]
 

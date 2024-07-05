@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pbngj6l1wpp"
-path="res://.godot/imported/Capybala_Nervous.png-b30e70b0d1bd88b2be6d1d1d834c7d75.ctex"
+uid="uid://drhyd0o413wnl"
+path="res://.godot/imported/op.png-975592568f9c52bb94dfd845d8f41abe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Capybala_Nervous.png"
-dest_files=["res://.godot/imported/Capybala_Nervous.png-b30e70b0d1bd88b2be6d1d1d834c7d75.ctex"]
+source_file="res://assets/images/characters/op.png"
+dest_files=["res://.godot/imported/op.png-975592568f9c52bb94dfd845d8f41abe.ctex"]
 
 [params]
 

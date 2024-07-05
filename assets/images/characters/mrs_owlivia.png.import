@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvlo4lf63xud4"
-path="res://.godot/imported/Capibala_Nervous.png-a06c7962791a54c465347ca3be2d2edf.ctex"
+uid="uid://w3mu0yydv0tc"
+path="res://.godot/imported/mrs_owlivia.png-7ff20090703b1cf540f15aa10499d963.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Capibala_Nervous.png"
-dest_files=["res://.godot/imported/Capibala_Nervous.png-a06c7962791a54c465347ca3be2d2edf.ctex"]
+source_file="res://assets/images/characters/mrs_owlivia.png"
+dest_files=["res://.godot/imported/mrs_owlivia.png-7ff20090703b1cf540f15aa10499d963.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxun6xfri7o1w"
-path="res://.godot/imported/Rapper_Rabbit_Position_2.png-7dfd3a9fb40fe0b7530b34cc702db46a.ctex"
+uid="uid://qkittogjdywf"
+path="res://.godot/imported/rapper_rabbit_position_3.png-cc88582f31d8a8508a67ac2da78164b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Rapper_Rabbit_Position_2.png"
-dest_files=["res://.godot/imported/Rapper_Rabbit_Position_2.png-7dfd3a9fb40fe0b7530b34cc702db46a.ctex"]
+source_file="res://assets/images/characters/rapper_rabbit_position_3.png"
+dest_files=["res://.godot/imported/rapper_rabbit_position_3.png-cc88582f31d8a8508a67ac2da78164b4.ctex"]
 
 [params]
 

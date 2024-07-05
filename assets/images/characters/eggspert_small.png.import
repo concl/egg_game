@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7je2vmxs2j2u"
-path="res://.godot/imported/The_Eggspert_Position_2.png-b1bf03b33e3be0fc661499702564cad9.ctex"
+uid="uid://cdvgo4ivricfy"
+path="res://.godot/imported/eggspert_small.png-a6708ccfab7074a6e9b7cf367f375192.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/The_Eggspert_Position_2.png"
-dest_files=["res://.godot/imported/The_Eggspert_Position_2.png-b1bf03b33e3be0fc661499702564cad9.ctex"]
+source_file="res://assets/images/characters/eggspert_small.png"
+dest_files=["res://.godot/imported/eggspert_small.png-a6708ccfab7074a6e9b7cf367f375192.ctex"]
 
 [params]
 
