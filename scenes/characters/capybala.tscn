@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bqf2xlvlvpgr" path="res://scenes/characters/character.tscn" id="1_1tkbf"]
 [ext_resource type="Script" path="res://scenes/characters/capybala.gd" id="1_nbuue"]
-[ext_resource type="Texture2D" uid="uid://8c72s6byvijj" path="res://assets/images/characters/capybala_position_1.png" id="3_7snpg"]
+[ext_resource type="Texture2D" uid="uid://cpacorlfs6lqc" path="res://assets/images/characters/capybala.png" id="3_todwm"]
 [ext_resource type="Texture2D" uid="uid://dvlo4lf63xud4" path="res://assets/images/characters/capybala_nervous.png" id="4_3ulnq"]
 
 [node name="Capybala" instance=ExtResource("1_1tkbf")]
@@ -11,15 +11,15 @@ script = ExtResource("1_nbuue")
 [node name="Default" type="Node2D" parent="Sprites" index="0"]
 
 [node name="DefaultSprite" type="Sprite2D" parent="Sprites/Default" index="0"]
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("3_7snpg")
-offset = Vector2(0, -3120)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_todwm")
+offset = Vector2(0, -1104.11)
 
 [node name="Nervous" type="Node2D" parent="Sprites" index="1"]
 visible = false
 scale = Vector2(1.1645, 1.1645)
 
 [node name="NervousSprite" type="Sprite2D" parent="Sprites/Nervous" index="0"]
-scale = Vector2(0.125, 0.125)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_3ulnq")
-offset = Vector2(6.10352e-05, -2782.31)
+offset = Vector2(0, -1146.41)

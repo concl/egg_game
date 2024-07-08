@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://crojxl7ytbfxy"]
+
+[ext_resource type="PackedScene" uid="uid://bqf2xlvlvpgr" path="res://scenes/characters/character.tscn" id="1_cn0wy"]
+[ext_resource type="Texture2D" uid="uid://btghd8exy48gc" path="res://assets/images/characters/nanny_goose.png" id="2_q2pqu"]
+
+[node name="NannyGoose" instance=ExtResource("1_cn0wy")]
+
+[node name="Default" type="Node2D" parent="Sprites" index="0"]
+
+[node name="NannyGoose" type="Sprite2D" parent="Sprites/Default" index="0"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_q2pqu")
+offset = Vector2(0, -1184)

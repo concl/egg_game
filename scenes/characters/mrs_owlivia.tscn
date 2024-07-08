@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://rb8fcr4omjap"]
+
+[ext_resource type="PackedScene" uid="uid://bqf2xlvlvpgr" path="res://scenes/characters/character.tscn" id="1_ye1pj"]
+[ext_resource type="Texture2D" uid="uid://w3mu0yydv0tc" path="res://assets/images/characters/mrs_owlivia.png" id="2_mhf5o"]
+
+[node name="MrsOwlivia" instance=ExtResource("1_ye1pj")]
+
+[node name="Default" type="Node2D" parent="Sprites" index="0"]
+
+[node name="DefaultSprite" type="Sprite2D" parent="Sprites/Default" index="0"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_mhf5o")
+offset = Vector2(0, -960)

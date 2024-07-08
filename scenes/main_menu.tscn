@@ -65,6 +65,7 @@ anchor_bottom = 1.0
 offset_left = -150.0
 offset_top = -414.0
 offset_right = 150.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -91,12 +92,8 @@ text = "Quit"
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="ReturnButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Return"
-
 [node name="Continue" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -153,7 +150,6 @@ layout_mode = 2
 [connection signal="pressed" from="Main/PanelContainer/VBoxContainer/PlayButton" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/PanelContainer/VBoxContainer/OptionsButton" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Main/PanelContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="Main/PanelContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="toggled" from="Options/Panel/VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="transitioned" from="TransitionManager" to="." method="_on_transition_manager_transitioned"]
 
