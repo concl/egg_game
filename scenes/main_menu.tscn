@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcg4t6806rtns"]
+[gd_scene load_steps=11 format=3 uid="uid://bcg4t6806rtns"]
 
 [ext_resource type="FontFile" uid="uid://d0n4mfdy260lo" path="res://assets/Playfair_Display_Font/PlayfairDisplay-VariableFont_wght.ttf" id="1_2iaav"]
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="2_qlo1c"]
 [ext_resource type="Texture2D" uid="uid://o50coucytngs" path="res://assets/images/title_screen.png" id="3_wmt70"]
+[ext_resource type="AudioStream" uid="uid://cci66yvb4oarx" path="res://assets/sounds/music/loading_sound.wav" id="5_pda6g"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="9_m8x2h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvtfa"]
@@ -146,6 +147,10 @@ text = "Fullscreen: "
 layout_mode = 2
 
 [node name="TransitionManager" parent="." instance=ExtResource("9_m8x2h")]
+
+[node name="AudioStreamPlayer" parent="TransitionManager" index="2"]
+stream = ExtResource("5_pda6g")
+bus = &"Music"
 
 [connection signal="pressed" from="Main/PanelContainer/VBoxContainer/PlayButton" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/PanelContainer/VBoxContainer/OptionsButton" to="." method="_on_options_pressed"]

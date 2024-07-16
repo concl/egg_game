@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://273jjweunsd3"]
+[gd_scene load_steps=7 format=3 uid="uid://273jjweunsd3"]
 
 [ext_resource type="Script" path="res://scenes/transition_manager.gd" id="1_pvx1f"]
-[ext_resource type="AudioStream" uid="uid://crvwofhjdnu7q" path="res://assets/sounds/loadingsound.wav" id="2_yynjn"]
 
 [sub_resource type="Animation" id="Animation_fnypr"]
 resource_name = "FadeIn"
@@ -154,7 +153,6 @@ libraries = {
 autoplay = "START"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_yynjn")
 volume_db = -10.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

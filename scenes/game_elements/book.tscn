@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm7gnysf0ejgs"]
+
+[ext_resource type="Texture2D" uid="uid://cfgfa3ndnyja2" path="res://assets/images/notebook.png" id="1_fwb2n"]
+
+[sub_resource type="GDScript" id="GDScript_dfs6s"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+    pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+    pass
+
+
+func _on_close_button_pressed():
+    visible = not visible
+"
+
+[node name="Book" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_dfs6s")
+
+[node name="NotebookSprite" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("1_fwb2n")
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -96.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "arrow bouncing"
+
+[node name="First" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 312.0
+offset_top = 312.0
+offset_right = 352.0
+offset_bottom = 352.0
