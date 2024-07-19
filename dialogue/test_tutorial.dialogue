@@ -3,13 +3,18 @@
 
 Test: This is a tutorial
 set State.changes = [{"name":"AddCharacter", "character":"Capybala"}, {"name":"AddCharacter", "character":"Eggspert"}]
-Test: I am cpbala
-=> END
+Test: I am cpbala dfiadsjf;ldsjf;ldsj;fldsjfsdja;afjds;kljf;ldsjf;ldsajf;sdjfiwenjfoweihnforehnogredu;oghnreaohg;orehng;orehng;orehn;ogrehoghnjre;oghreddhgnu;oreahgorehjgoresajgopreji;ogrhjeoghareoghorehjg;oredhjgoreahjogrweajhg;orejhg;orehjgoreajh;ogreahjgreao;hjgr;weao
+=> part
 
 ~ part
 Test: Asdafgsdlagjafjg;as
+- asdf
+- asdf
+- asdf
+- a asdf
 => END
 
 ~ sjfdgklg
 Character: dlsjafljsa
 set State.variable = ""
+=> END

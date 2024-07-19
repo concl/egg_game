@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6sr60gdpdsdb"]
+[gd_scene load_steps=6 format=3 uid="uid://c6sr60gdpdsdb"]
 
-[ext_resource type="FontFile" uid="uid://d0n4mfdy260lo" path="res://assets/Playfair_Display_Font/PlayfairDisplay-VariableFont_wght.ttf" id="1_5qr3f"]
+[ext_resource type="Theme" uid="uid://xycay2vr14mx" path="res://scenes/main_theme.tres" id="1_b1kna"]
 
 [sub_resource type="Animation" id="Animation_fsx0y"]
 length = 0.001
@@ -39,19 +39,8 @@ _data = {
 "fade_in": SubResource("Animation_twcpd")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k33n7"]
-bg_color = Color(0.482353, 0.415686, 0.32549, 1)
-corner_radius_top_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g57tl"]
-bg_color = Color(0.482353, 0.415686, 0.32549, 0)
-corner_radius_top_left = 16
-
-[sub_resource type="Theme" id="Theme_lg87y"]
-default_font = ExtResource("1_5qr3f")
-default_font_size = 64
-Button/styles/hover = SubResource("StyleBoxFlat_k33n7")
-Button/styles/normal = SubResource("StyleBoxFlat_g57tl")
+[sub_resource type="Theme" id="Theme_eplge"]
+default_font_size = 48
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -60,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_b1kna")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -76,33 +66,49 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Main" type="Control" parent="."]
+z_index = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -145.5
-offset_top = -225.0
-offset_right = 145.5
-offset_bottom = 225.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_lg87y")
+theme = SubResource("Theme_eplge")
 
-[node name="ReturnButton" type="Button" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Main"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -414.0
+offset_right = 150.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/PanelContainer"]
 layout_mode = 2
-text = "Return"
 
-[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
+[node name="PlayButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Main Menu"
+text = "New Game"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="OptionsButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="MarginContainer" type="MarginContainer" parent="Main/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2

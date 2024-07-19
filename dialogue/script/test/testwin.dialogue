@@ -1,0 +1,8 @@
+~ this_is_a_node_title
+
+set State.changes = [{"name":"AddCharacter", "character":"Capybala", "state":"Default"}]
+buddy: you soldved the puzzle!!1
+- yay
+- nay
+
+=> END

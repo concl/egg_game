@@ -1,21 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://dca5nidljdli6"]
+[gd_scene load_steps=7 format=3 uid="uid://dca5nidljdli6"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_scene.gd" id="1_jcpra"]
 [ext_resource type="Texture2D" uid="uid://cxmb0g840k30x" path="res://assets/images/main_scene.png" id="2_muq6v"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="2_ur0vy"]
+[ext_resource type="Script" path="res://scenes/game_scenes/CollisionShape2D.gd" id="3_ulqcb"]
 [ext_resource type="PackedScene" uid="uid://dcif8uanmvqx0" path="res://scenes/game_elements/main_ui.tscn" id="4_ngh3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4v76"]
+size = Vector2(509, 187)
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_jcpra")
 
 [node name="TransitionManager" parent="." instance=ExtResource("2_ur0vy")]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MainScene" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene"]
+position = Vector2(-249, 28)
+shape = SubResource("RectangleShape2D_m4v76")
+script = ExtResource("3_ulqcb")
+
+[node name="MainSprite" type="Sprite2D" parent="MainScene"]
+texture = ExtResource("2_muq6v")
+
 [node name="UI" type="CanvasLayer" parent="."]
-layer = 50
 
 [node name="MainUI" parent="UI" instance=ExtResource("4_ngh3r")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="MainScene" type="Sprite2D" parent="."]
-texture = ExtResource("2_muq6v")
+[editable path="TransitionManager"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dt8j6metqfx52"
+path="res://.godot/imported/testwin.dialogue-ae8e4b1b844fe9a2ad22c6b09ee143c9.tres"
+
+[deps]
+
+source_file="res://dialogue/script/test/testwin.dialogue"
+dest_files=["res://.godot/imported/testwin.dialogue-ae8e4b1b844fe9a2ad22c6b09ee143c9.tres"]
+
+[params]
+
+defaults=true

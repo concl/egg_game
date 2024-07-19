@@ -1,9 +1,14 @@
 extends Node
 
+var input_enabled = true
+
 # array of changes: each element represents a change for the displayed characters
 var changes: Array
 var test = null
 var phase = 0
+
+var correct_order = [2,3,4,5,1]
+var book_solved = false
 
 # Function to load and play a sound file
 func play_sound(file_path: String):

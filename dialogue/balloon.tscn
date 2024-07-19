@@ -42,7 +42,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88vpx"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vied"]
 texture = ExtResource("2_8wdhl")
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
@@ -55,7 +55,7 @@ MarginContainer/constants/margin_bottom = 15
 MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
-Panel/styles/panel = SubResource("StyleBoxTexture_88vpx")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_7vied")
 
 [node name="TextBalloon" type="CanvasLayer"]
 layer = 99
@@ -73,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="Panel" type="Panel" parent="Balloon"]
+[node name="Panel" type="PanelContainer" parent="Balloon"]
 clip_children = 2
 layout_mode = 1
 anchors_preset = -1
@@ -90,16 +90,10 @@ grow_vertical = 0
 mouse_filter = 1
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = -40.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
 layout_mode = 2

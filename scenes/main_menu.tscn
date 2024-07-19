@@ -1,23 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcg4t6806rtns"]
+[gd_scene load_steps=8 format=3 uid="uid://bcg4t6806rtns"]
 
-[ext_resource type="FontFile" uid="uid://d0n4mfdy260lo" path="res://assets/Playfair_Display_Font/PlayfairDisplay-VariableFont_wght.ttf" id="1_2iaav"]
+[ext_resource type="Theme" uid="uid://xycay2vr14mx" path="res://scenes/main_theme.tres" id="1_0rlay"]
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="2_qlo1c"]
 [ext_resource type="Texture2D" uid="uid://o50coucytngs" path="res://assets/images/title_screen.png" id="3_wmt70"]
 [ext_resource type="AudioStream" uid="uid://cci66yvb4oarx" path="res://assets/sounds/music/loading_sound.wav" id="5_pda6g"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="9_m8x2h"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvtfa"]
-bg_color = Color(0.482353, 0.415686, 0.32549, 1)
-corner_radius_top_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2sq1u"]
-bg_color = Color(0.482353, 0.415686, 0.32549, 0)
-corner_radius_top_left = 16
-
-[sub_resource type="Theme" id="Theme_xkaec"]
-default_font = ExtResource("1_2iaav")
-Button/styles/hover = SubResource("StyleBoxFlat_kvtfa")
-Button/styles/normal = SubResource("StyleBoxFlat_2sq1u")
 
 [sub_resource type="Theme" id="Theme_eplge"]
 default_font_size = 48
@@ -32,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_xkaec")
+theme = ExtResource("1_0rlay")
 script = ExtResource("2_qlo1c")
 
 [node name="Background" type="TextureRect" parent="."]
