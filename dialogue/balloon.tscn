@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=13 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_36de5"]
-[ext_resource type="Texture2D" uid="uid://bca5mtr82qqaw" path="res://assets/images/text_balloon.png" id="2_8wdhl"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="PackedScene" uid="uid://lt4cml3g6r4t" path="res://dialogue/characters.tscn" id="2_w2j4t"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://c4pkycxqdxcky" path="res://assets/images/ui_images/button.png" id="3_nf1lh"]
+[ext_resource type="Texture2D" uid="uid://bca5mtr82qqaw" path="res://assets/images/ui_images/text_balloon.png" id="4_p5bbs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -42,15 +43,22 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1eig"]
+texture = ExtResource("3_nf1lh")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vied"]
-texture = ExtResource("2_8wdhl")
+texture = ExtResource("4_p5bbs")
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
 default_font_size = 20
 Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
 Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
 Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
-Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+Button/styles/normal = SubResource("StyleBoxTexture_f1eig")
 MarginContainer/constants/margin_bottom = 15
 MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
@@ -104,6 +112,7 @@ modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -114,6 +123,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
 text = "Dialogue..."
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]

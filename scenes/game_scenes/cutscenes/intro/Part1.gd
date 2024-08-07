@@ -3,8 +3,7 @@ extends Node2D
 @onready var special_text = $SpecialText
 @onready var special_text_2 = $SpecialText2
 @onready var special_text_3 = $SpecialText3
-@onready var test_sprite = $TestSprite
-@onready var animation_player = $TestSprite/AnimationPlayer
+@onready var special_text_4 = $SpecialText4
 
 signal ended
 
@@ -26,14 +25,13 @@ func _on_special_text_end_click():
 
 func _on_special_text_2_end_click():
     special_text_3.start()
-    animation_player.play("fade_in")
 
 func _on_special_text_3_end_click():
+    special_text_4.start()
+
+func _on_special_text_4_end_click():
     special_text.exit_scene()
     special_text_2.exit_scene()
     special_text_3.exit_scene()
-    animation_player.play("fade_out")
-    
-    await animation_player.animation_finished
-    test_sprite.queue_free()
+    special_text_4.exit_scene()
     ended.emit()

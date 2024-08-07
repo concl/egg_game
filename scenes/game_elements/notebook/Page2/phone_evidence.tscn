@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwua7aphhusvr"]
+
+[ext_resource type="PackedScene" uid="uid://wvyt0vqypjdv" path="res://scenes/game_elements/notebook/Page2/evidence_item.tscn" id="1_yqufu"]
+[ext_resource type="Texture2D" uid="uid://e4wux8hxj7rn" path="res://assets/images/evidence_images/phone.png" id="2_ijdx8"]
+
+[node name="PhoneEvidence" instance=ExtResource("1_yqufu")]
+offset_right = 101.0
+offset_bottom = 150.0
+texture = ExtResource("2_ijdx8")

@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfdjlg0y0yygk"]
+
+[ext_resource type="Texture2D" uid="uid://de8p8ofmf57kw" path="res://assets/images/ui_images/egg_book_contents.png" id="1_6odif"]
+[ext_resource type="Texture2D" uid="uid://hf1padb37vwn" path="res://assets/images/ui_images/egg_book_p1.png" id="2_lyfku"]
+[ext_resource type="Texture2D" uid="uid://c1hwjb7fwmuwl" path="res://assets/images/ui_images/egg_book_p2.png" id="3_dbesy"]
+[ext_resource type="Texture2D" uid="uid://bg1wkj8sgx85w" path="res://assets/images/ui_images/egg_book_p3.png" id="4_0hwcj"]
+
+[node name="EggBook" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Contents" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ContentsImage" type="TextureRect" parent="Contents"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_6odif")
+
+[node name="Page1" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="P1Image" type="TextureRect" parent="Page1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_lyfku")
+
+[node name="Page2" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="P2Image" type="TextureRect" parent="Page2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_dbesy")
+
+[node name="Page3" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="P3Image" type="TextureRect" parent="Page3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_0hwcj")

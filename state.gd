@@ -1,5 +1,8 @@
 extends Node
 
+# save stuff
+var load_save = false
+
 var input_enabled = true
 
 # array of changes: each element represents a change for the displayed characters
@@ -7,8 +10,15 @@ var changes: Array
 var test = null
 var phase = 0
 
-var correct_order = [2,3,4,5,1]
-var book_solved = false
+# first page of the book
+var correct_order = [4,3,2,5,1]
+var first_book_page_solved = false
+
+# second page of the book
+var inventory = []
+var total_items_page_2 = 5
+var second_book_page_solved = false
+
 
 # Function to load and play a sound file
 func play_sound(file_path: String):

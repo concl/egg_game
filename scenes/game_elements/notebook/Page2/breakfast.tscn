@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceue5kmrqdk6i"]
+
+[ext_resource type="PackedScene" uid="uid://wvyt0vqypjdv" path="res://scenes/game_elements/notebook/Page2/evidence_item.tscn" id="1_bng3m"]
+[ext_resource type="Texture2D" uid="uid://bi0rf8k64nglx" path="res://assets/images/evidence_images/breakfast.png" id="2_b2nsi"]
+
+[node name="Breakfast" instance=ExtResource("1_bng3m")]
+offset_right = 146.332
+offset_bottom = 150.0
+texture = ExtResource("2_b2nsi")

@@ -3,13 +3,14 @@ extends Node2D
 class_name Character
 
 const PATH = preload("res://scenes/characters/path.tres")
-
+@onready var sprites = $Sprites
 @onready var animation_player = $AnimationPlayer
 var from
 var to
 var moving = false
 var time_since = 0
 var move_factor = 4
+var focused = false
 
 func _init():
     pass
@@ -31,6 +32,16 @@ func change_loc(pos):
     from = global_position.x
     to = pos
     moving = true
+
+func focus():
+    if not focused:
+        animation_player.play("focus")
+        focused = true
+
+func unfocus():
+    if focused:
+        animation_player.play("unfocus")
+        focused = false
 
 func play_animation(animation_name):
     animation_player.play(animation_name)

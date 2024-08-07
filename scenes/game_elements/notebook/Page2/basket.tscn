@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv41g4e7n3opc"]
+
+[ext_resource type="PackedScene" uid="uid://wvyt0vqypjdv" path="res://scenes/game_elements/notebook/Page2/evidence_item.tscn" id="1_4htei"]
+[ext_resource type="Texture2D" uid="uid://discy0u3l4r8u" path="res://assets/images/evidence_images/apple_basket.png" id="2_r6774"]
+
+[node name="Basket" instance=ExtResource("1_4htei")]
+offset_right = 6244.0
+offset_bottom = 4267.0
+texture = ExtResource("2_r6774")

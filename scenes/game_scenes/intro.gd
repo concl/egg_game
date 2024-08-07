@@ -20,7 +20,7 @@ func _ready():
     part_1.start()
 
 func end_scene():
-    State.play_sound("res://assets/sounds/effects/telephone_ringing.mp3")
+    #State.play_sound("res://assets/sounds/effects/telephone_ringing.mp3")
     transition_manager.fade_out()
     await transition_manager.transitioned
     get_tree().change_scene_to_file(next_scene)

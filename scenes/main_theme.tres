@@ -1,16 +1,55 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://xycay2vr14mx"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://xycay2vr14mx"]
 
+[ext_resource type="Texture2D" uid="uid://c4pkycxqdxcky" path="res://assets/images/ui_images/button.png" id="1_0h2hf"]
 [ext_resource type="FontFile" uid="uid://d0n4mfdy260lo" path="res://assets/Playfair_Display_Font/PlayfairDisplay-VariableFont_wght.ttf" id="1_8ix66"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvtfa"]
-bg_color = Color(0.482353, 0.415686, 0.32549, 1)
-corner_radius_top_left = 8
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4f6sp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2sq1u"]
-bg_color = Color(0.482353, 0.415686, 0.32549, 0)
-corner_radius_top_left = 16
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3psa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnv6c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4ycl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_re4f4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8uajl"]
+texture = ExtResource("1_0h2hf")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.501961, 0.501961, 0.501961, 0.501961)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgiwq"]
+texture = ExtResource("1_0h2hf")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dh1sd"]
+texture = ExtResource("1_0h2hf")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhgcl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [resource]
 default_font = ExtResource("1_8ix66")
-Button/styles/hover = SubResource("StyleBoxFlat_kvtfa")
-Button/styles/normal = SubResource("StyleBoxFlat_2sq1u")
+ArrowButton/base_type = &"Button"
+ArrowButton/styles/disabled = SubResource("StyleBoxEmpty_4f6sp")
+ArrowButton/styles/focus = SubResource("StyleBoxEmpty_k3psa")
+ArrowButton/styles/hover = SubResource("StyleBoxEmpty_gnv6c")
+ArrowButton/styles/normal = SubResource("StyleBoxEmpty_d4ycl")
+ArrowButton/styles/pressed = SubResource("StyleBoxEmpty_re4f4")
+Button/colors/font_color = Color(0.162044, 0.106319, 0.0360101, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_8uajl")
+Button/styles/hover = SubResource("StyleBoxTexture_kgiwq")
+Button/styles/normal = SubResource("StyleBoxTexture_kgiwq")
+Button/styles/pressed = SubResource("StyleBoxTexture_dh1sd")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_jhgcl")

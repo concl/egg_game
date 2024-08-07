@@ -1,0 +1,49 @@
+~ first_scene
+
+set State.changes = [{"name":"AddCharacter", "character":"Eggspert", "state":"Focus"}]
+侦探蛋哥: 我, 伟大机智的侦探蛋哥，来了!
+侦探蛋哥: 在听闻夫人对我的求助后光临此地！
+侦探蛋哥: 有什么需要本座解决的小麻烦？
+
+set State.changes = [{"name":"AddCharacter", "character":"Op", "state":"Focus"}, {"name":"PlaySound", "sound":"Op"}]
+猫头鹰老爹: 大侦探你终于来了
+set State.changes = [{"name":"PlaySound", "sound":"Op"}]
+猫头鹰老爹: 这次的事件非常紧急
+set State.changes = [{"name":"PlaySound", "sound":"Op_long"}]
+猫头鹰老爹: 我们家其中一个小猫头鹰的蛋出现裂痕了！
+
+set State.changes = [{"name":"AddCharacter", "character":"Owlivia", "state":"Focus"},{"name":"PlaySound", "sound":"Owl"}]
+猫头鹰老妈: 呜呜呜伟大机智的蛋哥请你帮帮我们！
+set State.changes = [{"name":"PlaySound", "sound":"Owl"}]
+猫头鹰老妈: 我那还没出世的可爱宝宝啊！
+set State.changes = [{"name":"PlaySound", "sound":"Owl"}]
+猫头鹰老妈: 我和孩子他爸一直有好好地爱护它
+set State.changes = [{"name":"PlaySound", "sound":"Owl"}]
+猫头鹰老妈: 但是现在蛋壳上有一条巨大的裂缝！
+set State.changes = [{"name":"PlaySound", "sound":"Owl"}]
+猫头鹰老妈: 呜啊啊啊
+set State.changes = [{"name":"PlaySound", "sound":"Owl"}]
+猫头鹰老妈: 孩子没了我也不活了呜呜呜...
+
+set State.changes = [{"name":"PlayAnimation", "character":"Eggspert", "animation_name":"focus"}]
+侦探蛋哥: 这简直是惨无鹰道
+侦探蛋哥: 恶劣至极
+侦探蛋哥: 泯灭鹰性的犯罪！
+侦探蛋哥: 先生，女士，请您们放心！
+侦探蛋哥: 本次案件的凶手将由我，侦探蛋哥
+侦探蛋哥: 也就是正义的化身，一举拿下！
+侦探蛋哥: 首先，请您先冷静下来
+侦探蛋哥: 协助本侦探确定案发前后的时间线并找到嫌疑人。
+
+
+
+=> END
+
+~ notebook_dialog
+
+
+侦探蛋哥: 二位！请告诉本侦探你们今天都做了什么
+侦探蛋哥: 这有助于本侦探缩小嫌疑人范围然后锁定凶手
+侦探蛋哥: 从现在开始我会让我的助手把一切都记录在我的侦探本中
+
+=> END

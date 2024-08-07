@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dpfv4vfngx12y"]
+
+[ext_resource type="FontFile" uid="uid://cihcjvgmttr6u" path="res://assets/main_font_chinese/shijuef.com(gongfanmianfeiti) Regular.ttf" id="1_ggf5p"]
+
+[resource]
+Label/fonts/font = ExtResource("1_ggf5p")

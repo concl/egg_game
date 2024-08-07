@@ -1,100 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckxgwal6qi36j"]
+[gd_scene load_steps=8 format=3 uid="uid://ckxgwal6qi36j"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/intro.gd" id="1_pbugm"]
 [ext_resource type="Script" path="res://scenes/game_scenes/cutscenes/intro/Part1.gd" id="2_k5ceq"]
 [ext_resource type="PackedScene" uid="uid://deib08mtq18w" path="res://dialogue/special_text.tscn" id="3_0gdyf"]
-[ext_resource type="Texture2D" uid="uid://dsfvjguxfohju" path="res://assets/images/characters/eggspert.png" id="4_00lh2"]
+[ext_resource type="Theme" uid="uid://dpfv4vfngx12y" path="res://text_theme.tres" id="4_lp4h6"]
 [ext_resource type="Script" path="res://scenes/game_scenes/cutscenes/intro/Final.gd" id="5_ej3gl"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="5_haqpp"]
-[ext_resource type="AudioStream" uid="uid://5ythojkk64uy" path="res://assets/sounds/music/intro_music.mp3" id="6_14e6o"]
-
-[sub_resource type="Animation" id="Animation_b3sth"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_ep6i3"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_7shan"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sm4hp"]
-_data = {
-"RESET": SubResource("Animation_b3sth"),
-"fade_in": SubResource("Animation_ep6i3"),
-"fade_out": SubResource("Animation_7shan")
-}
+[ext_resource type="AudioStream" uid="uid://dtoxbxgvixp4k" path="res://assets/sounds/music/intro_music.wav" id="7_fxauv"]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_pbugm")
@@ -114,49 +26,50 @@ anchor_mode = 0
 script = ExtResource("2_k5ceq")
 
 [node name="SpecialText" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "Once upon a time"
+text = "很久很久以前, 有一个大名鼎鼎的侦探叫蛋哥"
 tick_time = 0.1
 
 [node name="Label" parent="Part1/SpecialText" index="0"]
-offset_left = 252.0
-offset_top = 175.0
-offset_right = 577.0
-offset_bottom = 244.0
+offset_left = 250.0
+offset_top = 200.0
+offset_right = 613.0
+offset_bottom = 269.0
+theme = ExtResource("4_lp4h6")
 metadata/_edit_use_anchors_ = true
 
 [node name="SpecialText2" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "There was a ...."
+text = "有一个大名鼎鼎的侦探叫蛋哥"
 
 [node name="Label" parent="Part1/SpecialText2" index="0"]
-offset_left = 457.0
-offset_top = 326.0
-offset_right = 782.0
-offset_bottom = 395.0
+offset_left = 250.0
+offset_top = 400.0
+offset_right = 613.0
+offset_bottom = 469.0
+theme = ExtResource("4_lp4h6")
 metadata/_edit_use_anchors_ = true
 
 [node name="SpecialText3" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "Here's a test image"
+text = "它机智聪敏, 破获了很多起悬案"
 
 [node name="Label" parent="Part1/SpecialText3" index="0"]
-offset_left = 731.0
-offset_top = 507.0
-offset_right = 1056.0
-offset_bottom = 576.0
+offset_left = 250.0
+offset_top = 600.0
+offset_right = 613.0
+offset_bottom = 669.0
+theme = ExtResource("4_lp4h6")
 
-[node name="TestSprite" type="Node2D" parent="Part1"]
-position = Vector2(-552, -29)
+[node name="SpecialText4" parent="Part1" instance=ExtResource("3_0gdyf")]
+text = "使得小镇里的居民都对它有着很高的信任和崇敬"
 
-[node name="Sprite2D" type="Sprite2D" parent="Part1/TestSprite"]
-visible = false
-position = Vector2(2151, 686)
-scale = Vector2(0.238, 0.238)
-texture = ExtResource("4_00lh2")
+[node name="Label" parent="Part1/SpecialText4" index="0"]
+offset_left = 250.0
+offset_top = 800.0
+offset_right = 613.0
+offset_bottom = 869.0
+theme = ExtResource("4_lp4h6")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Part1/TestSprite"]
-libraries = {
-"": SubResource("AnimationLibrary_sm4hp")
-}
-autoplay = "RESET"
+[node name="AnimationPlayer" parent="Part1/SpecialText4" index="1"]
+root_node = NodePath("../../SpecialText4")
 
 [node name="Final" type="Node2D" parent="."]
 script = ExtResource("5_ej3gl")
@@ -164,10 +77,16 @@ script = ExtResource("5_ej3gl")
 [node name="SpecialText" parent="Final" instance=ExtResource("3_0gdyf")]
 text = "More text"
 
+[node name="Label" parent="Final/SpecialText" index="0"]
+offset_left = 250.0
+offset_top = 200.0
+offset_right = 575.0
+offset_bottom = 269.0
+
 [node name="TransitionManager" parent="." instance=ExtResource("5_haqpp")]
 
 [node name="AudioStreamPlayer" parent="TransitionManager" index="2"]
-stream = ExtResource("6_14e6o")
+stream = ExtResource("7_fxauv")
 autoplay = true
 bus = &"Music"
 
@@ -175,6 +94,7 @@ bus = &"Music"
 [connection signal="end_click" from="Part1/SpecialText" to="Part1" method="_on_special_text_end_click"]
 [connection signal="end_click" from="Part1/SpecialText2" to="Part1" method="_on_special_text_2_end_click"]
 [connection signal="end_click" from="Part1/SpecialText3" to="Part1" method="_on_special_text_3_end_click"]
+[connection signal="end_click" from="Part1/SpecialText4" to="Part1" method="_on_special_text_4_end_click"]
 [connection signal="ended" from="Final" to="." method="_on_final_ended"]
 [connection signal="end_click" from="Final/SpecialText" to="Final" method="_on_special_text_end_click"]
 [connection signal="transitioned" from="TransitionManager" to="." method="_on_transition_manager_transitioned"]
@@ -182,5 +102,6 @@ bus = &"Music"
 [editable path="Part1/SpecialText"]
 [editable path="Part1/SpecialText2"]
 [editable path="Part1/SpecialText3"]
+[editable path="Part1/SpecialText4"]
 [editable path="Final/SpecialText"]
 [editable path="TransitionManager"]
