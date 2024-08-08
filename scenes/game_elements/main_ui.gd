@@ -43,6 +43,9 @@ func toggle_phone():
         book_element.visible = false
         egg_book_element.visible = false
         phone_element.open()
+    
+func toggle_egg_book():
+    pass
 
 func add_evidence_item(item_name):
     book.add_evidence_item(item_name)
