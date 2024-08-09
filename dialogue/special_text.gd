@@ -5,6 +5,7 @@ extends CanvasLayer
 @export var text: String
 @export var tick_time: float = 0.2 # in seconds
 @export var autostart: bool = false
+@export var centered: bool = true
 
 signal end_click
 signal ended
@@ -12,6 +13,7 @@ signal ended
 var _is_typing = false
 var _time_before_tick: float
 var _text_index = 0
+var _horizontal_position
 var finished = false
 
 func _unhandled_input(event):
@@ -29,6 +31,8 @@ func _unhandled_input(event):
 # Called when the node enters the scene tree for the first time.
 func _ready():
     label.text = ""
+    label.size[0] = 0
+    _horizontal_position = label.position[0]
     if autostart:
         start()
 
@@ -39,6 +43,10 @@ func _process(delta):
         _time_before_tick -= delta
         if _time_before_tick <= 0:
             tick()
+    
+    if centered:
+        var hsize = label.size[0]
+        label.position[0] = _horizontal_position - hsize/2
 
 
 func start():
@@ -51,6 +59,9 @@ func tick():
     if _text_index < text.length():
         label.text += text[_text_index]
         _text_index += 1
+        if centered:
+            var hsize = label.size[0]
+            label.position[0] = _horizontal_position - hsize/2
     else:
         ended.emit()
         finished = true

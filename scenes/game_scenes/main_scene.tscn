@@ -129,6 +129,8 @@ position = Vector2(164, 348)
 position = Vector2(-1, 11.5)
 shape = SubResource("RectangleShape2D_jgoqs")
 
+[node name="Marriage" type="Node2D" parent="MainScene"]
+
 [node name="TransitionManager" parent="." instance=ExtResource("2_ur0vy")]
 
 [node name="AudioStreamPlayer" parent="TransitionManager" index="2"]

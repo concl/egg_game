@@ -30,10 +30,10 @@ text = "很久很久以前, 有一个大名鼎鼎的侦探叫蛋哥"
 tick_time = 0.1
 
 [node name="Label" parent="Part1/SpecialText" index="0"]
-offset_left = 250.0
+offset_left = 960.0
 offset_top = 200.0
-offset_right = 613.0
-offset_bottom = 269.0
+offset_right = 961.0
+offset_bottom = 258.0
 theme = ExtResource("4_lp4h6")
 metadata/_edit_use_anchors_ = true
 
@@ -41,9 +41,9 @@ metadata/_edit_use_anchors_ = true
 text = "有一个大名鼎鼎的侦探叫蛋哥"
 
 [node name="Label" parent="Part1/SpecialText2" index="0"]
-offset_left = 250.0
+offset_left = 960.0
 offset_top = 400.0
-offset_right = 613.0
+offset_right = 1323.0
 offset_bottom = 469.0
 theme = ExtResource("4_lp4h6")
 metadata/_edit_use_anchors_ = true
