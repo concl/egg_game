@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnrn8ef2sh3ef"
-path="res://.godot/imported/book_glow.png-6532153f86f28419d6ef3098f2797424.ctex"
+uid="uid://b1lp6vltn7b57"
+path="res://.godot/imported/phone_glow.png-c97ab3de825a7fbf437bffb33f6b7e15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui_images/book_glow.png"
-dest_files=["res://.godot/imported/book_glow.png-6532153f86f28419d6ef3098f2797424.ctex"]
+source_file="res://assets/images/ui_images/glow/phone_glow.png"
+dest_files=["res://.godot/imported/phone_glow.png-c97ab3de825a7fbf437bffb33f6b7e15.ctex"]
 
 [params]
 

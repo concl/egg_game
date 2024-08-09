@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7kxfrjqay0t7"
-path="res://.godot/imported/egg_canvas.png-3f919465be9cdd51d01a11515c3f8b32.ctex"
+uid="uid://c4a0rf5dppgh2"
+path="res://.godot/imported/footsteps_glow.png-de158abd33cee84bd119e1b094252944.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui_images/egg_canvas.png"
-dest_files=["res://.godot/imported/egg_canvas.png-3f919465be9cdd51d01a11515c3f8b32.ctex"]
+source_file="res://assets/images/ui_images/glow/footsteps_glow.png"
+dest_files=["res://.godot/imported/footsteps_glow.png-de158abd33cee84bd119e1b094252944.ctex"]
 
 [params]
 

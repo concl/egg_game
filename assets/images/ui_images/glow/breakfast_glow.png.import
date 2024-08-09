@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2ukin8ba8tgb"
-path="res://.godot/imported/marriage_glow.png-799297927f13fc0eea99a5d821a34091.ctex"
+uid="uid://cs1c30d66grjd"
+path="res://.godot/imported/breakfast_glow.png-51a191b5472a2cce9a36fe3778c790bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui_images/marriage_glow.png"
-dest_files=["res://.godot/imported/marriage_glow.png-799297927f13fc0eea99a5d821a34091.ctex"]
+source_file="res://assets/images/ui_images/glow/breakfast_glow.png"
+dest_files=["res://.godot/imported/breakfast_glow.png-51a191b5472a2cce9a36fe3778c790bf.ctex"]
 
 [params]
 

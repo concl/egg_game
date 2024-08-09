@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csx78t52dnuos"
-path="res://.godot/imported/basket_glow.png-ac056fbe6da1b11e1755fd8740361063.ctex"
+path="res://.godot/imported/basket_glow.png-92664bb83fccc0878461393f2cc64a47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui_images/basket_glow.png"
-dest_files=["res://.godot/imported/basket_glow.png-ac056fbe6da1b11e1755fd8740361063.ctex"]
+source_file="res://assets/images/ui_images/glow/basket_glow.png"
+dest_files=["res://.godot/imported/basket_glow.png-92664bb83fccc0878461393f2cc64a47.ctex"]
 
 [params]
 

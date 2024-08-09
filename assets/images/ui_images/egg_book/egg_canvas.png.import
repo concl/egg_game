@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y2r16xmmmfg1"
-path="res://.godot/imported/portrait_glow.png-019e9adec30d800d3fea9b2671f3b117.ctex"
+uid="uid://b7kxfrjqay0t7"
+path="res://.godot/imported/egg_canvas.png-beebc126b144a3afef12d6faf17ab8b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui_images/portrait_glow.png"
-dest_files=["res://.godot/imported/portrait_glow.png-019e9adec30d800d3fea9b2671f3b117.ctex"]
+source_file="res://assets/images/ui_images/egg_book/egg_canvas.png"
+dest_files=["res://.godot/imported/egg_canvas.png-beebc126b144a3afef12d6faf17ab8b0.ctex"]
 
 [params]
 

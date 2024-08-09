@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://wssa62ks64rl"]
 
-[ext_resource type="Texture2D" uid="uid://b7kxfrjqay0t7" path="res://assets/images/ui_images/egg_canvas.png" id="1_2jndv"]
+[ext_resource type="Texture2D" uid="uid://b7kxfrjqay0t7" path="res://assets/images/ui_images/egg_book/egg_canvas.png" id="1_2jndv"]
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/drawing_canvas.gd" id="2_xtilq"]
 
 [node name="DrawingCanvas" type="TextureRect"]

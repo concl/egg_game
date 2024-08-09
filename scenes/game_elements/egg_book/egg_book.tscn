@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfdjlg0y0yygk"]
 
-[ext_resource type="Texture2D" uid="uid://de8p8ofmf57kw" path="res://assets/images/ui_images/egg_book_contents.png" id="1_6odif"]
-[ext_resource type="Texture2D" uid="uid://hf1padb37vwn" path="res://assets/images/ui_images/egg_book_p1.png" id="2_lyfku"]
-[ext_resource type="Texture2D" uid="uid://c1hwjb7fwmuwl" path="res://assets/images/ui_images/egg_book_p2.png" id="3_dbesy"]
-[ext_resource type="Texture2D" uid="uid://bg1wkj8sgx85w" path="res://assets/images/ui_images/egg_book_p3.png" id="4_0hwcj"]
+[ext_resource type="Texture2D" uid="uid://de8p8ofmf57kw" path="res://assets/images/ui_images/egg_book/egg_book_contents.png" id="1_6odif"]
+[ext_resource type="Texture2D" uid="uid://hf1padb37vwn" path="res://assets/images/ui_images/egg_book/egg_book_p1.png" id="2_lyfku"]
+[ext_resource type="Texture2D" uid="uid://c1hwjb7fwmuwl" path="res://assets/images/ui_images/egg_book/egg_book_p2.png" id="3_dbesy"]
+[ext_resource type="Texture2D" uid="uid://bg1wkj8sgx85w" path="res://assets/images/ui_images/egg_book/egg_book_p3.png" id="4_0hwcj"]
 
 [node name="EggBook" type="Control"]
 layout_mode = 3

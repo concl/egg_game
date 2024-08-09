@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs1c30d66grjd"
-path="res://.godot/imported/breakfast_glow.png-b51ebd5ffc7507d94f4cc85b06e893e4.ctex"
+uid="uid://dnrn8ef2sh3ef"
+path="res://.godot/imported/book_glow.png-e643ea00d41c650c68139f21a9772a6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui_images/breakfast_glow.png"
-dest_files=["res://.godot/imported/breakfast_glow.png-b51ebd5ffc7507d94f4cc85b06e893e4.ctex"]
+source_file="res://assets/images/ui_images/glow/book_glow.png"
+dest_files=["res://.godot/imported/book_glow.png-e643ea00d41c650c68139f21a9772a6c.ctex"]
 
 [params]
 

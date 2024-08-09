@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hf1padb37vwn"
-path="res://.godot/imported/egg_book_p1.png-6222a7b5dfc744108590bfca087323e3.ctex"
+uid="uid://c2ukin8ba8tgb"
+path="res://.godot/imported/marriage_glow.png-8b007fd8a19859bfa2d83802871af6a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui_images/egg_book_p1.png"
-dest_files=["res://.godot/imported/egg_book_p1.png-6222a7b5dfc744108590bfca087323e3.ctex"]
+source_file="res://assets/images/ui_images/glow/marriage_glow.png"
+dest_files=["res://.godot/imported/marriage_glow.png-8b007fd8a19859bfa2d83802871af6a1.ctex"]
 
 [params]
 
