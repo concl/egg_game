@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://wvyt0vqypjdv"]
 
-[ext_resource type="Script" path="res://scenes/game_elements/notebook/Page2/evidence_item.gd" id="1_4hvg8"]
+[ext_resource type="Script" path="res://scenes/game_elements/notebook/Page2/evidence_pictures/evidence_item.gd" id="1_g3kcn"]
 
 [node name="EvidenceItem" type="TextureRect"]
 custom_minimum_size = Vector2(0, 100)
 expand_mode = 3
-script = ExtResource("1_4hvg8")
+script = ExtResource("1_g3kcn")

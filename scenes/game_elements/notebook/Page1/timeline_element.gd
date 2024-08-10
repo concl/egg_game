@@ -45,6 +45,8 @@ func _drop_data(_pos, data):
     var temp = get_parent().order[f]
     get_parent().order[f] = get_parent().order[g]
     get_parent().order[g] = temp
+    get_parent().check_win()
+    
 
 var swap_duration: float = .5 # Duration of the swap animation in seconds
 var swap_steps: int = 60 # Number of steps in the animation (frames)

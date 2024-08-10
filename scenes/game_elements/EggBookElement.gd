@@ -1,6 +1,7 @@
-extends TextureRect
+extends Control
 
-var _name = "basket"
+
+var book_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

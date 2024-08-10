@@ -16,11 +16,3 @@ func _drop_data(at_position, data):
         page_2.not_valuable_items[data[0].name] = null
         page_2.check_win()
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-    pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-    pass

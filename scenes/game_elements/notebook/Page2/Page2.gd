@@ -11,17 +11,19 @@ var valuable_items = {}
 var not_valuable_items = {}
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-    pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-    pass
-
 func check_win():
-    if items_found == State.total_items_page_2:
-        pass
+    if items_found == State.total_items_page_2 and valuable_items == State.correct_valuable_items:
+        disable_ui_for_all_children(self)
+        next_page.visible = true
+        # handle other stuff
 
+# Function to disable UI response for all children
+func disable_ui_for_all_children(parent: Node):
+    for child in parent.get_children():
+        if child is Control and not (child is Button):
+            child.mouse_filter = Control.MOUSE_FILTER_IGNORE
+        if child is TextureRect:
+            child.material = State.apply_grayscale_shader_to_texture(child.texture)
+        # Recursively call the function for children of the current child
+        disable_ui_for_all_children(child)
 

@@ -6,11 +6,14 @@ var page_number = 0
 
 # evidence item name to object
 var evidence_items = {
-    "Basket": preload("res://scenes/game_elements/notebook/Page2/basket.tscn"),
-    "EggBlanket": preload("res://scenes/game_elements/notebook/Page2/egg_blanket.tscn"),
-    "Footsteps": preload("res://scenes/game_elements/notebook/Page2/footsteps.tscn"),
-    "Phone": preload("res://scenes/game_elements/notebook/Page2/phone_evidence.tscn"),
-    "Breakfast": preload("res://scenes/game_elements/notebook/Page2/breakfast.tscn")
+    "Basket": preload("res://scenes/game_elements/notebook/Page2/evidence_pictures/basket.tscn"),
+    "EggBlanket": preload("res://scenes/game_elements/notebook/Page2/evidence_pictures/egg_blanket.tscn"),
+    "Footsteps": preload("res://scenes/game_elements/notebook/Page2/evidence_pictures/footsteps.tscn"),
+    "Phone": preload("res://scenes/game_elements/notebook/Page2/evidence_pictures/phone_evidence.tscn"),
+    "Breakfast": preload("res://scenes/game_elements/notebook/Page2/evidence_pictures/breakfast.tscn"),
+    "EggBook": null,
+    "Marriage": null,
+    "Portrait": null
 }
 
 # Called when the node enters the scene tree for the first time.

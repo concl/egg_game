@@ -14,6 +14,7 @@ func _drop_data(at_position, data):
         add_child(data[0])
         page_2.not_valuable_items.erase(data[0].name)
         page_2.valuable_items[data[0].name] = null
+        page_2.check_win()
         
 # Called when the node enters the scene tree for the first time.
 func _ready():

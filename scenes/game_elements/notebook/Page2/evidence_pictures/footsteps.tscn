@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccqvpepbs2dfk"]
+
+[ext_resource type="PackedScene" uid="uid://wvyt0vqypjdv" path="res://scenes/game_elements/notebook/Page2/evidence_pictures/evidence_item.tscn" id="1_g50fb"]
+[ext_resource type="Texture2D" uid="uid://cxkfc3jkje10u" path="res://assets/images/evidence_images/footsteps.png" id="2_2dsfq"]
+
+[node name="Footsteps" instance=ExtResource("1_g50fb")]
+offset_right = 218.0
+offset_bottom = 150.0
+texture = ExtResource("2_2dsfq")

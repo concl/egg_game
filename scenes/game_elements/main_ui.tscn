@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://dcif8uanmvqx0"]
+[gd_scene load_steps=77 format=3 uid="uid://dcif8uanmvqx0"]
 
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/book_element.gd" id="1_7cvkj"]
 [ext_resource type="Theme" uid="uid://xycay2vr14mx" path="res://scenes/main_theme.tres" id="1_8xyb5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bfdjlg0y0yygk" path="res://scenes/game_elements/egg_book/egg_book.tscn" id="4_oqxle"]
 [ext_resource type="Texture2D" uid="uid://ijq1rovadryq" path="res://assets/images/ui_images/arrow_bobbing.png" id="5_1v28d"]
 [ext_resource type="Texture2D" uid="uid://b2xbx8wcefn3g" path="res://assets/images/ui_images/arrow_bobbing_select.png" id="6_5miry"]
+[ext_resource type="Script" path="res://scenes/game_elements/EggBookElement.gd" id="8_0qh5p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpobo"]
 atlas = ExtResource("5_1v28d")
@@ -835,6 +836,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("8_0qh5p")
 
 [node name="EggBook" parent="EggBookElement" instance=ExtResource("4_oqxle")]
 visible = false

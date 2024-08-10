@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://kfsneuwojb42"]
-
-[ext_resource type="PackedScene" uid="uid://wvyt0vqypjdv" path="res://scenes/game_elements/notebook/Page2/evidence_item.tscn" id="1_gwmhb"]
-[ext_resource type="Texture2D" uid="uid://hs4m48vrkmxu" path="res://assets/images/evidence_images/egg_blanket.png" id="2_v46iy"]
-
-[node name="EggBlanket" instance=ExtResource("1_gwmhb")]
-offset_right = 218.0
-offset_bottom = 150.0
-texture = ExtResource("2_v46iy")

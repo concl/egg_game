@@ -1,7 +1,7 @@
 extends Node
 
 # save stuff
-var load_save = false
+var _load_save = false
 
 var input_enabled = true
 
@@ -17,8 +17,18 @@ var first_book_page_solved = false
 # second page of the book
 var inventory = []
 var total_items_page_2 = 5
+var correct_valuable_items = {
+    "Footsteps": null,
+    "EggBlanket": null,
+    "Phone": null
+}
 var second_book_page_solved = false
 
+# func _ready():
+    # if _load_save:
+        # load_save("nu")
+# func load_save(save):
+    # pass
 
 # Function to load and play a sound file
 func play_sound(file_path: String):
@@ -38,3 +48,28 @@ func play_sound(file_path: String):
     else:
         print("Error: Could not load the audio file")
 
+func apply_grayscale_shader_to_texture(texture: Texture2D) -> ShaderMaterial:
+    var grayscale_shader_code = """
+    shader_type canvas_item;
+
+    void fragment() {
+        vec4 tex_color = texture(TEXTURE, UV);
+        float gray = dot(tex_color.rgb, vec3(0.299, 0.587, 0.114));
+        COLOR = vec4(gray, gray, gray, tex_color.a);
+    }
+    """
+    
+    # Create the shader
+    var shader = Shader.new()
+    shader.code = grayscale_shader_code
+    
+    # Create the ShaderMaterial and assign the shader to it
+    var shader_material = ShaderMaterial.new()
+    shader_material.shader = shader
+    
+    # Create a new Sprite and apply the ShaderMaterial
+    var sprite = Sprite2D.new()
+    sprite.texture = texture
+    sprite.material = shader_material
+    
+    return shader_material
