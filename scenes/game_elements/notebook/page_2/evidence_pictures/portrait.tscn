@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqddvtop5uei1"]
+
+[ext_resource type="PackedScene" uid="uid://wvyt0vqypjdv" path="res://scenes/game_elements/notebook/page_2/evidence_pictures/evidence_item.tscn" id="1_ku7ne"]
+[ext_resource type="Texture2D" uid="uid://dg0t3lgtief2j" path="res://assets/images/evidence_images/portrait.png" id="2_f4u5v"]
+
+[node name="Portrait" instance=ExtResource("1_ku7ne")]
+texture = ExtResource("2_f4u5v")

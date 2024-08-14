@@ -4,6 +4,7 @@ static var enabled = false
 
 @onready var glow_sprite = $GlowSprite
 @onready var area_2d = $Area2D
+const TextBalloon = preload("res://dialogue/balloon.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c685qdontxgej"
+path="res://.godot/imported/evidence_search.dialogue-3dc7d42cf904f379d232ce5ce5444871.tres"
+
+[deps]
+
+source_file="res://dialogue/script/evidence_search.dialogue"
+dest_files=["res://.godot/imported/evidence_search.dialogue-3dc7d42cf904f379d232ce5ce5444871.tres"]
+
+[params]
+
+defaults=true

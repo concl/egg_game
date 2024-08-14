@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://78p60m4uymcj"]
+
+[ext_resource type="PackedScene" uid="uid://wvyt0vqypjdv" path="res://scenes/game_elements/notebook/page_2/evidence_pictures/evidence_item.tscn" id="1_wiy1j"]
+[ext_resource type="Texture2D" uid="uid://dldo5coxitt1b" path="res://assets/images/evidence_images/marriage.png" id="2_d5tsm"]
+
+[node name="Marriage" instance=ExtResource("1_wiy1j")]
+texture = ExtResource("2_d5tsm")

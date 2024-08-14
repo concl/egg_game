@@ -162,7 +162,7 @@ texture = ExtResource("17_0cf1e")
 [node name="Area2D" type="Area2D" parent="MainScene/Portrait"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/Portrait/Area2D"]
-position = Vector2(-337.5, -225.5)
+position = Vector2(-405, -287)
 shape = SubResource("RectangleShape2D_ag8hv")
 
 [node name="TransitionManager" parent="." instance=ExtResource("2_ur0vy")]

@@ -12,4 +12,5 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
             transition_manager.camera_click()
             State.play_sound("res://assets/sounds/effects/camera_click.mp3")
             queue_free()
-
+            
+            var ball = preload("res://dialogue/balloon.tscn")

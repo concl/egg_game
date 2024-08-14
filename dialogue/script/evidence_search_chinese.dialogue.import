@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c2kijavimph1f"
+path="res://.godot/imported/evidence_search_chinese.dialogue-9f03903e4114a530aa6b47015f29d224.tres"
+
+[deps]
+
+source_file="res://dialogue/script/evidence_search_chinese.dialogue"
+dest_files=["res://.godot/imported/evidence_search_chinese.dialogue-9f03903e4114a530aa6b47015f29d224.tres"]
+
+[params]
+
+defaults=true

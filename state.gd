@@ -1,7 +1,12 @@
 extends Node
 
+signal dialogue_ended
+
+const TextBalloon = preload("res://dialogue/balloon.tscn")
+
 # save stuff
 var _load_save = false
+var _language = "chinese"
 
 var input_enabled = true
 
@@ -16,11 +21,11 @@ var first_book_page_solved = false
 
 # second page of the book
 var inventory = []
-var total_items_page_2 = 5
+var total_items_page_2 = 8
 var correct_valuable_items = {
     "Footsteps": null,
     "EggBlanket": null,
-    "Phone": null
+    "PhoneEvidence": null
 }
 var second_book_page_solved = false
 
@@ -73,3 +78,11 @@ func apply_grayscale_shader_to_texture(texture: Texture2D) -> ShaderMaterial:
     sprite.material = shader_material
     
     return shader_material
+
+func start_dialogue(file, header):
+    
+    var balloon = TextBalloon.instantiate()
+    get_tree().current_scene.add_child(balloon)
+    balloon.start(load(file), header)
+    await balloon.ended
+    dialogue_ended.emit()
