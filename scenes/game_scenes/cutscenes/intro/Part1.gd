@@ -21,17 +21,17 @@ func start():
     print("asdf")
     
 func _on_special_text_end_click():
+    special_text.exit_scene()
     special_text_2.start()
 
 func _on_special_text_2_end_click():
+    special_text_2.exit_scene()
     special_text_3.start()
 
 func _on_special_text_3_end_click():
+    special_text_3.exit_scene()
     special_text_4.start()
 
 func _on_special_text_4_end_click():
-    special_text.exit_scene()
-    special_text_2.exit_scene()
-    special_text_3.exit_scene()
     special_text_4.exit_scene()
     ended.emit()

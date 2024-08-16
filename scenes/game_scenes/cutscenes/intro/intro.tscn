@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckxgwal6qi36j"]
+[gd_scene load_steps=9 format=3 uid="uid://ckxgwal6qi36j"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/intro.gd" id="1_pbugm"]
 [ext_resource type="Script" path="res://scenes/game_scenes/cutscenes/intro/Part1.gd" id="2_k5ceq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/game_scenes/cutscenes/intro/Final.gd" id="5_ej3gl"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="5_haqpp"]
 [ext_resource type="AudioStream" uid="uid://dtoxbxgvixp4k" path="res://assets/sounds/music/intro_music.wav" id="7_fxauv"]
+[ext_resource type="VideoStream" path="res://assets/intro.ogv" id="8_6sxlv"]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_pbugm")
@@ -22,56 +23,69 @@ color = Color(0, 0, 0, 1)
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1088.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("8_6sxlv")
+autoplay = true
+
 [node name="Part1" type="Node2D" parent="."]
+visible = false
 script = ExtResource("2_k5ceq")
 
 [node name="SpecialText" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "很久很久以前, 有一个大名鼎鼎的侦探叫蛋哥"
+text = "很久很久以前"
 tick_time = 0.1
 
 [node name="Label" parent="Part1/SpecialText" index="0"]
 offset_left = 960.0
-offset_top = 200.0
-offset_right = 961.0
-offset_bottom = 258.0
+offset_top = 540.0
+offset_right = 1323.0
+offset_bottom = 598.0
 theme = ExtResource("4_lp4h6")
 metadata/_edit_use_anchors_ = true
 
 [node name="SpecialText2" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "有一个大名鼎鼎的侦探叫蛋哥"
+text = "有一个大名鼎鼎的侦探叫蛋哥。哥"
 
 [node name="Label" parent="Part1/SpecialText2" index="0"]
 offset_left = 960.0
-offset_top = 400.0
+offset_top = 540.0
 offset_right = 1323.0
-offset_bottom = 469.0
+offset_bottom = 609.0
 theme = ExtResource("4_lp4h6")
 metadata/_edit_use_anchors_ = true
 
 [node name="SpecialText3" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "它机智聪敏, 破获了很多起悬案"
+text = "它机智聪敏，破获了很多起悬案"
 
 [node name="Label" parent="Part1/SpecialText3" index="0"]
-offset_left = 250.0
-offset_top = 600.0
-offset_right = 613.0
-offset_bottom = 669.0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 1323.0
+offset_bottom = 609.0
 theme = ExtResource("4_lp4h6")
 
 [node name="SpecialText4" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "使得小镇里的居民都对它有着很高的信任和崇敬"
+text = "使得小镇里的居民都对它有着很高的信任和崇敬。"
 
 [node name="Label" parent="Part1/SpecialText4" index="0"]
-offset_left = 250.0
-offset_top = 800.0
-offset_right = 613.0
-offset_bottom = 869.0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 1323.0
+offset_bottom = 609.0
 theme = ExtResource("4_lp4h6")
 
 [node name="AnimationPlayer" parent="Part1/SpecialText4" index="1"]
 root_node = NodePath("../../SpecialText4")
 
 [node name="Final" type="Node2D" parent="."]
+visible = false
 script = ExtResource("5_ej3gl")
 
 [node name="SpecialText" parent="Final" instance=ExtResource("3_0gdyf")]
@@ -87,9 +101,9 @@ offset_bottom = 269.0
 
 [node name="AudioStreamPlayer" parent="TransitionManager" index="2"]
 stream = ExtResource("7_fxauv")
-autoplay = true
 bus = &"Music"
 
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="ended" from="Part1" to="." method="_on_part_1_ended"]
 [connection signal="end_click" from="Part1/SpecialText" to="Part1" method="_on_special_text_end_click"]
 [connection signal="end_click" from="Part1/SpecialText2" to="Part1" method="_on_special_text_2_end_click"]

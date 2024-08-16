@@ -4,6 +4,7 @@ extends Control
 @onready var book = $Book
 @onready var open_button = $OpenButton
 
+signal done
 var book_open = false
 
 # Called when the node enters the scene tree for the first time.
@@ -17,11 +18,10 @@ func _process(delta):
 
 func open():
     animation_player.play("open_book")
+    await animation_player.animation_finished
     book_open = true
 
 
 func close():
     animation_player.play("close_book")
     book_open = false
-
-

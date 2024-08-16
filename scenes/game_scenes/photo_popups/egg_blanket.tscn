@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://omr02bhu1qug"]
+
+[ext_resource type="PackedScene" uid="uid://664scoy40vwa" path="res://scenes/game_scenes/photo_popups/popup.tscn" id="1_0bfny"]
+[ext_resource type="Texture2D" uid="uid://bskxgv5lql1f7" path="res://assets/images/evidence_images/original/egg_blanket.png" id="2_m8j0a"]
+[ext_resource type="Script" path="res://scenes/game_scenes/photo_popups/egg_blanket.gd" id="3_na8fl"]
+
+[node name="EggBlanket" instance=ExtResource("1_0bfny")]
+custom_minimum_size = Vector2(0, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -366.0
+offset_top = -250.0
+offset_right = 365.276
+offset_bottom = 250.0
+texture = ExtResource("2_m8j0a")
+expand_mode = 3
+script = ExtResource("3_na8fl")

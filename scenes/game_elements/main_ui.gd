@@ -7,6 +7,8 @@ extends Control
 @onready var page2_container = $Page2/NotValuable/GridContainer
 @onready var book = $BookElement/Book
 
+var _timeline_dialogue = true
+
 var book_out = false
 var phone_out = false
 var egg_book_out = false
@@ -32,6 +34,12 @@ func toggle_book():
         book_element.close()
     else:
         book_element.open()
+        if !book_page_1_solved:
+            if _timeline_dialogue:
+                _timeline_dialogue = false
+                State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_1_dialogue")
+            else:
+                State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_1_again")
     
 func toggle_phone():
     if phone_element.phone_open:
@@ -45,9 +53,16 @@ func toggle_phone():
         phone_element.open()
     
 func toggle_egg_book():
-    pass
+    if egg_book_out:
+        egg_book_element.visible = false
+        book_element.visible = true
+        egg_book_out = false
+    else:
+        egg_book_element.visible = true
+        book_element.visible = false
+        phone_element.visible = false
+        egg_book_out = true
+        
 
 func add_evidence_item(item_name):
     book.add_evidence_item(item_name)
-
-

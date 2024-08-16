@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5q21oi5ffpdi"]
+
+[ext_resource type="PackedScene" uid="uid://664scoy40vwa" path="res://scenes/game_scenes/photo_popups/popup.tscn" id="1_18fgk"]
+[ext_resource type="Texture2D" uid="uid://f0vys5us4ru6" path="res://assets/images/evidence_images/original/marriage.png" id="2_sokea"]
+[ext_resource type="Script" path="res://scenes/game_scenes/photo_popups/marriage.gd" id="3_8dgv8"]
+
+[node name="Marriage" instance=ExtResource("1_18fgk")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.638
+offset_top = -250.0
+offset_right = 365.638
+offset_bottom = 250.0
+texture = ExtResource("2_sokea")
+expand_mode = 3
+script = ExtResource("3_8dgv8")

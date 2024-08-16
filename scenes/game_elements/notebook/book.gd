@@ -30,6 +30,10 @@ func next_page():
     pages[page_number].visible = false
     pages[page_number + 1].visible = true
     page_number += 1
+    if !pages[page_number].solved and page_number != 0: # will never be called on page 1 anywayy
+        pages[page_number].play_dialogue()
+    
+    State.play_sound("res://assets/sounds/effects/page_flip.wav")
 
 func prev_page():
     if page_number == 0:
@@ -37,10 +41,10 @@ func prev_page():
     pages[page_number].visible = false
     pages[page_number - 1].visible = true
     page_number -= 1
+    State.play_sound("res://assets/sounds/effects/page_flip.wav")
 
 func add_evidence_item(item_name):
     var new_item = evidence_items[item_name].instantiate()
     page2_container.add_child(new_item)
     pages[1].not_valuable_items[item_name] = null
     pages[1].items_found += 1
-

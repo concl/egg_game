@@ -10,6 +10,7 @@ func next_page():
     current_page += 1
     pages[current_page - 1].visible = false
     pages[current_page].visible = true
+    State.play_sound("res://assets/sounds/effects/page_flip.wav")
 
 func prev_page():
     if current_page <= 0:
@@ -18,5 +19,4 @@ func prev_page():
     current_page -= 1
     pages[current_page + 1].visible = false
     pages[current_page].visible = true
-
-
+    State.play_sound("res://assets/sounds/effects/page_flip.wav")

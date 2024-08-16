@@ -12,7 +12,8 @@ var char_names = {
 var blabber = {    
     "Op": "res://assets/sounds/effects/character_blabber/owlbert_default.wav",
     "Op_long": "res://assets/sounds/effects/character_blabber/owlbert_long.wav",
-    "Owl": "res://assets/sounds/effects/character_blabber/owlivia_default.wav"
+    "Owl": "res://assets/sounds/effects/character_blabber/owlivia_default.wav",
+    "Eggspert": "res://assets/sounds/effects/character_blabber/eggspert_default.wav"
 }
 
 var dimensions: Vector2
@@ -83,4 +84,3 @@ func _process_changes():
     for i in range(n):
         char_obs[i].change_loc((i + 1) * length / (n + 1))
         
-

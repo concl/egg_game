@@ -507,6 +507,28 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_lyfku")
 
+[node name="PrevPage" type="Button" parent="Page1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -314.0
+offset_right = 211.0
+offset_bottom = 314.0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("3_cykfr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page1/PrevPage"]
+position = Vector2(136, 314)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_k8uxc")
+autoplay = "default"
+frame_progress = 0.986239
+
 [node name="NextPage" type="Button" parent="Page1"]
 layout_mode = 1
 anchors_preset = 6
@@ -530,7 +552,7 @@ rotation = 4.71239
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_k8uxc")
 autoplay = "default"
-frame_progress = 0.701483
+frame_progress = 0.293086
 
 [node name="Page2" type="Control" parent="."]
 visible = false
@@ -546,6 +568,28 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_dbesy")
+
+[node name="PrevPage" type="Button" parent="Page2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -314.0
+offset_right = 211.0
+offset_bottom = 314.0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("3_cykfr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page2/PrevPage"]
+position = Vector2(136, 314)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_k8uxc")
+autoplay = "default"
+frame_progress = 0.759694
 
 [node name="NextPage" type="Button" parent="Page2"]
 layout_mode = 1
@@ -570,7 +614,7 @@ rotation = 4.71239
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_k8uxc")
 autoplay = "default"
-frame_progress = 0.701483
+frame_progress = 0.293086
 
 [node name="Page3" type="Control" parent="."]
 visible = false
@@ -587,12 +631,43 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_0hwcj")
 
+[node name="PrevPage" type="Button" parent="Page3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -314.0
+offset_right = 211.0
+offset_bottom = 314.0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("3_cykfr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page3/PrevPage"]
+position = Vector2(136, 314)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_k8uxc")
+autoplay = "default"
+frame_progress = 0.759694
+
 [connection signal="mouse_entered" from="Contents/NextPage" to="Contents/NextPage" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Contents/NextPage" to="Contents/NextPage" method="_on_mouse_exited"]
 [connection signal="pressed" from="Contents/NextPage" to="." method="next_page"]
+[connection signal="mouse_entered" from="Page1/PrevPage" to="Page1/PrevPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page1/PrevPage" to="Page1/PrevPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page1/PrevPage" to="." method="prev_page"]
 [connection signal="mouse_entered" from="Page1/NextPage" to="Page1/NextPage" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Page1/NextPage" to="Page1/NextPage" method="_on_mouse_exited"]
 [connection signal="pressed" from="Page1/NextPage" to="." method="next_page"]
+[connection signal="mouse_entered" from="Page2/PrevPage" to="Page2/PrevPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page2/PrevPage" to="Page2/PrevPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page2/PrevPage" to="." method="prev_page"]
 [connection signal="mouse_entered" from="Page2/NextPage" to="Page2/NextPage" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Page2/NextPage" to="Page2/NextPage" method="_on_mouse_exited"]
 [connection signal="pressed" from="Page2/NextPage" to="." method="next_page"]
+[connection signal="mouse_entered" from="Page3/PrevPage" to="Page3/PrevPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page3/PrevPage" to="Page3/PrevPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page3/PrevPage" to="." method="prev_page"]

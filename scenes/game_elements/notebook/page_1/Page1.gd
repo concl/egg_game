@@ -15,15 +15,18 @@ func _can_drop_data(at_position, data):
 func _drop_data(at_position, data):
     data[1].glow.self_modulate = 0
     
-
+var solved = false
 var order = [1,2,3,4,5]
+
+
 
 func check_win():
     if order == State.correct_order:
-        State.start_dialogue("res://dialogue/script/test/testwin.dialogue","this_is_a_node_title")
+        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_1_win")
         disable_ui_for_all_children(self)
         
         # Change state
+        solved = true
         State.first_book_page_solved = true
         next_page.visible = true
 
@@ -36,5 +39,3 @@ func disable_ui_for_all_children(parent: Node):
             child.material = State.apply_grayscale_shader_to_texture(child.texture)
         # Recursively call the function for children of the current child
         disable_ui_for_all_children(child)
-
-

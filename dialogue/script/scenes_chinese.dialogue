@@ -1,8 +1,10 @@
 ~ first_scene
 
-set State.changes = [{"name":"AddCharacter", "character":"Eggspert", "state":"Focus"}]
+set State.changes = [{"name":"AddCharacter", "character":"Eggspert", "state":"Focus"},{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 我, 伟大机智的侦探蛋哥，来了!
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 在听闻夫人对我的求助后光临此地！
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 有什么需要本座解决的小麻烦？
 
 set State.changes = [{"name":"AddCharacter", "character":"Op", "state":"Focus"}, {"name":"PlaySound", "sound":"Op"}]
@@ -25,25 +27,80 @@ set State.changes = [{"name":"PlaySound", "sound":"Owl"}]
 set State.changes = [{"name":"PlaySound", "sound":"Owl"}]
 猫头鹰老妈: 孩子没了我也不活了呜呜呜...
 
-set State.changes = [{"name":"PlayAnimation", "character":"Eggspert", "animation_name":"focus"}]
+set State.changes = [{"name":"PlayAnimation", "character":"Eggspert", "animation_name":"focus"},{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 这简直是惨无鹰道
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 恶劣至极
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 泯灭鹰性的犯罪！
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 先生，女士，请您们放心！
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 本次案件的凶手将由我，侦探蛋哥
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 也就是正义的化身，一举拿下！
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 首先，请您先冷静下来
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
 侦探蛋哥: 协助本侦探确定案发前后的时间线并找到嫌疑人。
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
+侦探蛋哥: 请告诉本侦探你们今天都做了什么。
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
+侦探蛋哥: 这有助于本侦探缩小嫌疑人范围然后锁定凶手。
+set State.changes = [{"name":"PlaySound", "sound":"Eggspert"}]
+侦探蛋哥: 从现在开始我会把时间线记录在我的侦探本中。
 
-
+set State.changes = [{"name":"PlayAnimation", "character":"Op", "animation_name":"focus"}]
+猫头鹰老爹: 只要能破案，我们一定全力配合。
 
 => END
 
-~ notebook_dialog
+~ page_1_dialogue
+
+猫头鹰老爸: 先来说说我吧
+猫头鹰老爸: 我是一名数学老师。按照往常的习惯，我在今早7：30离家去到学校，然后在下午4：05左右回到家。
+猫头鹰老爸: 哦提起回家，我和我的爱人就是在回到家中路过的一条小道上相遇的，在见到的第一刻起我就一直在想，世界上怎会有如此美丽的猫头鹰啊....
+
+侦探蛋哥: 咳咳！！本侦探还需要更多的线索和细节！当然这些细节不包括二位的恋爱故事咯。
+猫头鹰老爸: 哦哦哈哈哈哈，那我继续讲，我一回到家就检查了我的蛋们...然后发现了那条裂缝...我的妻子今天一天都在家，让她来跟你讲讲家里发生的事吧。
+猫头鹰老妈: 我是今天早上九点起的床，然后我做了我最爱吃的早餐：炒鸡蛋和鸡蛋沙拉三明治。吃完后，我照常给我的宝贝蛋们，哦，包括我的亲亲甜甜小蛋糕...我将他们从卧室里推出来到客厅让他们透透气，还给他们阅读他们最爱的早教故事。他们那时候非常的完美——洁白，光滑，完好，可爱...
+侦探蛋哥: 很好。那么下午的时候呢？
+猫头鹰老妈: 嗯...我下午一点打了个盹儿，然后在2：30的时候被门铃声吵醒，是鹅婆婆突然造访。她还带来了美味的鸡蛋煎饼。
+猫头鹰老妈: 于是我就邀请她进屋坐坐...哦！哦！我清晰的记得她眼睛直勾勾地盯着我的蛋！还伸出翅膀摸过他们！鹅婆婆下午3：00左右离开了我家，它前脚刚走，后脚就来了宝石小兔。这孩子来我家嚷嚷着要问我丈夫数学题。我从没有见过任何一个小孩儿像他一样又吵又爱炫耀。我不好拒绝他，但为了不让他这个小冒失鬼伤到我可爱的小蛋糕们，我将它们推进了卧室，把宝石小兔领到了客厅后我就去准备晚饭了。在3：45的时候，我听到了另一声门铃，是卡皮巴拉先生。他来给我丈夫送新做的西服，你知道的，它是镇上工艺最厉害的裁缝。宝石小兔在那时候已经离开了，我都不知道他是什么时候走的。我当时让卡皮巴拉先生把新衣服放到衣帽间后就赶快跑回厨房，不然我的菜就要烧糊了。在4：05的时候，我做完了饭，同时我的丈夫也回到了家，发现了我的亲亲 甜甜小蛋糕上的裂缝...
+
+=> END
+
+~ page_1_again
+
+egg: i remembver stuff happened
+
+=> END
+
+~ page_1_win
 
 
-侦探蛋哥: 二位！请告诉本侦探你们今天都做了什么
-侦探蛋哥: 这有助于本侦探缩小嫌疑人范围然后锁定凶手
-侦探蛋哥: 从现在开始我会让我的助手把一切都记录在我的侦探本中
+侦探蛋哥: 原来如此, 是这么回事啊! 
+侦探蛋哥: 非常感谢二位的积极配合。
+侦探蛋哥: 现在! 伟大机智的蛋哥把嫌疑人锁定到了鹅婆婆, 宝石小兔, 和卡皮巴拉身上。
+侦探蛋哥: 看来本侦探要做个案发现场调查了。
+
+=> END
+
+~ page_2_dialogue
+
+other people: you need to find 8 things and 3 valuables
+
+=> END
+
+~ page_2_again
+
+egg: i need to find 8 things and 3 valuable evidence
+
+=> END
+
+
+~ page_2_win
+
+侦探蛋哥: i found all the valuable stuff
 
 => END

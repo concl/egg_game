@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dcif8uanmvqx0"]
+[gd_scene load_steps=78 format=3 uid="uid://dcif8uanmvqx0"]
 
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/book_element.gd" id="1_7cvkj"]
 [ext_resource type="Theme" uid="uid://xycay2vr14mx" path="res://scenes/main_theme.tres" id="1_8xyb5"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ijq1rovadryq" path="res://assets/images/ui_images/arrow_bobbing.png" id="5_1v28d"]
 [ext_resource type="Texture2D" uid="uid://b2xbx8wcefn3g" path="res://assets/images/ui_images/arrow_bobbing_select.png" id="6_5miry"]
 [ext_resource type="Script" path="res://scenes/game_elements/EggBookElement.gd" id="8_0qh5p"]
+[ext_resource type="Script" path="res://scenes/game_elements/OpenButton.gd" id="12_eyppv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpobo"]
 atlas = ExtResource("5_1v28d")
@@ -839,11 +840,9 @@ mouse_filter = 1
 script = ExtResource("8_0qh5p")
 
 [node name="EggBook" parent="EggBookElement" instance=ExtResource("4_oqxle")]
-visible = false
 layout_mode = 1
 
 [node name="CloseButton" type="Button" parent="EggBookElement"]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -884,12 +883,20 @@ offset_bottom = 1080.0
 
 [node name="OpenButton" type="Button" parent="BookElement"]
 visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
 offset_left = 760.0
 offset_top = 984.0
 offset_right = 1160.0
 offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "open book"
+script = ExtResource("12_eyppv")
 
 [node name="CloseButton" type="Button" parent="BookElement"]
 visible = false
@@ -927,6 +934,7 @@ autoplay = "RESET"
 [connection signal="pressed" from="PhoneElement/CloseButton" to="PhoneElement" method="_on_close_button_pressed"]
 [connection signal="mouse_entered" from="EggBookElement/CloseButton" to="EggBookElement/CloseButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="EggBookElement/CloseButton" to="EggBookElement/CloseButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="EggBookElement/CloseButton" to="." method="toggle_egg_book"]
 [connection signal="pressed" from="BookElement/OpenButton" to="BookElement" method="open"]
 [connection signal="mouse_entered" from="BookElement/CloseButton" to="BookElement/CloseButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="BookElement/CloseButton" to="BookElement/CloseButton" method="_on_mouse_exited"]

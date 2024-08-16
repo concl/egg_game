@@ -4,10 +4,13 @@
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/drawing_canvas.gd" id="2_xtilq"]
 
 [node name="DrawingCanvas" type="TextureRect"]
-offset_right = 500.0
-offset_bottom = 591.0
+custom_minimum_size = Vector2(0, 400)
+offset_right = 217.0
+offset_bottom = 256.0
 texture = ExtResource("1_2jndv")
-expand_mode = 5
+expand_mode = 3
 script = ExtResource("2_xtilq")
 
 [node name="Line2D" type="Line2D" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="save_drawing"]

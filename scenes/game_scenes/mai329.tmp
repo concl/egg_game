@@ -1,0 +1,177 @@
+[gd_scene load_steps=30 format=3 uid="uid://dca5nidljdli6"]
+
+[ext_resource type="Script" path="res://scenes/game_scenes/main_scene.gd" id="1_jcpra"]
+[ext_resource type="Texture2D" uid="uid://cxmb0g840k30x" path="res://assets/images/main_scene.png" id="2_muq6v"]
+[ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="2_ur0vy"]
+[ext_resource type="Script" path="res://scenes/game_scenes/Footsteps.gd" id="3_gy8rx"]
+[ext_resource type="Texture2D" uid="uid://c4a0rf5dppgh2" path="res://assets/images/ui_images/glow/footsteps_glow.png" id="4_8knkp"]
+[ext_resource type="PackedScene" uid="uid://dcif8uanmvqx0" path="res://scenes/game_elements/main_ui.tscn" id="4_ngh3r"]
+[ext_resource type="Script" path="res://scenes/game_scenes/evidence_scripts/Phone.gd" id="5_45vij"]
+[ext_resource type="Texture2D" uid="uid://b1lp6vltn7b57" path="res://assets/images/ui_images/glow/phone_glow.png" id="6_pnv3k"]
+[ext_resource type="Texture2D" uid="uid://cs1c30d66grjd" path="res://assets/images/ui_images/glow/breakfast_glow.png" id="7_p5t4b"]
+[ext_resource type="Script" path="res://scenes/game_scenes/evidence_scripts/Breakfast.gd" id="7_xwu33"]
+[ext_resource type="Texture2D" uid="uid://csx78t52dnuos" path="res://assets/images/ui_images/glow/basket_glow.png" id="8_adufo"]
+[ext_resource type="Texture2D" uid="uid://pkwhepp6ieqy" path="res://assets/images/ui_images/glow/eggs_glow.png" id="9_6camh"]
+[ext_resource type="Script" path="res://scenes/game_scenes/evidence_scripts/Basket.gd" id="9_w5jh8"]
+[ext_resource type="Texture2D" uid="uid://dnrn8ef2sh3ef" path="res://assets/images/ui_images/glow/book_glow.png" id="10_hk7al"]
+[ext_resource type="Script" path="res://scenes/game_scenes/evidence_scripts/Eggs.gd" id="11_gu3ti"]
+[ext_resource type="Script" path="res://scenes/game_scenes/evidence_scripts/EggBook.gd" id="13_7iw0c"]
+[ext_resource type="Script" path="res://scenes/game_scenes/evidence_scripts/Marriage.gd" id="15_qyapr"]
+[ext_resource type="Texture2D" uid="uid://c2ukin8ba8tgb" path="res://assets/images/ui_images/glow/marriage_glow.png" id="16_qygct"]
+[ext_resource type="AudioStream" uid="uid://d03e3x3qlj7f" path="res://assets/sounds/music/main_scene_music.wav" id="16_vy4c6"]
+[ext_resource type="Texture2D" uid="uid://y2r16xmmmfg1" path="res://assets/images/ui_images/glow/portrait_glow.png" id="17_0cf1e"]
+[ext_resource type="Script" path="res://scenes/game_scenes/evidence_scripts/Portrait.gd" id="17_4w2ch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xl1i"]
+size = Vector2(436, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fge03"]
+size = Vector2(125, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjabc"]
+size = Vector2(183, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd8c3"]
+size = Vector2(147, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjqts"]
+size = Vector2(269, 179.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgoqs"]
+size = Vector2(164, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv7me"]
+size = Vector2(105, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ag8hv"]
+size = Vector2(35, 39)
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_jcpra")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MainScene" type="Node2D" parent="."]
+
+[node name="MainSprite" type="Sprite2D" parent="MainScene"]
+texture = ExtResource("2_muq6v")
+
+[node name="Footsteps" type="Node2D" parent="MainScene"]
+script = ExtResource("3_gy8rx")
+
+[node name="GlowSprite" type="Sprite2D" parent="MainScene/Footsteps"]
+visible = false
+texture = ExtResource("4_8knkp")
+
+[node name="Area2D" type="Area2D" parent="MainScene/Footsteps"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/Footsteps/Area2D"]
+position = Vector2(-139, 46.5)
+shape = SubResource("RectangleShape2D_8xl1i")
+
+[node name="Phone" type="Node2D" parent="MainScene"]
+script = ExtResource("5_45vij")
+
+[node name="GlowSprite" type="Sprite2D" parent="MainScene/Phone"]
+visible = false
+texture = ExtResource("6_pnv3k")
+
+[node name="Area2D" type="Area2D" parent="MainScene/Phone"]
+position = Vector2(-907, 273)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/Phone/Area2D"]
+position = Vector2(29.5, 27)
+shape = SubResource("RectangleShape2D_fge03")
+
+[node name="Breakfast" type="Node2D" parent="MainScene"]
+script = ExtResource("7_xwu33")
+
+[node name="GlowSprite" type="Sprite2D" parent="MainScene/Breakfast"]
+visible = false
+texture = ExtResource("7_p5t4b")
+
+[node name="Area2D" type="Area2D" parent="MainScene/Breakfast"]
+position = Vector2(513, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/Breakfast/Area2D"]
+position = Vector2(41.5, 12)
+shape = SubResource("RectangleShape2D_sjabc")
+
+[node name="Basket" type="Node2D" parent="MainScene"]
+script = ExtResource("9_w5jh8")
+
+[node name="GlowSprite" type="Sprite2D" parent="MainScene/Basket"]
+visible = false
+texture = ExtResource("8_adufo")
+
+[node name="Area2D" type="Area2D" parent="MainScene/Basket"]
+position = Vector2(176, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/Basket/Area2D"]
+position = Vector2(-9.5, 4.5)
+shape = SubResource("RectangleShape2D_wd8c3")
+
+[node name="Eggs" type="Node2D" parent="MainScene"]
+script = ExtResource("11_gu3ti")
+
+[node name="GlowSprite" type="Sprite2D" parent="MainScene/Eggs"]
+visible = false
+texture = ExtResource("9_6camh")
+
+[node name="Area2D" type="Area2D" parent="MainScene/Eggs"]
+position = Vector2(-907, 273)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/Eggs/Area2D"]
+position = Vector2(770, 78.25)
+shape = SubResource("RectangleShape2D_hjqts")
+
+[node name="EggBook" type="Node2D" parent="MainScene"]
+script = ExtResource("13_7iw0c")
+
+[node name="GlowSprite" type="Sprite2D" parent="MainScene/EggBook"]
+visible = false
+texture = ExtResource("10_hk7al")
+
+[node name="Area2D" type="Area2D" parent="MainScene/EggBook"]
+position = Vector2(164, 348)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/EggBook/Area2D"]
+position = Vector2(-1, 11.5)
+shape = SubResource("RectangleShape2D_jgoqs")
+
+[node name="Marriage" type="Node2D" parent="MainScene"]
+script = ExtResource("15_qyapr")
+
+[node name="GlowSprite" type="Sprite2D" parent="MainScene/Marriage"]
+visible = false
+texture = ExtResource("16_qygct")
+
+[node name="Area2D" type="Area2D" parent="MainScene/Marriage"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/Marriage/Area2D"]
+position = Vector2(853.5, -359)
+shape = SubResource("RectangleShape2D_mv7me")
+
+[node name="Portrait" type="Node2D" parent="MainScene"]
+script = ExtResource("17_4w2ch")
+
+[node name="GlowSprite" type="Sprite2D" parent="MainScene/Portrait"]
+visible = false
+texture = ExtResource("17_0cf1e")
+
+[node name="Area2D" type="Area2D" parent="MainScene/Portrait"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/Portrait/Area2D"]
+position = Vector2(-405, -287)
+shape = SubResource("RectangleShape2D_ag8hv")
+
+[node name="TransitionManager" parent="." instance=ExtResource("2_ur0vy")]
+
+[node name="AudioStreamPlayer" parent="TransitionManager" index="2"]
+stream = ExtResource("16_vy4c6")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MainUI" parent="UI" groups=["Persist"] instance=ExtResource("4_ngh3r")]
+
+[editable path="TransitionManager"]

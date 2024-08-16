@@ -27,36 +27,20 @@ func _input(event):
     else:
         _pressed = false
 
-# Function to save the current drawing as a PNG image
 func save_drawing():
-    # Create a SubViewport to render the drawing area
-    var viewport = SubViewport.new()
-    viewport.size = size
-    viewport.render_target_clear_mode = SubViewport.CLEAR_MODE_ALWAYS
-    viewport.render_target_v_flip = true  # Flip the rendering so it saves correctly
-    add_child(viewport)
-    
-    # Create a Control to be rendered in the viewport
-    var control = Control.new()
-    control.size = size
-    viewport.add_child(control)
-    
-    # Clone the lines into the control
-    for line in _lines.get_children():
-        var new_line = line.duplicate()
-        control.add_child(new_line)
-    
-    # Force the viewport to update and render
-    viewport.update()
+    # Capture the entire viewport as an image
+    var capture = get_viewport().get_texture().get_image()
 
-    # Create an image from the viewport's content
-    var img: Image = viewport.get_texture().get_image()
+    # Define the area to crop (the bounds of the TextureRect)
+    var crop_rect = Rect2i(global_position, size)
     
-    # Save the image to a file
-    var file_path = "user://drawing.png"
-    img.save_png(file_path)
+     # Create a new image with the desired crop size
+
+    var cropped_image = Image.new()
+    cropped_image.create(crop_rect.size.x, crop_rect.size.y, false, capture.get_format())
     
-    # Clean up
-    viewport.queue_free()
+    # Copy the desired region from the original image to the new image
+    cropped_image.blit_rect(capture, crop_rect, Vector2(0, 0))
     
-    print("Drawing saved to ", file_path)
+    var filename = "user://thing.png"
+    cropped_image.save_png(filename)

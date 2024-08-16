@@ -15,4 +15,3 @@ func _drop_data(at_position, data):
         page_2.valuable_items.erase(data[0].name)
         page_2.not_valuable_items[data[0].name] = null
         page_2.check_win()
-

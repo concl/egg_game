@@ -10,18 +10,20 @@ var items_found = 0
 var valuable_items = {}
 var not_valuable_items = {}
 
+var seen_dialogue = false
+
+func play_dialogue():
+    if seen_dialogue:
+        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_dialogue")
+
 
 func check_win():
-    print("checked")
-    print(items_found)
-    print(valuable_items)
-    print(State.correct_valuable_items)
     if items_found == State.total_items_page_2 and valuable_items == State.correct_valuable_items:
-
-        
         disable_ui_for_all_children(self)
         next_page.visible = true
         # handle other stuff
+        solved = true
+        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_win")
 
 # Function to disable UI response for all children
 func disable_ui_for_all_children(parent: Node):

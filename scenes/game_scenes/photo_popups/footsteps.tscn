@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ww6mv477qpb8"]
+
+[ext_resource type="PackedScene" uid="uid://664scoy40vwa" path="res://scenes/game_scenes/photo_popups/popup.tscn" id="1_18fgk"]
+[ext_resource type="Texture2D" uid="uid://cyst1xu63swh" path="res://assets/images/evidence_images/original/footsteps.png" id="2_0bsmp"]
+[ext_resource type="Script" path="res://scenes/game_scenes/photo_popups/footsteps.gd" id="2_lvt5f"]
+
+[node name="Footsteps" instance=ExtResource("1_18fgk")]
+custom_minimum_size = Vector2(0, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.638
+offset_top = -250.0
+offset_right = 365.638
+offset_bottom = 250.0
+texture = ExtResource("2_0bsmp")
+expand_mode = 3
+script = ExtResource("2_lvt5f")
