@@ -11,9 +11,6 @@ extends CanvasLayer
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
-signal next_message()
-signal ended()
-
 ## The dialogue resource
 var resource: DialogueResource
 
@@ -37,7 +34,6 @@ var dialogue_line: DialogueLine:
 
         # The dialogue has finished so close the balloon
         if not next_dialogue_line:
-            ended.emit()
             queue_free()
             return
 
@@ -96,8 +92,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func _notification(what: int) -> void:
-    # Detect a change of locale and update the current dialogue line to show the new language
+    ## Detect a change of locale and update the current dialogue line to show the new language
     if what == NOTIFICATION_TRANSLATION_CHANGED and _locale != TranslationServer.get_locale() and is_instance_valid(dialogue_label):
+        _locale = TranslationServer.get_locale()
         var visible_ratio = dialogue_label.visible_ratio
         self.dialogue_line = await resource.get_next_dialogue_line(dialogue_line.id)
         if visible_ratio < 1:
@@ -110,15 +107,11 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
     is_waiting_for_input = false
     resource = dialogue_resource
     self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
-    next_message.emit()
-    
 
 
 ## Go to the next line
 func next(next_id: String) -> void:
     self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
-    next_message.emit()
-    
 
 
 #region Signals

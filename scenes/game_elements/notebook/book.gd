@@ -24,14 +24,16 @@ func _ready():
 func _process(delta):
     pass
 
+func play_current_dialogue():
+    pages[page_number].play_dialogue()
+
 func next_page():
     if page_number == len(pages):
         return
     pages[page_number].visible = false
     pages[page_number + 1].visible = true
     page_number += 1
-    if !pages[page_number].solved and page_number != 0: # will never be called on page 1 anywayy
-        pages[page_number].play_dialogue()
+    pages[page_number].play_dialogue()
     
     State.play_sound("res://assets/sounds/effects/page_flip.wav")
 

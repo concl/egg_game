@@ -498,7 +498,6 @@ texture = ExtResource("2_ec1j8")
 expand_mode = 2
 
 [node name="Page1" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -870,6 +869,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Page4" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -921,3 +921,5 @@ offset_bottom = 40.0
 [connection signal="mouse_entered" from="Page3/PrevPage" to="Page3/PrevPage" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Page3/PrevPage" to="Page3/PrevPage" method="_on_mouse_exited"]
 [connection signal="pressed" from="Page3/PrevPage" to="." method="prev_page"]
+[connection signal="pressed" from="Page4/DrawingElement/HBoxContainer/SaveButton" to="Page4/DrawingElement/DrawingCanvas" method="save_drawing"]
+[connection signal="pressed" from="Page4/DrawingElement/HBoxContainer/ClearButton" to="Page4/DrawingElement/DrawingCanvas" method="clear_lines"]

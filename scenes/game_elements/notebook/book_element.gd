@@ -19,6 +19,7 @@ func _process(delta):
 func open():
     animation_player.play("open_book")
     await animation_player.animation_finished
+    book.play_current_dialogue()
     book_open = true
 
 

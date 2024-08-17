@@ -18,6 +18,17 @@ func _drop_data(at_position, data):
 var solved = false
 var order = [1,2,3,4,5]
 
+var seen_dialogue = false
+
+func play_dialogue():
+    if solved:
+        return
+    
+    if !seen_dialogue:
+        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_dialogue")
+        seen_dialogue = true
+    else:
+        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_again")
 
 
 func check_win():

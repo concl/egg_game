@@ -31,16 +31,17 @@ func save_drawing():
     # Capture the entire viewport as an image
     var capture = get_viewport().get_texture().get_image()
 
+    var ratio = float(capture.get_size().x) / 1920
     # Define the area to crop (the bounds of the TextureRect)
-    var crop_rect = Rect2i(global_position, size)
-    
+    var crop_rect = Rect2i(global_position * ratio, size * ratio)
      # Create a new image with the desired crop size
-
-    var cropped_image = Image.new()
-    cropped_image.create(crop_rect.size.x, crop_rect.size.y, false, capture.get_format())
-    
+    var cropped_image = Image.create_empty(crop_rect.size.x, crop_rect.size.y, false, capture.get_format())
     # Copy the desired region from the original image to the new image
     cropped_image.blit_rect(capture, crop_rect, Vector2(0, 0))
-    
     var filename = "user://thing.png"
     cropped_image.save_png(filename)
+
+func clear_lines():
+    for child in _lines.get_children():
+        child.queue_free()
+        

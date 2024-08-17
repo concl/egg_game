@@ -13,8 +13,14 @@ var not_valuable_items = {}
 var seen_dialogue = false
 
 func play_dialogue():
-    if seen_dialogue:
+    if solved:
+        return
+    
+    if !seen_dialogue:
         State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_dialogue")
+        seen_dialogue = true
+    else:
+        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_again")
 
 
 func check_win():
@@ -34,4 +40,3 @@ func disable_ui_for_all_children(parent: Node):
             child.material = State.apply_grayscale_shader_to_texture(child.texture)
         # Recursively call the function for children of the current child
         disable_ui_for_all_children(child)
-

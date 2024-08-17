@@ -34,12 +34,6 @@ func toggle_book():
         book_element.close()
     else:
         book_element.open()
-        if !book_page_1_solved:
-            if _timeline_dialogue:
-                _timeline_dialogue = false
-                State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_1_dialogue")
-            else:
-                State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_1_again")
     
 func toggle_phone():
     if phone_element.phone_open:
