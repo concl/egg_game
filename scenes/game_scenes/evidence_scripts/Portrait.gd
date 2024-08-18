@@ -1,7 +1,8 @@
 extends "res://scenes/game_scenes/evidence.gd"
 
-@onready var transition_manager = $"../../TransitionManager"
-@onready var main_ui = $"../../UI/MainUI"
+@onready var transition_manager = $"../../../TransitionManager"
+@onready var main_ui = $"../../../UI/MainUI"
+
 const PORTRAIT = preload("res://scenes/game_scenes/photo_popups/portrait.tscn")
 
 func _on_area_2d_input_event(viewport, event, shape_idx):

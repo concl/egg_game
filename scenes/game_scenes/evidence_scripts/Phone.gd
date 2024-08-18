@@ -1,7 +1,7 @@
 extends "res://scenes/game_scenes/evidence.gd"
 
-@onready var main_ui = $"../../UI/MainUI"
-@onready var transition_manager = $"../../TransitionManager"
+@onready var transition_manager = $"../../../TransitionManager"
+@onready var main_ui = $"../../../UI/MainUI"
 
 var _dialogue_shown = false
 

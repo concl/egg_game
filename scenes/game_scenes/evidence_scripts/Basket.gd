@@ -1,7 +1,7 @@
 extends "res://scenes/game_scenes/evidence.gd"
 
-@onready var transition_manager = $"../../TransitionManager"
-@onready var main_ui = $"../../UI/MainUI"
+@onready var transition_manager = $"../../../TransitionManager"
+@onready var main_ui = $"../../../UI/MainUI"
 const BASKET = preload("res://scenes/game_scenes/photo_popups/basket.tscn")
 
 
