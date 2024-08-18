@@ -29,7 +29,8 @@ var correct_valuable_items = {
 }
 var second_book_page_solved = false
 
-# func _ready():
+# func _ready():git push
+
     # if _load_save:
         # load_save("nu")
 # func load_save(save):

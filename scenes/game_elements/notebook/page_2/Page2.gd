@@ -21,7 +21,8 @@ func play_dialogue():
         seen_dialogue = true
     else:
         State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_again")
-
+        await State.dialogue_ended
+        
 
 func check_win():
     if items_found == State.total_items_page_2 and valuable_items == State.correct_valuable_items:
@@ -30,6 +31,7 @@ func check_win():
         # handle other stuff
         solved = true
         State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_win")
+        
 
 # Function to disable UI response for all children
 func disable_ui_for_all_children(parent: Node):
