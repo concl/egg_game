@@ -1,20 +1,491 @@
-[gd_scene load_steps=6 format=3 uid="uid://dexm53a03cmc6"]
+[gd_scene load_steps=26 format=3 uid="uid://dexm53a03cmc6"]
 
+[ext_resource type="Script" path="res://scenes/game_elements/phone/phone.gd" id="1_2ybpv"]
+[ext_resource type="Texture2D" uid="uid://bwya6dfrjjfxg" path="res://assets/images/ui_images/phone_image.png" id="1_ed8h6"]
 [ext_resource type="Texture2D" uid="uid://dob2x4ajp1kqt" path="res://assets/images/ui_images/chat_history.png" id="1_q5fb3"]
-[ext_resource type="Texture2D" uid="uid://clb10lsl7vnbk" path="res://assets/images/ui_images/phone_image.png" id="2_c2ovo"]
+[ext_resource type="AudioStream" uid="uid://bolm5spf7e7r6" path="res://assets/sounds/music/bad_rap.mp3" id="2_4w1fa"]
+[ext_resource type="Texture2D" uid="uid://djw3kn8fh34h6" path="res://assets/images/ui_images/wechat_bars.png" id="2_xvnjk"]
+[ext_resource type="Texture2D" uid="uid://bc5l5p6odbcq0" path="res://assets/images/evidence_images/phone/phone_lock_screen.png" id="3_kcm81"]
+[ext_resource type="Texture2D" uid="uid://crdtelrwuutds" path="res://assets/images/evidence_images/phone/phone_home_screen.png" id="4_6nxy7"]
+[ext_resource type="Theme" uid="uid://chidvejbh7533" path="res://scenes/game_elements/phone/phone.tres" id="4_p141t"]
+[ext_resource type="Texture2D" uid="uid://b8ujfqngtimxe" path="res://assets/images/evidence_images/phone/phone_image_1.png" id="6_yv5yv"]
+[ext_resource type="Texture2D" uid="uid://b0wqnl2n2ttau" path="res://assets/images/evidence_images/phone/phone_image_2.png" id="7_gst48"]
+[ext_resource type="Texture2D" uid="uid://f5ljn4yevpdf" path="res://assets/images/evidence_images/phone/phone_image_3.png" id="8_naust"]
+[ext_resource type="Texture2D" uid="uid://b3r4n2mdf8gr4" path="res://assets/images/evidence_images/phone/phone_music.png" id="10_a2xj3"]
+[ext_resource type="Texture2D" uid="uid://cg2tepss63m78" path="res://assets/images/ui_images/grabber_texture.png" id="11_85mqm"]
+[ext_resource type="Texture2D" uid="uid://bwijlcm8glr0o" path="res://assets/images/evidence_images/phone/phone_play_button.png" id="11_fytd2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eteqi"]
+[sub_resource type="Animation" id="Animation_7afxn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HomeScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HomeScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LockScreen:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Chat:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Chat:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(590, 556)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Chat:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2595, 0.2595)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Photos:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Photos:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.0655, 0.0655)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Photos:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Music:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Music:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.0625, 0.0625)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Music:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(773, 760)]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tjue"]
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.144063, 0.144063, 0.144062, 1)
+[sub_resource type="Animation" id="Animation_s8df3"]
+resource_name = "close_chat"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(755, 673)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Chat:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.0825, 0.0825)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Chat:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
-[sub_resource type="Theme" id="Theme_x3nxw"]
-ScrollContainer/styles/panel = SubResource("StyleBoxFlat_eteqi")
-VScrollBar/styles/scroll = SubResource("StyleBoxFlat_4tjue")
+[sub_resource type="Animation" id="Animation_tlm4j"]
+resource_name = "close_images"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Photos:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Photos:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.0655, 0.0655)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Photos:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(848, 762)]
+}
+
+[sub_resource type="Animation" id="Animation_r3lw5"]
+resource_name = "close_music"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.0625, 0.0625)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Music:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(773, 760)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_y6lf8"]
+resource_name = "homescreen"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HomeScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HomeScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LockScreen:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_l10qs"]
+resource_name = "open_chat"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chat:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Chat:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.25),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(755, 673), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Chat:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.05, 0.25),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0.0825, 0.0825), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ly00j"]
+resource_name = "open_images"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Photos:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Photos:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.25),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0.0655, 0.0655), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Photos:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.05, 0.25),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(848, 762), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0b28u"]
+resource_name = "open_music"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Music:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.0625, 0.0625), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.05, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(773, 760), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_14dx1"]
+_data = {
+"RESET": SubResource("Animation_7afxn"),
+"close_chat": SubResource("Animation_s8df3"),
+"close_images": SubResource("Animation_tlm4j"),
+"close_music": SubResource("Animation_r3lw5"),
+"homescreen": SubResource("Animation_y6lf8"),
+"open_chat": SubResource("Animation_l10qs"),
+"open_images": SubResource("Animation_ly00j"),
+"open_music": SubResource("Animation_0b28u")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1725u"]
+bg_color = Color(0.597176, 0.597176, 0.597176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8dyd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [node name="Phone" type="Control"]
 layout_mode = 3
@@ -23,8 +494,112 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+mouse_filter = 1
+script = ExtResource("1_2ybpv")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_14dx1")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4w1fa")
+
+[node name="LockScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LockScreenImage" type="TextureRect" parent="LockScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -207.0
+offset_right = 172.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_kcm81")
+expand_mode = 3
+
+[node name="HomeScreen" type="Control" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HomeScreenImage" type="TextureRect" parent="HomeScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -207.0
+offset_right = 172.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6nxy7")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="OpenChatButton" type="Button" parent="HomeScreen"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 801.0
+offset_top = 688.0
+offset_right = 870.0
+offset_bottom = 752.0
+mouse_filter = 1
+
+[node name="OpenImagesButton" type="Button" parent="HomeScreen"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 881.001
+offset_top = 764.0
+offset_right = 948.001
+offset_bottom = 829.0
+
+[node name="OpenMusicButton" type="Button" parent="HomeScreen"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 798.0
+offset_top = 762.0
+offset_right = 872.0
+offset_bottom = 829.0
+
+[node name="Chat" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 590.0
+offset_top = 556.0
+offset_right = 590.0
+offset_bottom = 556.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2595, 0.2595)
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Chat"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,18 +607,136 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -164.0
-offset_top = -174.0
+offset_top = -172.0
 offset_right = 149.0
-offset_bottom = 261.0
+offset_bottom = 263.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_x3nxw")
+theme = ExtResource("4_p141t")
 
-[node name="Chat" type="TextureRect" parent="ScrollContainer"]
+[node name="Chat" type="TextureRect" parent="Chat/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("1_q5fb3")
 expand_mode = 5
+
+[node name="ChatBars" type="TextureRect" parent="Chat"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_xvnjk")
+expand_mode = 3
+
+[node name="Photos" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0655, 0.0655)
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Photos"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -209.0
+offset_right = 149.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_p141t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Photos/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="Image1" type="TextureRect" parent="Photos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_yv5yv")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Image2" type="TextureRect" parent="Photos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_gst48")
+expand_mode = 5
+
+[node name="Image3" type="TextureRect" parent="Photos/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_naust")
+expand_mode = 5
+
+[node name="Music" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 773.0
+offset_top = 760.0
+offset_right = 773.0
+offset_bottom = 760.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0625, 0.0625)
+
+[node name="MusicImage" type="TextureRect" parent="Music"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.001
+offset_top = -216.0
+offset_right = 168.325
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_a2xj3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ProgressBar" type="HSlider" parent="Music"]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 717.0
+offset_right = 1093.0
+offset_bottom = 733.0
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("11_85mqm")
+theme_override_styles/slider = SubResource("StyleBoxFlat_1725u")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_r8dyd")
+
+[node name="PlayButton" type="TextureButton" parent="Music"]
+layout_mode = 0
+offset_left = 937.0
+offset_top = 764.0
+offset_right = 987.0
+offset_bottom = 814.0
+texture_normal = ExtResource("11_fytd2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HomeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 849.0
+offset_right = 984.0
+offset_bottom = 916.0
 
 [node name="PhoneImage" type="TextureRect" parent="."]
 layout_mode = 1
@@ -51,10 +744,19 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -369.023
-offset_right = 369.023
+offset_left = -477.65
+offset_right = 477.648
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_c2ovo")
+texture = ExtResource("1_ed8h6")
 expand_mode = 3
+stretch_mode = 5
+
+[connection signal="pressed" from="HomeScreen/OpenChatButton" to="." method="open_chat"]
+[connection signal="pressed" from="HomeScreen/OpenImagesButton" to="." method="open_images"]
+[connection signal="pressed" from="HomeScreen/OpenMusicButton" to="." method="open_music"]
+[connection signal="drag_ended" from="Music/ProgressBar" to="." method="_on_progress_bar_drag_ended"]
+[connection signal="drag_started" from="Music/ProgressBar" to="." method="_on_progress_bar_drag_started"]
+[connection signal="pressed" from="Music/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]

@@ -10,6 +10,16 @@ extends CanvasLayer
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+@onready var character_sprite: TextureRect = $Balloon/Panel/Dialogue/HBoxContainer/CharacterSprite
+
+var character_names = {
+    "侦探蛋哥": preload("res://assets/images/characters/small/eggspert_small.png"),
+    "猫头鹰老爸": preload("res://assets/images/characters/small/op_small.png"),
+    "猫头鹰老妈": preload("res://assets/images/characters/small/owlivia_small.png"),
+    "卡皮巴拉": preload("res://assets/images/characters/small/capybala_small.png"),
+    "宝石小兔": preload("res://assets/images/characters/small/rabbit_small.png"),
+    "鹅婆婆": preload("res://assets/images/characters/small/nanny_goose_small.png")
+}
 
 signal next_message()
 signal ended()
@@ -27,6 +37,14 @@ var is_waiting_for_input: bool = false
 var will_hide_balloon: bool = false
 
 var _locale: String = TranslationServer.get_locale()
+
+var unskippable: bool = false
+var turn_visible:
+    set(setting):
+        if !setting:
+            balloon.modulate = Color(1, 1, 1, 0)
+        else:
+            balloon.modulate = Color(1, 1, 1, 1)
 
 ## The current line
 var dialogue_line: DialogueLine:
@@ -61,9 +79,22 @@ var dialogue_line: DialogueLine:
         will_hide_balloon = false
 
         dialogue_label.show()
+        
+        if not dialogue_line.character.is_empty():
+            character_sprite.custom_minimum_size.x = 160
+            character_sprite.custom_minimum_size.y = 192
+            character_sprite.texture = character_names[character_label.text]
+        else:
+            character_sprite.custom_minimum_size.x = 0
+            character_sprite.custom_minimum_size.y = 0
+            character_sprite.texture = null
+        
         if not dialogue_line.text.is_empty():
             dialogue_label.type_out()
             await dialogue_label.finished_typing
+
+        
+
 
         # Wait for input
         if dialogue_line.responses.size() > 0:
@@ -135,6 +166,9 @@ func _on_mutated(_mutation: Dictionary) -> void:
 
 
 func _on_balloon_gui_input(event: InputEvent) -> void:
+    if unskippable:
+        return
+    
     # See if we need to skip typing of the dialogue
     if dialogue_label.is_typing:
         var mouse_was_clicked: bool = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed()

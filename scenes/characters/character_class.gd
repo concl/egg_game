@@ -11,7 +11,8 @@ var moving = false
 var time_since = 0
 var move_factor = 4
 var focused = false
-
+var current_pose = "default"
+var poses: Dictionary
 func _init():
     pass
 
@@ -50,5 +51,11 @@ func exit_scene():
     animation_player.play("exit")
     await animation_player.animation_finished
     queue_free()
+
+func pose(name):
+    poses[current_pose].visible = false
+    poses[name].visible = true
+    current_pose = name
+    
     
     

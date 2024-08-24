@@ -16,3 +16,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     pass
+
+func evidence_search_start():
+    pass
+
+func gathering_start():
+    transition_manager.fade_out()
+    await transition_manager.transitioned
+    transition_manager.fade_in()
+    await transition_manager.transitioned
+    State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","gathering_1")
+    await State.dialogue_ended
+    get_tree().call_group("UI","enable")
+    main_ui.open_book()
+    

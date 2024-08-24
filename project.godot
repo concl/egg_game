@@ -36,6 +36,11 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
+[global_group]
+
+UI=""
+MainScene=""
+
 [input]
 
 pause={
@@ -51,4 +56,9 @@ locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=2
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+anti_aliasing/screen_space_roughness_limiter/amount=4.0
+anti_aliasing/screen_space_roughness_limiter/limit=1.0
 anti_aliasing/quality/screen_space_aa=1
+anti_aliasing/quality/use_taa=true

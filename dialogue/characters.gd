@@ -77,6 +77,10 @@ func _process_changes():
         
         elif name == "PlaySound":
             State.play_sound(blabber[x["sound"]])
+        
+        elif name == "Pose":
+            var position = characters.find(x["character"])
+            char_obs[position].pose(x["pose"])
     
     # handle changed positions
     var length = dimensions.x

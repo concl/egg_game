@@ -1,6 +1,8 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://dpfv4vfngx12y"]
 
-[ext_resource type="FontFile" uid="uid://cihcjvgmttr6u" path="res://assets/main_font_chinese/shijuef.com(gongfanmianfeiti) Regular.ttf" id="1_ggf5p"]
+[ext_resource type="FontFile" uid="uid://qi573gdsocb1" path="res://assets/chinese_font/chinese_font.ttf" id="1_vv6c3"]
 
 [resource]
-Label/fonts/font = ExtResource("1_ggf5p")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("1_vv6c3")

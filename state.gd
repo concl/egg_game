@@ -7,11 +7,14 @@ const TextBalloon = preload("res://dialogue/balloon.tscn")
 # save stuff
 var _load_save = false
 var _language = "chinese"
-
 var input_enabled = true
 
 # array of changes: each element represents a change for the displayed characters
 var changes: Array
+var ui_command: String:
+    set(command):
+        get_tree().call_group("UI",command)
+
 var test = null
 var phase = 0
 
@@ -29,12 +32,22 @@ var correct_valuable_items = {
 }
 var second_book_page_solved = false
 
-# func _ready():git push
+var third_book_page_solved = false
 
-    # if _load_save:
-        # load_save("nu")
-# func load_save(save):
-    # pass
+var fourth_book_page_solved = true
+
+var fifth_book_page_solved = true
+
+func _ready():
+    if _load_save:
+        load_save("nu")
+
+
+
+func load_save(save):
+    pass
+
+
 
 # Function to load and play a sound file
 func play_sound(file_path: String):
@@ -53,6 +66,8 @@ func play_sound(file_path: String):
         audio_player.queue_free()
     else:
         print("Error: Could not load the audio file")
+
+
 
 func apply_grayscale_shader_to_texture(texture: Texture2D) -> ShaderMaterial:
     var grayscale_shader_code = """
@@ -80,6 +95,13 @@ func apply_grayscale_shader_to_texture(texture: Texture2D) -> ShaderMaterial:
     
     return shader_material
 
+
+
+func add_line_to_transcript(line):
+    get_tree().call_group("UI", "add_line_to_transcript", line)
+
+
+
 func start_dialogue(file, header):
     
     var balloon = TextBalloon.instantiate()
@@ -87,3 +109,33 @@ func start_dialogue(file, header):
     balloon.start(load(file), header)
     await balloon.ended
     dialogue_ended.emit()
+
+
+
+func page_1_done():
+    first_book_page_solved = true
+    start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_1_win")
+
+
+
+func page_2_done():
+    second_book_page_solved = true
+    start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_win")
+
+
+
+func page_3_done():
+    third_book_page_solved = true
+    start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_3_win")
+    await dialogue_ended
+    
+    get_tree().call_group("UI","close_book_cutscene")
+    get_tree().call_group("MainScene", "gathering_start")
+
+func page_4_done():
+    fourth_book_page_solved = true
+    start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_4_win")
+
+func page_5_done():
+    fifth_book_page_solved = true
+    start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_5_win")

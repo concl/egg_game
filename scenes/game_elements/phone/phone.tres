@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://chidvejbh7533"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eteqi"]
+bg_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tjue"]
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.144063, 0.144063, 0.144062, 1)
+
+[resource]
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_eteqi")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_4tjue")

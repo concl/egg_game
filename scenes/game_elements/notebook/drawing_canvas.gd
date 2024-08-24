@@ -5,7 +5,8 @@ extends TextureRect
 var _pressed = false
 var _current_line: Line2D = null
 
-func _input(event):
+
+func _on_gui_input(event: InputEvent) -> void:
     if not visible:
         return
     
@@ -21,13 +22,14 @@ func _input(event):
                     _current_line.default_color = Color.BLACK
                     _current_line.width = 3
                     _lines.add_child(_current_line)
-                    _current_line.add_point(event.position - global_position)
+                    _current_line.add_point(event.position)
         elif event is InputEventMouseMotion and _pressed:
-            _current_line.add_point(event.position - global_position)
+            _current_line.add_point(event.position)
     else:
         _pressed = false
 
-func save_drawing():
+
+func save_drawing(filename):
     # Capture the entire viewport as an image
     var capture = get_viewport().get_texture().get_image()
 
@@ -38,8 +40,7 @@ func save_drawing():
     var cropped_image = Image.create_empty(crop_rect.size.x, crop_rect.size.y, false, capture.get_format())
     # Copy the desired region from the original image to the new image
     cropped_image.blit_rect(capture, crop_rect, Vector2(0, 0))
-    var filename = "user://thing.png"
-    cropped_image.save_png(filename)
+    cropped_image.save_png("user://" + filename)
 
 func clear_lines():
     for child in _lines.get_children():

@@ -1,9 +1,11 @@
-[gd_scene load_steps=95 format=3 uid="uid://bm7gnysf0ejgs"]
+[gd_scene load_steps=114 format=3 uid="uid://bm7gnysf0ejgs"]
 
 [ext_resource type="Theme" uid="uid://xycay2vr14mx" path="res://scenes/main_theme.tres" id="1_uxaby"]
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/book.gd" id="2_1kfei"]
 [ext_resource type="Texture2D" uid="uid://cfgfa3ndnyja2" path="res://assets/images/ui_images/notebook.png" id="2_ec1j8"]
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/page_1/Page1.gd" id="4_3uih4"]
+[ext_resource type="Script" path="res://scenes/game_elements/notebook/page_0/Page0.gd" id="4_04gwy"]
+[ext_resource type="Theme" uid="uid://dpfv4vfngx12y" path="res://text_theme.tres" id="5_ds1sc"]
 [ext_resource type="Texture2D" uid="uid://dxu8yjmr2hke5" path="res://assets/images/ui_images/blurred_red_box_no_margins.png" id="5_palyo"]
 [ext_resource type="Texture2D" uid="uid://ju2f6vgmikj8" path="res://assets/images/timeline_pictures/timeline.png" id="5_q7nkv"]
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/page_1/First.gd" id="6_at4wc"]
@@ -31,17 +33,23 @@
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/ValuableContainer.gd" id="29_ltxdj"]
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/page_3/Page3.gd" id="30_vyj3i"]
 [ext_resource type="PackedScene" uid="uid://wssa62ks64rl" path="res://scenes/game_elements/notebook/drawing_canvas.tscn" id="31_6i0me"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nq5e0"]
-texture = ExtResource("5_palyo")
-texture_margin_left = 40.0
-texture_margin_top = 40.0
-texture_margin_right = 40.0
-texture_margin_bottom = 40.0
-draw_center = false
-
-[sub_resource type="Theme" id="Theme_c0bow"]
-PanelContainer/styles/panel = SubResource("StyleBoxTexture_nq5e0")
+[ext_resource type="Script" path="res://scenes/game_elements/notebook/page_3/evidence_match_item.gd" id="34_6r0ya"]
+[ext_resource type="PackedScene" uid="uid://cwua7aphhusvr" path="res://scenes/game_elements/notebook/page_2/evidence_pictures/phone_evidence.tscn" id="34_alboo"]
+[ext_resource type="PackedScene" uid="uid://kfsneuwojb42" path="res://scenes/game_elements/notebook/page_2/evidence_pictures/egg_blanket.tscn" id="35_8ebwj"]
+[ext_resource type="PackedScene" uid="uid://ccqvpepbs2dfk" path="res://scenes/game_elements/notebook/page_2/evidence_pictures/footsteps.tscn" id="36_2l7gg"]
+[ext_resource type="Texture2D" uid="uid://c6agatjdurhnr" path="res://assets/images/ui_images/black_box.png" id="37_0mw73"]
+[ext_resource type="Texture2D" uid="uid://dikgi10absfxf" path="res://assets/images/characters/mugshot/rabbit_mugshot.jpg" id="37_37wlg"]
+[ext_resource type="Script" path="res://scenes/game_elements/notebook/page_3/receiver.gd" id="38_ipwhh"]
+[ext_resource type="Texture2D" uid="uid://c2euj01y7ol0c" path="res://assets/images/characters/mugshot/capybara_mugshot.jpg" id="40_rb1w4"]
+[ext_resource type="Texture2D" uid="uid://d2eiwsjspblld" path="res://assets/images/characters/mugshot/goose_mugshot.jpg" id="41_oia3h"]
+[ext_resource type="Script" path="res://scenes/game_elements/notebook/page_4/page_4.gd" id="42_i83ko"]
+[ext_resource type="Texture2D" uid="uid://cyst1xu63swh" path="res://assets/images/evidence_images/original/footsteps.png" id="44_pl4nn"]
+[ext_resource type="Texture2D" uid="uid://bskxgv5lql1f7" path="res://assets/images/evidence_images/original/egg_blanket.png" id="46_4bddy"]
+[ext_resource type="Script" path="res://scenes/game_elements/notebook/page_5/page_5.gd" id="46_gskon"]
+[ext_resource type="Texture2D" uid="uid://darcev7tefsic" path="res://assets/images/ui_images/tape1.png" id="46_vckn4"]
+[ext_resource type="Texture2D" uid="uid://iiuivg57gqg5" path="res://assets/images/ui_images/tape2.png" id="47_g20mc"]
+[ext_resource type="Script" path="res://scenes/game_elements/notebook/page_6/page_6.gd" id="48_le1xc"]
+[ext_resource type="Texture2D" uid="uid://6t80vn4k76tq" path="res://assets/images/evidence_images/original/phone.png" id="49_5ebgr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpobo"]
 atlas = ExtResource("12_w5lct")
@@ -476,6 +484,17 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nq5e0"]
+texture = ExtResource("5_palyo")
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+draw_center = false
+
+[sub_resource type="Theme" id="Theme_c0bow"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_nq5e0")
+
 [node name="Book" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -496,6 +515,70 @@ scale = Vector2(0.9375, 0.9375)
 mouse_filter = 2
 texture = ExtResource("2_ec1j8")
 expand_mode = 2
+
+[node name="Page0" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_04gwy")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Page0"]
+layout_mode = 0
+offset_left = 1068.0
+offset_top = 259.0
+offset_right = 1691.0
+offset_bottom = 784.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page0/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Page0/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Page0/ScrollContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_ds1sc")
+text = "Transcript"
+horizontal_alignment = 1
+
+[node name="DialogueHistory" type="Label" parent="Page0/ScrollContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_ds1sc")
+theme_override_colors/font_color = Color(0.187176, 0.187176, 0.187176, 1)
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="NextPage" type="Button" parent="Page0"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -314.0
+offset_bottom = 314.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("22_8njxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page0/NextPage"]
+position = Vector2(20, 314)
+rotation = 4.71239
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mjdy6")
+autoplay = "default"
 
 [node name="Page1" type="Control" parent="."]
 layout_mode = 1
@@ -695,6 +778,26 @@ layout_mode = 2
 texture = ExtResource("20_2eer7")
 expand_mode = 3
 
+[node name="PrevPage" type="Button" parent="Page1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -314.0
+offset_right = 155.0
+offset_bottom = 314.0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("22_8njxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page1/PrevPage"]
+position = Vector2(136, 314)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mjdy6")
+autoplay = "default"
+
 [node name="NextPage" type="Button" parent="Page1"]
 visible = false
 layout_mode = 1
@@ -831,7 +934,137 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("5_ds1sc")
 script = ExtResource("30_vyj3i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 277.0
+offset_right = 458.0
+offset_bottom = 735.0
+
+[node name="PhoneEvidence" parent="Page3/VBoxContainer" instance=ExtResource("34_alboo")]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+stretch_mode = 5
+script = ExtResource("34_6r0ya")
+item_number = 0
+
+[node name="Footsteps" parent="Page3/VBoxContainer" instance=ExtResource("36_2l7gg")]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+stretch_mode = 5
+script = ExtResource("34_6r0ya")
+item_number = 1
+
+[node name="EggBlanket" parent="Page3/VBoxContainer" instance=ExtResource("35_8ebwj")]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+stretch_mode = 5
+script = ExtResource("34_6r0ya")
+item_number = 2
+
+[node name="Suspect1" type="Control" parent="Page3"]
+anchors_preset = 0
+offset_left = 597.0
+offset_top = 275.0
+offset_right = 637.0
+offset_bottom = 315.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/Suspect1"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 363.0
+
+[node name="Mugshot" type="TextureRect" parent="Page3/Suspect1/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("37_37wlg")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Page3/Suspect1/VBoxContainer"]
+layout_mode = 2
+text = "男 17岁 esfp 白羊座
+无犯罪记录"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Receiver" type="TextureRect" parent="Page3/Suspect1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("37_0mw73")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("38_ipwhh")
+
+[node name="Suspect2" type="Control" parent="Page3"]
+anchors_preset = 0
+offset_left = 1014.0
+offset_top = 275.0
+offset_right = 1054.0
+offset_bottom = 315.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/Suspect2"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 263.0
+
+[node name="Mugshot" type="TextureRect" parent="Page3/Suspect2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("40_rb1w4")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="Page3/Suspect2/VBoxContainer"]
+layout_mode = 2
+text = "男 42岁 infj 金牛座
+无犯罪记录"
+horizontal_alignment = 1
+
+[node name="Receiver" type="TextureRect" parent="Page3/Suspect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("37_0mw73")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("38_ipwhh")
+
+[node name="Suspect3" type="Control" parent="Page3"]
+anchors_preset = 0
+offset_left = 1355.0
+offset_top = 275.0
+offset_right = 1395.0
+offset_bottom = 315.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/Suspect3"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 232.0
+
+[node name="Mugshot" type="TextureRect" parent="Page3/Suspect3/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("41_oia3h")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="Page3/Suspect3/VBoxContainer"]
+layout_mode = 2
+text = "女 56岁 istj 处女座
+无犯罪记录"
+horizontal_alignment = 1
+
+[node name="Receiver" type="TextureRect" parent="Page3/Suspect3/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("37_0mw73")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("38_ipwhh")
 
 [node name="PrevPage" type="Button" parent="Page3"]
 layout_mode = 1
@@ -853,26 +1086,103 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_mjdy6")
 autoplay = "default"
 
-[node name="Suspect1" type="Control" parent="Page3"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="NextPage" type="Button" parent="Page3"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -314.0
+offset_bottom = 314.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("22_8njxd")
 
-[node name="Suspect2" type="Control" parent="Page3"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page3/NextPage"]
+position = Vector2(20, 314)
+rotation = 4.71239
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mjdy6")
+autoplay = "default"
 
-[node name="Suspect3" type="Control" parent="Page3"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Tape1" type="TextureRect" parent="Page3"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 124.0
+offset_right = 984.0
+offset_bottom = 711.0
+mouse_filter = 2
+texture = ExtResource("46_vckn4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Tape2" type="TextureRect" parent="Page3"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 136.0
+offset_right = 997.0
+offset_bottom = 786.0
+mouse_filter = 2
+texture = ExtResource("47_g20mc")
+expand_mode = 3
+
+[node name="Tape3" type="TextureRect" parent="Page3"]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 123.0
+offset_right = 1400.0
+offset_bottom = 710.0
+mouse_filter = 2
+texture = ExtResource("46_vckn4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Tape4" type="TextureRect" parent="Page3"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 132.0
+offset_right = 1410.0
+offset_bottom = 782.0
+mouse_filter = 2
+texture = ExtResource("47_g20mc")
+expand_mode = 3
+
+[node name="Tape5" type="TextureRect" parent="Page3"]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 121.0
+offset_right = 1739.0
+offset_bottom = 708.0
+mouse_filter = 2
+texture = ExtResource("46_vckn4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Tape6" type="TextureRect" parent="Page3"]
+layout_mode = 0
+offset_left = 1128.0
+offset_top = 133.0
+offset_right = 1752.0
+offset_bottom = 783.0
+mouse_filter = 2
+texture = ExtResource("47_g20mc")
+expand_mode = 3
 
 [node name="Page4" type="Control" parent="."]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("42_i83ko")
 
 [node name="DrawingElement" type="VBoxContainer" parent="Page4"]
 layout_mode = 0
@@ -880,6 +1190,7 @@ offset_left = 1193.0
 offset_top = 263.0
 offset_right = 1531.0
 offset_bottom = 738.0
+mouse_filter = 2
 
 [node name="DrawingCanvas" parent="Page4/DrawingElement" instance=ExtResource("31_6i0me")]
 layout_mode = 2
@@ -897,18 +1208,304 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Clear"
 
+[node name="PrevPage" type="Button" parent="Page4"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -314.0
+offset_right = 155.0
+offset_bottom = 314.0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("22_8njxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page4/PrevPage"]
+position = Vector2(136, 314)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mjdy6")
+autoplay = "default"
+
+[node name="NextPage" type="Button" parent="Page4"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -314.0
+offset_bottom = 314.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("22_8njxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page4/NextPage"]
+position = Vector2(20, 314)
+rotation = 4.71239
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mjdy6")
+autoplay = "default"
+
+[node name="EvidenceImage" type="TextureRect" parent="Page4"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 0
+offset_left = 276.0
+offset_top = 302.0
+offset_right = 861.021
+offset_bottom = 702.0
+texture = ExtResource("44_pl4nn")
+expand_mode = 3
+
+[node name="Tape1" type="TextureRect" parent="Page4"]
+layout_mode = 1
+offset_left = -96.0
+offset_top = -30.0
+offset_right = 984.0
+offset_bottom = 1043.0
+mouse_filter = 2
+texture = ExtResource("46_vckn4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Tape2" type="TextureRect" parent="Page4"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 107.0
+offset_right = 1065.05
+offset_bottom = 1002.0
+mouse_filter = 2
+texture = ExtResource("47_g20mc")
+expand_mode = 3
+
 [node name="Page5" type="Control" parent="."]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("46_gskon")
+
+[node name="DrawingElement" type="VBoxContainer" parent="Page5"]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 263.0
+offset_right = 1531.0
+offset_bottom = 738.0
+
+[node name="DrawingCanvas" parent="Page5/DrawingElement" instance=ExtResource("31_6i0me")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page5/DrawingElement"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="Page5/DrawingElement/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save"
+
+[node name="ClearButton" type="Button" parent="Page5/DrawingElement/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear"
+
+[node name="EvidenceImage" type="TextureRect" parent="Page5"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 0
+offset_left = 276.0
+offset_top = 302.0
+offset_right = 861.021
+offset_bottom = 702.0
+texture = ExtResource("49_5ebgr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="PrevPage" type="Button" parent="Page5"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -314.0
+offset_right = 155.0
+offset_bottom = 314.0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("22_8njxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page5/PrevPage"]
+position = Vector2(136, 314)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mjdy6")
+autoplay = "default"
+
+[node name="NextPage" type="Button" parent="Page5"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -314.0
+offset_bottom = 314.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("22_8njxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page5/NextPage"]
+position = Vector2(20, 314)
+rotation = 4.71239
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mjdy6")
+autoplay = "default"
+
+[node name="Tape1" type="TextureRect" parent="Page5"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -40.0
+offset_right = 1142.0
+offset_bottom = 1033.0
+mouse_filter = 2
+texture = ExtResource("46_vckn4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Tape2" type="TextureRect" parent="Page5"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 104.0
+offset_right = 902.051
+offset_bottom = 999.0
+mouse_filter = 2
+texture = ExtResource("47_g20mc")
+expand_mode = 3
 
 [node name="Page6" type="Control" parent="."]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("48_le1xc")
 
+[node name="DrawingElement" type="VBoxContainer" parent="Page6"]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 263.0
+offset_right = 1531.0
+offset_bottom = 738.0
+
+[node name="DrawingCanvas" parent="Page6/DrawingElement" instance=ExtResource("31_6i0me")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page6/DrawingElement"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="Page6/DrawingElement/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save"
+
+[node name="ClearButton" type="Button" parent="Page6/DrawingElement/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear"
+
+[node name="EvidenceImage" type="TextureRect" parent="Page6"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 0
+offset_left = 276.0
+offset_top = 302.0
+offset_right = 861.021
+offset_bottom = 702.0
+texture = ExtResource("46_4bddy")
+expand_mode = 3
+
+[node name="PrevPage" type="Button" parent="Page6"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -314.0
+offset_right = 155.0
+offset_bottom = 314.0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("22_8njxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page6/PrevPage"]
+position = Vector2(136, 314)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mjdy6")
+autoplay = "default"
+
+[node name="NextPage" type="Button" parent="Page6"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -314.0
+offset_bottom = 314.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_type_variation = &"ArrowButton"
+icon_alignment = 1
+script = ExtResource("22_8njxd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page6/NextPage"]
+position = Vector2(20, 314)
+rotation = 4.71239
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mjdy6")
+autoplay = "default"
+
+[node name="Tape1" type="TextureRect" parent="Page6"]
+layout_mode = 0
+offset_left = -101.0
+offset_top = -35.0
+offset_right = 979.0
+offset_bottom = 1038.0
+mouse_filter = 2
+texture = ExtResource("46_vckn4")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Tape2" type="TextureRect" parent="Page6"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 101.0
+offset_right = 1065.05
+offset_bottom = 996.0
+mouse_filter = 2
+texture = ExtResource("47_g20mc")
+expand_mode = 3
+
+[connection signal="mouse_entered" from="Page0/NextPage" to="Page0/NextPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page0/NextPage" to="Page0/NextPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page0/NextPage" to="." method="next_page"]
+[connection signal="mouse_entered" from="Page1/PrevPage" to="Page1/PrevPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page1/PrevPage" to="Page1/PrevPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page1/PrevPage" to="." method="prev_page"]
 [connection signal="mouse_entered" from="Page1/NextPage" to="Page1/NextPage" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Page1/NextPage" to="Page1/NextPage" method="_on_mouse_exited"]
 [connection signal="pressed" from="Page1/NextPage" to="." method="next_page"]
@@ -918,8 +1515,33 @@ offset_bottom = 40.0
 [connection signal="mouse_entered" from="Page2/NextPage" to="Page2/NextPage" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Page2/NextPage" to="Page2/NextPage" method="_on_mouse_exited"]
 [connection signal="pressed" from="Page2/NextPage" to="." method="next_page"]
+[connection signal="dropped" from="Page3/Suspect1/VBoxContainer/Receiver" to="Page3" method="_on_receiver_dropped"]
+[connection signal="dropped" from="Page3/Suspect2/VBoxContainer/Receiver" to="Page3" method="_on_receiver_dropped"]
+[connection signal="dropped" from="Page3/Suspect3/VBoxContainer/Receiver" to="Page3" method="_on_receiver_dropped"]
 [connection signal="mouse_entered" from="Page3/PrevPage" to="Page3/PrevPage" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Page3/PrevPage" to="Page3/PrevPage" method="_on_mouse_exited"]
 [connection signal="pressed" from="Page3/PrevPage" to="." method="prev_page"]
-[connection signal="pressed" from="Page4/DrawingElement/HBoxContainer/SaveButton" to="Page4/DrawingElement/DrawingCanvas" method="save_drawing"]
-[connection signal="pressed" from="Page4/DrawingElement/HBoxContainer/ClearButton" to="Page4/DrawingElement/DrawingCanvas" method="clear_lines"]
+[connection signal="mouse_entered" from="Page3/NextPage" to="Page3/NextPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page3/NextPage" to="Page3/NextPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page3/NextPage" to="." method="next_page"]
+[connection signal="pressed" from="Page4/DrawingElement/HBoxContainer/SaveButton" to="Page4" method="_on_save_button_pressed"]
+[connection signal="mouse_entered" from="Page4/PrevPage" to="Page4/PrevPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page4/PrevPage" to="Page4/PrevPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page4/PrevPage" to="." method="prev_page"]
+[connection signal="mouse_entered" from="Page4/NextPage" to="Page4/NextPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page4/NextPage" to="Page4/NextPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page4/NextPage" to="." method="next_page"]
+[connection signal="pressed" from="Page5/DrawingElement/HBoxContainer/SaveButton" to="Page5" method="_on_save_button_pressed"]
+[connection signal="mouse_entered" from="Page5/PrevPage" to="Page5/PrevPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page5/PrevPage" to="Page5/PrevPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page5/PrevPage" to="." method="prev_page"]
+[connection signal="mouse_entered" from="Page5/NextPage" to="Page5/NextPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page5/NextPage" to="Page5/NextPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page5/NextPage" to="." method="next_page"]
+[connection signal="pressed" from="Page6/DrawingElement/HBoxContainer/SaveButton" to="Page6" method="_on_save_button_pressed"]
+[connection signal="mouse_entered" from="Page6/PrevPage" to="Page6/PrevPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page6/PrevPage" to="Page6/PrevPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page6/PrevPage" to="." method="prev_page"]
+[connection signal="mouse_entered" from="Page6/NextPage" to="Page6/NextPage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Page6/NextPage" to="Page6/NextPage" method="_on_mouse_exited"]
+[connection signal="pressed" from="Page6/NextPage" to="." method="next_page"]

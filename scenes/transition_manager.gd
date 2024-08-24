@@ -17,6 +17,7 @@ func fade_in():
     animation_player.play("FadeIn")
 
 func camera_click():
+    animation_player.stop()
     animation_player.play("CameraClick")
 
 func _on_animation_player_animation_finished(anim_name):

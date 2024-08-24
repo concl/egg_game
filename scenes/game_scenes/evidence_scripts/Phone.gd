@@ -6,6 +6,9 @@ extends "res://scenes/game_scenes/evidence.gd"
 var _dialogue_shown = false
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
+    if not State.first_book_page_solved:
+        return
+    
     if event is InputEventMouseButton:
         if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
             if !_dialogue_shown:
@@ -15,4 +18,3 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
                 State.play_sound("res://assets/sounds/effects/camera_click.mp3")
                 State.start_dialogue("res://dialogue/script/evidence_search_chinese.dialogue","Phone")
             main_ui.toggle_phone()
-

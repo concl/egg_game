@@ -33,13 +33,12 @@ func play_dialogue():
 
 func check_win():
     if order == State.correct_order:
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_1_win")
         disable_ui_for_all_children(self)
         
         # Change state
         solved = true
-        State.first_book_page_solved = true
         next_page.visible = true
+        State.page_1_done()
 
 # Function to disable UI response for all children
 func disable_ui_for_all_children(parent: Node):

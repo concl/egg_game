@@ -1,7 +1,7 @@
 extends Control
 
-var page_number = 0
-@onready var pages = [$Page1, $Page2, $Page3, $Page4, $Page5, $Page6]
+var page_number = 1
+@onready var pages = [$Page0, $Page1, $Page2, $Page3, $Page4, $Page5, $Page6]
 @onready var page2_container = $Page2/NotValuable/GridContainer
 
 # evidence item name to object
@@ -24,6 +24,9 @@ func _ready():
 func _process(delta):
     pass
 
+func add_line_to_transcript(line):
+    pages[0].add_line_to_transcript(line)
+
 func play_current_dialogue():
     pages[page_number].play_dialogue()
 
@@ -43,10 +46,12 @@ func prev_page():
     pages[page_number].visible = false
     pages[page_number - 1].visible = true
     page_number -= 1
+    pages[page_number].play_dialogue()
+    
     State.play_sound("res://assets/sounds/effects/page_flip.wav")
 
 func add_evidence_item(item_name):
     var new_item = evidence_items[item_name].instantiate()
     page2_container.add_child(new_item)
-    pages[1].not_valuable_items[item_name] = null
-    pages[1].items_found += 1
+    pages[2].not_valuable_items[item_name] = null
+    pages[2].items_found += 1
