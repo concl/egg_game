@@ -21,6 +21,7 @@ func evidence_search_start():
     pass
 
 func gathering_start():
+    print("asdf")
     transition_manager.fade_out()
     await transition_manager.transitioned
     transition_manager.fade_in()

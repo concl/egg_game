@@ -46,7 +46,7 @@ size = Vector2(105, 108)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ag8hv"]
 size = Vector2(35, 39)
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node2D" groups=["MainScene"]]
 script = ExtResource("1_jcpra")
 
 [node name="Camera2D" type="Camera2D" parent="."]
