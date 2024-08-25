@@ -11,6 +11,7 @@ extends CanvasLayer
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 @onready var character_sprite: TextureRect = $Balloon/Panel/Dialogue/HBoxContainer/CharacterSprite
+@onready var text_input: VBoxContainer = $Balloon/TextInput
 
 var character_names = {
     "侦探蛋哥": preload("res://assets/images/characters/small/eggspert_small.png"),
@@ -73,11 +74,15 @@ var dialogue_line: DialogueLine:
 
         responses_menu.hide()
         responses_menu.set_responses(dialogue_line.responses)
-
+        
+        text_input.hide()
+        
         # Show our balloon
         balloon.show()
         will_hide_balloon = false
-
+        
+        
+        
         dialogue_label.show()
         
         if not dialogue_line.character.is_empty():

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxmb0g840k30x"
-path="res://.godot/imported/main_scene.png-af7866223caf7c40462e058e60c18384.ctex"
+uid="uid://dp2wwv7uqsbxu"
+path="res://.godot/imported/birthed.png-b4f0953cfd01507ab6d36aebac5aa186.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/main_scene.png"
-dest_files=["res://.godot/imported/main_scene.png-af7866223caf7c40462e058e60c18384.ctex"]
+source_file="res://assets/images/scene_images/birthed.png"
+dest_files=["res://.godot/imported/birthed.png-b4f0953cfd01507ab6d36aebac5aa186.ctex"]
 
 [params]
 

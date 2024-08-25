@@ -6,6 +6,7 @@ extends Control
 @onready var book_element = $BookElement
 @onready var animation_player = $BookElement/AnimationPlayer
 @onready var book = $BookElement/Book
+@onready var evidence_choice: Control = $EvidenceChoice
 
 var _timeline_dialogue = true
 
@@ -56,6 +57,21 @@ func close_phone_cutscene():
 
 func unlock_phone():
     phone.open_homescreen()
+
+func the_choice():
+    book_element.visible = false
+    phone_element.visible = false
+    egg_book_element.visible = false
+    evidence_choice.visible = true
+
+func choice_done():
+    evidence_choice.visible = false
+
+func open_egg_book_cutscene():
+    egg_book_element.visible = true
+    
+func close_egg_book_cutscene():
+    egg_book_element.visible = false
  
 func toggle_book():
     if book_element.book_open:

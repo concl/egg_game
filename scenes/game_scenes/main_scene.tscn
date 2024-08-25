@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://dca5nidljdli6"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_scene.gd" id="1_jcpra"]
-[ext_resource type="Texture2D" uid="uid://cxmb0g840k30x" path="res://assets/images/main_scene.png" id="2_muq6v"]
+[ext_resource type="Texture2D" uid="uid://cxmb0g840k30x" path="res://assets/images/scene_images/main_scene.png" id="2_muq6v"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="2_ur0vy"]
 [ext_resource type="Script" path="res://scenes/game_scenes/evidence_scripts/Footsteps.gd" id="3_gy8rx"]
 [ext_resource type="Texture2D" uid="uid://c4a0rf5dppgh2" path="res://assets/images/ui_images/glow/footsteps_glow.png" id="4_8knkp"]
@@ -166,6 +166,9 @@ texture = ExtResource("17_0cf1e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainScene/EvidenceSearch/Portrait/Area2D"]
 position = Vector2(-405, -287)
 shape = SubResource("RectangleShape2D_ag8hv")
+
+[node name="EggCrack" type="Node2D" parent="."]
+visible = false
 
 [node name="TransitionManager" parent="." instance=ExtResource("2_ur0vy")]
 

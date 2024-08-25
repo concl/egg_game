@@ -1,7 +1,7 @@
 extends Control
 
 var page_number = 1
-@onready var pages = [$Page0, $Page1, $Page2, $Page3, $Page4, $Page5, $Page6]
+@onready var pages = [$Page0, $Page1, $Page2, $Page3, $Page4, $Page5, $Page6, $Page7]
 @onready var page2_container = $Page2/NotValuable/GridContainer
 
 # evidence item name to object
@@ -29,6 +29,11 @@ func add_line_to_transcript(line):
 
 func play_current_dialogue():
     pages[page_number].play_dialogue()
+
+func seek_page(page):
+    pages[page_number].visible = false
+    pages[page].visible = true
+    page_number = page
 
 func next_page():
     if page_number == len(pages):

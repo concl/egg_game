@@ -21,7 +21,6 @@ func evidence_search_start():
     pass
 
 func gathering_start():
-    print("asdf")
     transition_manager.fade_out()
     await transition_manager.transitioned
     transition_manager.fade_in()
@@ -30,4 +29,7 @@ func gathering_start():
     await State.dialogue_ended
     get_tree().call_group("UI","enable")
     main_ui.open_book()
+
+func egg_crack_scene():
     
+    pass

@@ -166,6 +166,30 @@ response_template = NodePath("ResponseExample")
 layout_mode = 2
 text = "Response example"
 
+[node name="TextInput" type="VBoxContainer" parent="Balloon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 54.0
+offset_right = 248.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Balloon/TextInput"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Your name here"
+
+[node name="Button" type="Button" parent="Balloon/TextInput"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Save"
+
 [connection signal="next_message" from="." to="Characters" method="_process_changes"]
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

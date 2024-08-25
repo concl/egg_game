@@ -34,9 +34,13 @@ var second_book_page_solved = false
 
 var third_book_page_solved = false
 
-var fourth_book_page_solved = true
+var fourth_book_page_solved = false
 
-var fifth_book_page_solved = true
+var fifth_book_page_solved = false
+
+var sixth_book_page_solved = false
+
+var seventh_book_page_solved = false
 
 func _ready():
     if _load_save:
@@ -139,3 +143,11 @@ func page_4_done():
 func page_5_done():
     fifth_book_page_solved = true
     start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_5_win")
+
+func page_6_done():
+    sixth_book_page_solved = true
+    start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_6_win")
+
+func page_7_done():
+    seventh_book_page_solved = true
+    start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_7_win")
