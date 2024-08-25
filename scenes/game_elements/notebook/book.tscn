@@ -1533,6 +1533,7 @@ offset_right = 328.0
 offset_bottom = 760.0
 
 [node name="PrevPage" type="Button" parent="Page7"]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1548,30 +1549,6 @@ script = ExtResource("22_8njxd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page7/PrevPage"]
 position = Vector2(136, 314)
 rotation = 1.5708
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_mjdy6")
-autoplay = "default"
-
-[node name="NextPage" type="Button" parent="Page7"]
-visible = false
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -155.0
-offset_top = -314.0
-offset_bottom = 314.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_type_variation = &"ArrowButton"
-icon_alignment = 1
-script = ExtResource("22_8njxd")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Page7/NextPage"]
-position = Vector2(20, 314)
-rotation = 4.71239
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_mjdy6")
 autoplay = "default"
@@ -1624,6 +1601,3 @@ autoplay = "default"
 [connection signal="mouse_entered" from="Page7/PrevPage" to="Page7/PrevPage" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Page7/PrevPage" to="Page7/PrevPage" method="_on_mouse_exited"]
 [connection signal="pressed" from="Page7/PrevPage" to="." method="prev_page"]
-[connection signal="mouse_entered" from="Page7/NextPage" to="Page7/NextPage" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Page7/NextPage" to="Page7/NextPage" method="_on_mouse_exited"]
-[connection signal="pressed" from="Page7/NextPage" to="." method="next_page"]

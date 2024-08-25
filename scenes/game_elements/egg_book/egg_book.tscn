@@ -468,6 +468,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_6odif")
 
 [node name="NextPage" type="Button" parent="Contents"]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

@@ -7,6 +7,7 @@ extends Control
 @onready var animation_player = $BookElement/AnimationPlayer
 @onready var book = $BookElement/Book
 @onready var evidence_choice: Control = $EvidenceChoice
+@onready var egg_book: Control = $EggBookElement/EggBook
 
 var _timeline_dialogue = true
 
@@ -69,9 +70,17 @@ func choice_done():
 
 func open_egg_book_cutscene():
     egg_book_element.visible = true
+    var close_button: Button = $EggBookElement/CloseButton
+    close_button.hide()
+
     
 func close_egg_book_cutscene():
     egg_book_element.visible = false
+    var close_button = $EggBookElement/CloseButton
+    close_button.show()
+
+func enable_egg_book_other_pages():
+    egg_book.enable_other_pages()
  
 func toggle_book():
     if book_element.book_open:

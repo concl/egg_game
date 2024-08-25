@@ -3,6 +3,7 @@ extends Control
 @onready var image_1: TextureRect = $Image1
 @onready var image_2: TextureRect = $Image2
 @onready var image_3: TextureRect = $Image3
+@onready var prev_page: Button = $PrevPage
 
 
 func play_dialogue():

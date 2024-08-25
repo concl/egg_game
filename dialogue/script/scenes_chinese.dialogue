@@ -268,7 +268,9 @@ set State.ui_command = "open_book"
 
 ~ page_7_win
 
-侦探蛋哥: wait these images look like they can be explained by some other thing
+set State.ui_command = "close_book_cutscene"
+侦探蛋哥: wait these sketches look like they can be explained by some other thing
+set State.ui_command = "the_choice"
 
 
 => END
@@ -276,6 +278,7 @@ set State.ui_command = "open_book"
 ~ egg_book_choice
 
 侦探蛋哥: that looks right
+set State.ui_command = "choice_done"
 
 => egg_book_dialogue
 
@@ -300,9 +303,11 @@ set State.ui_command = "open_book"
 
 ~ egg_book_dialogue
 
+
+set State.ui_command = "open_egg_book_cutscene"
+set State.ui_command = "enable_egg_book_other_pages"
 侦探蛋哥: c 好了，目前最明显也最可疑的问题就是随着时间变化不断扩大的裂缝。
 侦探蛋哥: t 本侦探在室内找到的一些物品或许可以帮助我调查出真相。
-【读书】
 第一章: 给蛋宝宝们做早教
 哦！这或许就是为什么猫头鹰夫人为什么要给蛋们读故事。
 第二章: 蛋的成长历程（猫头鹰老妈没有看的一页）

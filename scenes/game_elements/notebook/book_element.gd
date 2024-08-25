@@ -24,5 +24,9 @@ func open():
 
 
 func close():
-    animation_player.play("close_book")
-    book_open = false
+    if book.page_number != 7 or State.seventh_book_page_solved:
+        animation_player.play("close_book")
+        book_open = false
+    else:
+        State.page_7_done()
+        book.pages[7].prev_page.show()
