@@ -16,5 +16,5 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
                 main_ui.add_evidence_item("Phone")
                 transition_manager.camera_click()
                 State.play_sound("res://assets/sounds/effects/camera_click.mp3")
-                State.start_dialogue("res://dialogue/script/evidence_search_chinese.dialogue","Phone")
+                State.start_dialogue("evidence_search","Phone")
             main_ui.toggle_phone()

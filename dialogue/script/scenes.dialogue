@@ -13,41 +13,39 @@ Mr. Owlbert: One of our eggs cracked!!!
 set State.changes = [{"name":"AddCharacter", "character":"Owlivia", "state":"Focus"}]
 Mrs. Owlivia: Oh, Eggspert, it's just awful! 
 Mrs. Owlivia: My sweet little egg, for which I've been keeping safe and warm, has a huge crack!
-Mrs. Owlivia: 我和孩子他爸一直有好好地爱护它
-Mrs. Owlivia: 但是现在蛋壳上有一条巨大的裂缝！
-Mrs. Owlivia: 呜啊啊啊
-Mrs. Owlivia: 孩子没了我也不活了呜呜呜...
+Mrs. Owlivia: We've never abused it!
+Mrs. Owlivia: But now there's a huge crack!!!!
+Mrs. Owlivia: AHHHHHHHH
+Mrs. Owlivia: I wanna die because my kids are gone...
 
 set State.changes = [{"name":"PlayAnimation", "character":"Eggspert", "animation_name":"focus"}]
-Eggspert: 这简直是惨无鹰道
-Eggspert: 恶劣至极
-Eggspert: 泯灭鹰性的犯罪！
-Eggspert: 先生，女士，请您们放心！
-Eggspert: 本次案件的凶手将由我，Eggspert
-Eggspert: 也就是正义的化身，一举拿下！
-Eggspert: 首先，请您先冷静下来
-Eggspert: 协助本侦探确定案发前后的时间线并找到嫌疑人。
-Eggspert: 请告诉本侦探你们今天都做了什么。
-Eggspert: 这有助于本侦探缩小嫌疑人范围然后锁定凶手。
-Eggspert: 从现在开始我会把时间线记录在我的侦探本中。
+Eggspert: This is catastrophic!
+Eggspert: bad!
+Eggspert: really bad!
+Eggspert: However, ladies and gentlemenen, please don't be afraid.
+Eggspert: I, the egg of justice, will find the perpetrator!
+Eggspert: first please calm down.
+Eggspert: I need to establish a timeline of events before finding the suspect.
+Eggspert: Please tell me roughly what you people did before the event happened.
+Eggspert: This will help me determine the suspect.
+Eggspert: I will now proceed to put stuff in my notebook.
 
 set State.changes = [{"name":"PlayAnimation", "character":"Op", "animation_name":"focus"}]
-Mr. Owlbert: 只要能破案，我们一定全力配合。
+Mr. Owlbert: Ok
 
 => END
 
 ~ page_0_dialogue
 
-: 这一页是之前对话的内容。
+: This page shows all the dialogue that had been said before.
 
 => END
 
 ~ page_1_dialogue
 
-Mr. Owlbert: 先来说说我吧
-Mr. Owlbert: 我是一名数学老师。按照往常的习惯，我在今早7：30离家去到学校，然后在下午4：05左右回到家。
-Mr. Owlbert: 哦提起回家，我和我的爱人就是在回到家中路过的一条小道上相遇的，在见到的第一刻起我就一直在想，世界上怎会有如此美丽的猫头鹰啊....
-
+Mr. Owlbert: I go first.
+Mr. Owlbert: I'm a math teacher. As usual, I left home at 7:30 AM, and I came home at 4:05 PM.
+Mr. Owlbert: I met my wife going home btw and I love her very much.
 Eggspert: 咳咳！！本侦探还需要更多的线索和细节！当然这些细节不包括二位的恋爱故事咯。
 Mr. Owlbert: 哦哦哈哈哈哈，那我继续讲，我一回到家就检查了我的蛋们...然后发现了那条裂缝...我的妻子今天一天都在家，让她来跟你讲讲家里发生的事吧。
 Mrs. Owlivia: 我是今天早上九点起的床，然后我做了我最爱吃的早餐：炒鸡蛋和鸡蛋沙拉三明治。
