@@ -3,11 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d0n4mfdy260lo"
-valid=false
+path="res://.godot/imported/PlayfairDisplay-VariableFont_wght.ttf-7be3a4944b88d2bacae69ab1f0c1e26e.fontdata"
 
 [deps]
 
 source_file="res://assets/Playfair_Display_Font/PlayfairDisplay-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/PlayfairDisplay-VariableFont_wght.ttf-7be3a4944b88d2bacae69ab1f0c1e26e.fontdata"]
 
 [params]
 

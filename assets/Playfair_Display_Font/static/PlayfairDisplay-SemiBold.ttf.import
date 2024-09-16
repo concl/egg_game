@@ -3,11 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cukt5q378liww"
-valid=false
+path="res://.godot/imported/PlayfairDisplay-SemiBold.ttf-8ee4aba432d7638be9b381a64ea55173.fontdata"
 
 [deps]
 
 source_file="res://assets/Playfair_Display_Font/static/PlayfairDisplay-SemiBold.ttf"
+dest_files=["res://.godot/imported/PlayfairDisplay-SemiBold.ttf-8ee4aba432d7638be9b381a64ea55173.fontdata"]
 
 [params]
 

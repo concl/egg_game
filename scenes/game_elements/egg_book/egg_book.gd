@@ -22,17 +22,17 @@ func next_page():
     
     if not seen1 and current_page == 1:
         seen1 = true
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","egg_book_page_1")
+        State.start_dialogue("scenes","egg_book_page_1")
     
     if not seen2 and current_page == 2:
         seen2 = true
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","egg_book_page_2")
+        State.start_dialogue("scenes","egg_book_page_2")
     
     if not seen3 and current_page == 3:
         seen3 = true
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","egg_book_page_3")
+        State.start_dialogue("scenes","egg_book_page_3")
         await State.dialogue_ended
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","new_birth")
+        State.start_dialogue("scenes","new_birth")
     
     State.play_sound("res://assets/sounds/effects/page_flip.wav")
 

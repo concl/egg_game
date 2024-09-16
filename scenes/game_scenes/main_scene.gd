@@ -13,7 +13,7 @@ func _ready():
     transition_manager.fade_in()
     transition_manager.play_music()
     
-    State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","first_scene")
+    State.start_dialogue("scenes","first_scene")
     await State.dialogue_ended
     main_ui.toggle_book()
     
@@ -30,7 +30,7 @@ func gathering_start():
     transition_manager.change_music("res://assets/sounds/music/interrogation_music.wav")
     transition_manager.fade_in()
     await transition_manager.transitioned
-    State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","gathering_1")
+    State.start_dialogue("scenes","gathering_1")
     await State.dialogue_ended
     get_tree().call_group("UI","enable")
     main_ui.open_book()

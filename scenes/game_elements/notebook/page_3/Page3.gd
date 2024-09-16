@@ -25,7 +25,7 @@ func play_dialogue():
     if solved:
         return
     
-    State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_3_dialogue")
+    State.start_dialogue("scenes","page_3_dialogue")
     
 
 func _on_receiver_dropped() -> void:

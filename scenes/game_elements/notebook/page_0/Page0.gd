@@ -9,7 +9,7 @@ func play_dialogue():
         return
     else:
         seen_dialogue = true
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_0_dialogue")
+        State.start_dialogue("scenes","page_0_dialogue")
 
 
 func add_line_to_transcript(character, line):

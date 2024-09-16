@@ -3,11 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cihcjvgmttr6u"
-valid=false
+path="res://.godot/imported/shijuef.com(gongfanmianfeiti) Regular.ttf-eabe1c65f876e58ed0b255817ec7bc6a.fontdata"
 
 [deps]
 
 source_file="res://assets/main_font_chinese/shijuef.com(gongfanmianfeiti) Regular.ttf"
+dest_files=["res://.godot/imported/shijuef.com(gongfanmianfeiti) Regular.ttf-eabe1c65f876e58ed0b255817ec7bc6a.fontdata"]
 
 [params]
 

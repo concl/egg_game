@@ -3,11 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c1l3vvmf2t4s0"
-valid=false
+path="res://.godot/imported/chinese_normal_font.ttf-b50a2de5ea52a046fa0bb047ed44c36e.fontdata"
 
 [deps]
 
 source_file="res://assets/chinese_font/chinese_normal_font.ttf"
+dest_files=["res://.godot/imported/chinese_normal_font.ttf-b50a2de5ea52a046fa0bb047ed44c36e.fontdata"]
 
 [params]
 

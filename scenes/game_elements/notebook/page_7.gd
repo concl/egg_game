@@ -7,7 +7,7 @@ extends Control
 
 
 func play_dialogue():
-    State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_7_dialogue")
+    State.start_dialogue("scenes","page_7_dialogue")
     image_1.texture = create_texture("user://first.png")
     image_2.texture = create_texture("user://second.png")
     image_3.texture = create_texture("user://third.png")

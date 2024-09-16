@@ -41,7 +41,7 @@ func close_images():
 
 func open_music():
     if not rap_dialogue:
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue", "rap_dialogue")
+        State.start_dialogue("scenes", "rap_dialogue")
     
     animation_player.play("open_music")
     music_open = true
@@ -54,7 +54,7 @@ func close_music():
     if not rap_dialogue:
         await animation_player.animation_finished
         rap_dialogue = true
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue", "rap_dialogue_2")
+        State.start_dialogue("scenes", "rap_dialogue_2")
 
 func _on_home_button_pressed() -> void:
     if chat_open:

@@ -8,7 +8,7 @@ var seen_dialogue = false
 func play_dialogue():
     if not seen_dialogue:
         seen_dialogue = true
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue", "page_5_dialogue")
+        State.start_dialogue("scenes", "page_5_dialogue")
 
 func win():
     State.page_5_done()

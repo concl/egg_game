@@ -3,11 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://nruaa2nctbop"
-valid=false
+path="res://.godot/imported/PlayfairDisplay-BlackItalic.ttf-1a1afb5369bd48d2c77c23e4610a94a8.fontdata"
 
 [deps]
 
 source_file="res://assets/Playfair_Display_Font/static/PlayfairDisplay-BlackItalic.ttf"
+dest_files=["res://.godot/imported/PlayfairDisplay-BlackItalic.ttf-1a1afb5369bd48d2c77c23e4610a94a8.fontdata"]
 
 [params]
 

@@ -3,11 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cwdn1nujuqxrt"
-valid=false
+path="res://.godot/imported/camera_click.mp3-a926c909d37e752578af37aa3eba62e9.mp3str"
 
 [deps]
 
 source_file="res://assets/sounds/effects/camera_click.mp3"
+dest_files=["res://.godot/imported/camera_click.mp3-a926c909d37e752578af37aa3eba62e9.mp3str"]
 
 [params]
 

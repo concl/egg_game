@@ -17,10 +17,12 @@ func _on_main_menu_button_pressed() -> void:
 
 
 func _on_continue_button_pressed() -> void:
+    State.paused = false
     queue_free()
 
 
 func _on_yes_pressed() -> void:
+    State.paused = false
     get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 

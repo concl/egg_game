@@ -17,10 +17,10 @@ func play_dialogue():
         return
     
     if !seen_dialogue:
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_dialogue")
+        State.start_dialogue("scenes","page_2_dialogue")
         seen_dialogue = true
     else:
-        State.start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_again")
+        State.start_dialogue("scenes","page_2_again")
         await State.dialogue_ended
 
 func check_win():
