@@ -3,18 +3,18 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cwgekrmwjmrpq"
-path="res://.godot/imported/PlayfairDisplay-Bold.ttf-eb862584ed863ce4c9bf4113dee7bdea.fontdata"
+valid=false
 
 [deps]
 
 source_file="res://assets/Playfair_Display_Font/static/PlayfairDisplay-Bold.ttf"
-dest_files=["res://.godot/imported/PlayfairDisplay-Bold.ttf-eb862584ed863ce4c9bf4113dee7bdea.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

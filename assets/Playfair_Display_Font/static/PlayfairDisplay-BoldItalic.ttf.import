@@ -3,18 +3,18 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d32giqsump004"
-path="res://.godot/imported/PlayfairDisplay-BoldItalic.ttf-429a4cfc40322a5f94880a15b1428ea2.fontdata"
+valid=false
 
 [deps]
 
 source_file="res://assets/Playfair_Display_Font/static/PlayfairDisplay-BoldItalic.ttf"
-dest_files=["res://.godot/imported/PlayfairDisplay-BoldItalic.ttf-429a4cfc40322a5f94880a15b1428ea2.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

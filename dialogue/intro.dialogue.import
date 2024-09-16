@@ -3,12 +3,11 @@
 importer="dialogue_manager_compiler_12"
 type="Resource"
 uid="uid://kr3wkmxfv5u7"
-path="res://.godot/imported/intro.dialogue-3af4c7eb7038203a1c56fd8a6f3adbe4.tres"
+valid=false
 
 [deps]
 
 source_file="res://dialogue/intro.dialogue"
-dest_files=["res://.godot/imported/intro.dialogue-3af4c7eb7038203a1c56fd8a6f3adbe4.tres"]
 
 [params]
 

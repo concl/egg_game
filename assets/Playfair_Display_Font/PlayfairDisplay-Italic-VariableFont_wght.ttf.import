@@ -3,18 +3,18 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cfgwap53nm1n"
-path="res://.godot/imported/PlayfairDisplay-Italic-VariableFont_wght.ttf-55439d5d8807e775135a1ee5aa8b7a07.fontdata"
+valid=false
 
 [deps]
 
 source_file="res://assets/Playfair_Display_Font/PlayfairDisplay-Italic-VariableFont_wght.ttf"
-dest_files=["res://.godot/imported/PlayfairDisplay-Italic-VariableFont_wght.ttf-55439d5d8807e775135a1ee5aa8b7a07.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

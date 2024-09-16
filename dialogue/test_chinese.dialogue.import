@@ -3,12 +3,11 @@
 importer="dialogue_manager_compiler_12"
 type="Resource"
 uid="uid://b8quertm2vsen"
-path="res://.godot/imported/test_chinese.dialogue-ceefb13518ced7029deef94d13bc7661.tres"
+valid=false
 
 [deps]
 
 source_file="res://dialogue/test_chinese.dialogue"
-dest_files=["res://.godot/imported/test_chinese.dialogue-ceefb13518ced7029deef94d13bc7661.tres"]
 
 [params]
 
