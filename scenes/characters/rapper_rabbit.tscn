@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bty5jtx8i8rma"]
+[gd_scene load_steps=6 format=3 uid="uid://bty5jtx8i8rma"]
 
 [ext_resource type="PackedScene" uid="uid://bqf2xlvlvpgr" path="res://scenes/characters/character.tscn" id="1_v80ny"]
+[ext_resource type="Script" path="res://scenes/characters/rapper_rabbit.gd" id="2_dfq1v"]
 [ext_resource type="Texture2D" uid="uid://ceqxa8xje4weh" path="res://assets/images/characters/rapper_rabbit.png" id="2_nh1dx"]
 [ext_resource type="Texture2D" uid="uid://bps0x6hy0dvvv" path="res://assets/images/characters/rapper_rabbit_thinking.png" id="3_4vw41"]
 [ext_resource type="Texture2D" uid="uid://u1ndedhp20ys" path="res://assets/images/characters/rapper_rabbit_goofy.png" id="3_xgpj5"]
 
 [node name="RapperRabbit" instance=ExtResource("1_v80ny")]
+script = ExtResource("2_dfq1v")
 
 [node name="Default" type="Node2D" parent="Sprites" index="0"]
 
@@ -22,10 +24,10 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_4vw41")
 offset = Vector2(0, -1100)
 
-[node name="Happy" type="Node2D" parent="Sprites" index="2"]
+[node name="Goofy" type="Node2D" parent="Sprites" index="2"]
 visible = false
 
-[node name="HappySprite" type="Sprite2D" parent="Sprites/Happy" index="0"]
+[node name="GoofySprite" type="Sprite2D" parent="Sprites/Goofy" index="0"]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_xgpj5")
 offset = Vector2(0, -920)

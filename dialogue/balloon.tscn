@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=17 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="PackedScene" uid="uid://lt4cml3g6r4t" path="res://dialogue/characters.tscn" id="2_w2j4t"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 [ext_resource type="Texture2D" uid="uid://c4pkycxqdxcky" path="res://assets/images/ui_images/button.png" id="3_nf1lh"]
+[ext_resource type="FontFile" uid="uid://c1l3vvmf2t4s0" path="res://assets/chinese_font/chinese_normal_font.ttf" id="3_pallg"]
 [ext_resource type="Texture2D" uid="uid://bca5mtr82qqaw" path="res://assets/images/ui_images/text_balloon.png" id="4_p5bbs"]
 [ext_resource type="Texture2D" uid="uid://b2x8dejge8lrr" path="res://assets/images/characters/small/capybala_small.png" id="5_betju"]
+[ext_resource type="FontFile" uid="uid://3bkojuyuu670" path="res://assets/chinese_font/chinese_bold_font.ttf" id="6_yeqck"]
+[ext_resource type="FontFile" uid="uid://qi573gdsocb1" path="res://assets/chinese_font/chinese_font.ttf" id="7_wajor"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -56,15 +59,19 @@ texture = ExtResource("4_p5bbs")
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
 default_font_size = 20
+Button/fonts/font = ExtResource("3_pallg")
 Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
 Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
 Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
 Button/styles/normal = SubResource("StyleBoxTexture_f1eig")
+Label/fonts/font = ExtResource("3_pallg")
 MarginContainer/constants/margin_bottom = 15
 MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_7vied")
+RichTextLabel/fonts/bold_font = ExtResource("6_yeqck")
+RichTextLabel/fonts/normal_font = ExtResource("7_wajor")
 
 [node name="TextBalloon" type="CanvasLayer"]
 layer = 99
@@ -166,7 +173,15 @@ response_template = NodePath("ResponseExample")
 layout_mode = 2
 text = "Response example"
 
-[node name="TextInput" type="VBoxContainer" parent="Balloon"]
+[node name="TextInput" type="Control" parent="Balloon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextInput" type="VBoxContainer" parent="Balloon/TextInput"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -180,12 +195,13 @@ offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextEdit" type="TextEdit" parent="Balloon/TextInput"]
+[node name="TextEdit" type="TextEdit" parent="Balloon/TextInput/TextInput"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_colors/background_color = Color(0.328956, 0.246302, 0.136729, 1)
 placeholder_text = "Your name here"
 
-[node name="Button" type="Button" parent="Balloon/TextInput"]
+[node name="Button" type="Button" parent="Balloon/TextInput/TextInput"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Save"
@@ -193,3 +209,4 @@ text = "Save"
 [connection signal="next_message" from="." to="Characters" method="_process_changes"]
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[connection signal="pressed" from="Balloon/TextInput/TextInput/Button" to="." method="_on_button_pressed"]

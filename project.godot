@@ -13,7 +13,7 @@ config_version=5
 config/name="The Cracked Case"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/images/cracked_case_icon.png"
 
 [autoload]
 
@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 UI=""
 MainScene=""
+Translatable=""
 
 [input]
 
@@ -51,7 +52,7 @@ pause={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/test_tutorial.dialogue", "res://dialogue/intro.dialogue", "res://dialogue/script/test/testwin.dialogue", "res://dialogue/test_chinese.dialogue", "res://dialogue/script/scenes_chinese.dialogue", "res://dialogue/script/evidence_search_chinese.dialogue", "res://dialogue/script/evidence_search.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/test_tutorial.dialogue", "res://dialogue/intro.dialogue", "res://dialogue/script/test/testwin.dialogue", "res://dialogue/test_chinese.dialogue", "res://dialogue/script/scenes_chinese.dialogue", "res://dialogue/script/evidence_search_chinese.dialogue", "res://dialogue/script/evidence_search.dialogue", "res://dialogue/script/scenes.dialogue")
 
 [rendering]
 
@@ -60,5 +61,6 @@ textures/vram_compression/import_etc2_astc=true
 anti_aliasing/screen_space_roughness_limiter/enabled=false
 anti_aliasing/screen_space_roughness_limiter/amount=4.0
 anti_aliasing/screen_space_roughness_limiter/limit=1.0
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)
 anti_aliasing/quality/screen_space_aa=1
 anti_aliasing/quality/use_taa=true

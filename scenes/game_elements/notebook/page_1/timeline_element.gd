@@ -15,6 +15,7 @@ func _get_drag_data(at_position):
     if not enabled:
         return
     
+    State.play_sound("res://assets/sounds/effects/drag_start.wav")
     var aspect_ratio = texture_rect.size[0] / texture_rect.size[1]
     var preview_texture = TextureRect.new()
  
@@ -34,8 +35,8 @@ func _get_drag_data(at_position):
 func _can_drop_data(_pos, data):
     return data[0] is Texture2D
  
- 
 func _drop_data(_pos, data):
+    State.play_sound("res://assets/sounds/effects/notebook_sound_effect.wav")
     data[1].glow.self_modulate = 0
     animate_swap(data[1])
     
@@ -57,6 +58,8 @@ func animate_swap(other_node):
     if not other_node:
         print("Invalid node passed to animate_swap")
         return
+    
+    
 
     # Get the starting positions
     var start_pos_self = self.position
@@ -71,15 +74,18 @@ func start_swap_animation(start_pos_self: Vector2, start_pos_other: Vector2, oth
     var delta_self = (start_pos_other - start_pos_self) / swap_steps
     var delta_other = (start_pos_self - start_pos_other) / swap_steps
     
+    self.z_index = 10
+    other_node.z_index = 10
     enabled = false
-
+    
     for i in range(swap_steps):
         self.position += delta_self
         other_node.position += delta_other
         await get_tree().create_timer(swap_duration / swap_steps).timeout
     
     enabled = true
-
+    self.z_index = 0
+    other_node.z_index = 0
     # Ensure final positions are exactly swapped
     self.position = start_pos_other
     other_node.position = start_pos_self

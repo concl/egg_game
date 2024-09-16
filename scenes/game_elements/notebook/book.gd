@@ -24,8 +24,8 @@ func _ready():
 func _process(delta):
     pass
 
-func add_line_to_transcript(line):
-    pages[0].add_line_to_transcript(line)
+func add_line_to_transcript(character, line):
+    pages[0].add_line_to_transcript(character, line)
 
 func play_current_dialogue():
     pages[page_number].play_dialogue()

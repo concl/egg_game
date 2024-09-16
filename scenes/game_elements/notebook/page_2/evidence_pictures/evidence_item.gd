@@ -11,6 +11,7 @@ func _process(delta):
 
 func _get_drag_data(at_position):
     
+    State.play_sound("res://assets/sounds/effects/drag_start.wav")
     var aspect_ratio = size[0] / size[1]
     var preview_texture = TextureRect.new()
     preview_texture.texture = texture

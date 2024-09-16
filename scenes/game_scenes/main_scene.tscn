@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dca5nidljdli6"]
+[gd_scene load_steps=34 format=3 uid="uid://dca5nidljdli6"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/main_scene.gd" id="1_jcpra"]
 [ext_resource type="Texture2D" uid="uid://cxmb0g840k30x" path="res://assets/images/scene_images/main_scene.png" id="2_muq6v"]
@@ -21,6 +21,10 @@
 [ext_resource type="AudioStream" uid="uid://d03e3x3qlj7f" path="res://assets/sounds/music/main_scene_music.wav" id="16_vy4c6"]
 [ext_resource type="Texture2D" uid="uid://y2r16xmmmfg1" path="res://assets/images/ui_images/glow/portrait_glow.png" id="17_0cf1e"]
 [ext_resource type="Script" path="res://scenes/game_scenes/evidence_scripts/Portrait.gd" id="17_4w2ch"]
+[ext_resource type="Texture2D" uid="uid://1o88a55wsfgm" path="res://assets/images/scene_images/egg_hatching.png" id="19_brlpn"]
+[ext_resource type="Texture2D" uid="uid://dp2wwv7uqsbxu" path="res://assets/images/scene_images/birthed.png" id="20_p0byg"]
+[ext_resource type="Texture2D" uid="uid://btxabnb2lxcqu" path="res://assets/images/scene_images/egg_wall.png" id="21_s10m5"]
+[ext_resource type="Texture2D" uid="uid://op53yyjbphy8" path="res://assets/images/ui_images/egg_book/egg_canvas.png" id="22_vrer4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xl1i"]
 size = Vector2(436, 125)
@@ -169,6 +173,52 @@ shape = SubResource("RectangleShape2D_ag8hv")
 
 [node name="EggCrack" type="Node2D" parent="."]
 visible = false
+
+[node name="EggHatching" type="Sprite2D" parent="EggCrack"]
+texture = ExtResource("19_brlpn")
+
+[node name="Birthed" type="Node2D" parent="."]
+visible = false
+
+[node name="BirthedSprite" type="Sprite2D" parent="Birthed"]
+texture = ExtResource("20_p0byg")
+
+[node name="EggWall" type="Node2D" parent="."]
+visible = false
+
+[node name="Image1" type="TextureRect" parent="EggWall"]
+custom_minimum_size = Vector2(400, 450)
+offset_left = -867.0
+offset_top = -288.0
+offset_right = -467.0
+offset_bottom = 162.0
+texture = ExtResource("22_vrer4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Image2" type="TextureRect" parent="EggWall"]
+custom_minimum_size = Vector2(450, 450)
+offset_left = -285.0
+offset_top = -377.0
+offset_right = 165.0
+offset_bottom = 223.0
+texture = ExtResource("22_vrer4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Image3" type="TextureRect" parent="EggWall"]
+custom_minimum_size = Vector2(400, 450)
+offset_left = 257.0
+offset_top = -232.0
+offset_right = 657.0
+offset_bottom = 218.0
+rotation = -0.349066
+texture = ExtResource("22_vrer4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EggWallSprite" type="Sprite2D" parent="EggWall"]
+texture = ExtResource("21_s10m5")
 
 [node name="TransitionManager" parent="." instance=ExtResource("2_ur0vy")]
 

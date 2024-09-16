@@ -11,7 +11,6 @@ func play_dialogue():
     image_1.texture = create_texture("user://first.png")
     image_2.texture = create_texture("user://second.png")
     image_3.texture = create_texture("user://third.png")
-    print(image_1.texture.get_image())
 
 func create_texture(path):
     var img = Image.new()

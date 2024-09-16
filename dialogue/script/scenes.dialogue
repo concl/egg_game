@@ -1,0 +1,392 @@
+~ first_scene
+
+set State.changes = [{"name":"AddCharacter", "character":"Eggspert", "state":"Focus"}]
+Eggspert: I, the great detective egg am here! 
+set State.changes = [{"name": "Pose", "character":"Eggspert", "pose": "thinking"}]
+Eggspert: What happened m'lady?
+
+set State.changes = [{"name":"AddCharacter", "character":"Op", "state":"Focus"}]
+Mr. Owlbert: You're finally here!
+Mr. Owlbert: The situation this time is urgent.
+Mr. Owlbert: One of our eggs cracked!!!
+
+set State.changes = [{"name":"AddCharacter", "character":"Owlivia", "state":"Focus"}]
+Mrs. Owlivia: Oh, Eggspert, it's just awful! 
+Mrs. Owlivia: My sweet little egg, for which I've been keeping safe and warm, has a huge crack!
+Mrs. Owlivia: 我和孩子他爸一直有好好地爱护它
+Mrs. Owlivia: 但是现在蛋壳上有一条巨大的裂缝！
+Mrs. Owlivia: 呜啊啊啊
+Mrs. Owlivia: 孩子没了我也不活了呜呜呜...
+
+set State.changes = [{"name":"PlayAnimation", "character":"Eggspert", "animation_name":"focus"}]
+Eggspert: 这简直是惨无鹰道
+Eggspert: 恶劣至极
+Eggspert: 泯灭鹰性的犯罪！
+Eggspert: 先生，女士，请您们放心！
+Eggspert: 本次案件的凶手将由我，Eggspert
+Eggspert: 也就是正义的化身，一举拿下！
+Eggspert: 首先，请您先冷静下来
+Eggspert: 协助本侦探确定案发前后的时间线并找到嫌疑人。
+Eggspert: 请告诉本侦探你们今天都做了什么。
+Eggspert: 这有助于本侦探缩小嫌疑人范围然后锁定凶手。
+Eggspert: 从现在开始我会把时间线记录在我的侦探本中。
+
+set State.changes = [{"name":"PlayAnimation", "character":"Op", "animation_name":"focus"}]
+Mr. Owlbert: 只要能破案，我们一定全力配合。
+
+=> END
+
+~ page_0_dialogue
+
+: 这一页是之前对话的内容。
+
+=> END
+
+~ page_1_dialogue
+
+Mr. Owlbert: 先来说说我吧
+Mr. Owlbert: 我是一名数学老师。按照往常的习惯，我在今早7：30离家去到学校，然后在下午4：05左右回到家。
+Mr. Owlbert: 哦提起回家，我和我的爱人就是在回到家中路过的一条小道上相遇的，在见到的第一刻起我就一直在想，世界上怎会有如此美丽的猫头鹰啊....
+
+Eggspert: 咳咳！！本侦探还需要更多的线索和细节！当然这些细节不包括二位的恋爱故事咯。
+Mr. Owlbert: 哦哦哈哈哈哈，那我继续讲，我一回到家就检查了我的蛋们...然后发现了那条裂缝...我的妻子今天一天都在家，让她来跟你讲讲家里发生的事吧。
+Mrs. Owlivia: 我是今天早上九点起的床，然后我做了我最爱吃的早餐：炒鸡蛋和鸡蛋沙拉三明治。
+Mrs. Owlivia: 吃完后，我照常给我的宝贝蛋们，哦，包括我的亲亲甜甜小蛋糕...我将他们从卧室里推出来到客厅让他们透透气，还给他们阅读他们最爱的早教故事。他们那时候非常的完美——洁白，光滑，完好，可爱...
+Eggspert: 很好。那么下午的时候呢？
+Mrs. Owlivia: 嗯...我下午一点打了个盹儿，然后在2：30的时候被门铃声吵醒，是Nanny Goose突然造访。她还带来了美味的鸡蛋煎饼。
+Mrs. Owlivia: 于是我就邀请她进屋坐坐...哦！哦！我清晰的记得她眼睛直勾勾地盯着我的蛋！还伸出翅膀摸过他们！
+Mrs. Owlivia: Nanny Goose下午3：00左右离开了我家，它前脚刚走，后脚就来了Rappit。这孩子来我家嚷嚷着要问我丈夫数学题。我从没有见过任何一个小孩儿像他一样又吵又爱炫耀。
+Mrs. Owlivia: 我不好拒绝他，但为了不让他这个小冒失鬼伤到我可爱的小蛋糕们，我将它们推进了卧室，把Rappit领到了客厅后我就去准备晚饭了。
+Mrs. Owlivia: 在3：45的时候，我听到了另一声门铃，是Sir Capybala先生。他来给我丈夫送新做的西服，你知道的，它是镇上工艺最厉害的裁缝。
+Mrs. Owlivia: Rappit在那时候已经离开了，我都不知道他是什么时候走的。我当时让Sir Capybala先生把新衣服放到衣帽间后就赶快跑回厨房，不然我的菜就要烧糊了。
+Mrs. Owlivia: 在4：05的时候，我做完了饭，同时我的丈夫也回到了家，发现了我的亲亲 甜甜小蛋糕上的裂缝...
+: (你可以拖动图片到另外一个图片上来变换它们的位置)
+
+=> END
+
+~ page_1_again
+
+set record_lines = false
+Eggspert: 我得把这些照片整理好。
+set record_lines = true
+
+=> END
+
+~ page_1_win
+
+Eggspert: 原来如此, 是这么回事啊! 
+Eggspert: 非常感谢二位的积极配合。
+Eggspert: 现在! 伟大机智的蛋哥把嫌疑人锁定到了Nanny Goose, Rappit, 和Sir Capybala身上。
+Eggspert: 看来本侦探要做个案发现场调查了。
+
+=> END
+
+~ page_2_dialogue
+
+Eggspert: 我现在要把收集的八个线索分为“没有价值的线索”和“有价值的线索”。
+
+=> END
+
+~ page_2_again
+
+set record_lines = false
+: 你需要决定在这8个线索中哪3个是有调查价值的
+set record_lines = true
+
+=> END
+
+
+~ page_2_win
+
+Eggspert: 本侦探果然无所不能！现场的所有可疑细节现在都被记录在本侦探的笔记中。
+
+=> END
+
+~ page_3_dialogue
+
+Eggspert: 今天，除了猫头鹰夫妇，只有三个家伙来过这个房子：Nanny Goose、Rappit和卡皮吧啦。所以嫌疑人一定在这三个人当中。
+Eggspert: 那么下一步就是...找到这些可疑物品的所属者！
+
+=> END
+
+~ page_3_win
+
+Eggspert: 现在本座将把这三位嫌疑人叫过来。我，伟大机智的Eggspert，将审问他们三人，而真相马上大白！
+Eggspert: 猫头鹰女士，猫头鹰先生，此次调查中我发现了三个相当可疑的线索——蛋上的一根白色羽毛、房间里散落的脚印和一部被遗忘的手机。
+
+=> END
+
+~ gathering_1
+
+set State.changes = [{"name":"AddCharacter", "character":"Eggspert"}, {"name":"AddCharacter", "character":"Goose", "state":"Focus"}]
+Nanny Goose: 现在的年轻人啊和老一辈儿人比起来真年轻。
+Nanny Goose: 那么把我这个老太婆叫过来有什么事儿吗?
+set State.changes = [{"name":"AddCharacter", "character":"Rabbit", "state":"Focus"}]
+Rappit: What’s up！Bro！
+Rappit: 跟随着我的脚步，这里是AKARappit，拍照喜欢挑刁钻的角度，每天早晨篮球健身加跑步！
+set State.changes = [{"name":"AddCharacter", "character":"Capybala", "state":"Focus"}]
+Sir Capybala: 你们好，我是来协助调查的。
+Eggspert: 三位晚上好。我是伟大机智的Eggspert。
+Eggspert: 你们现在涉及到一件非常恶劣的裂蛋事件。很抱歉地告诉各位你们都是可疑的嫌疑人。
+Eggspert: 那么就由我这个伟大机智的Eggspert与你们进行一对一问话。
+Eggspert: 那么首先由Sir Capybala先生来回答我的问题。
+
+=> END
+
+~ page_4_dialogue
+
+Eggspert: 我发现一些可疑的椭圆形脚印出现在蛋们的附近。而你的脚就是椭圆形的！
+Eggspert: 你有什么要说的吗？说，你是不是去过它们的卧室！
+Sir Capybala: 扎心了老铁，但我没有要说的。我确实专门去卧室那里看蛋们。
+Sir Capybala: 因为我听说了那些蛋都很漂亮，隔壁的小动物都馋哭了，所以我想亲眼康康。
+Sir Capybala: 但我十分肯定以及确定，我尊～嘟只是看了看！
+Eggspert: 等等，你别动！这里有一小片蛋壳粘在你的胡子上！请你解释一下！
+Sir Capybala: 这些蛋们都很脆弱。这可能是我蹲下凑近仔细康的时候不小心沾到胡子上的。
+Sir Capybala: 可能是我的胡子太绵密了，难道胡子茂密也是一种错误吗！
+Sir Capybala: 但这颗蛋的裂缝在我看的时候就在这里了。如果现在的裂缝是四厘米的话当时的裂缝只有三厘米。
+Sir Capybala: 咳咳。我只想做个安静的美男子，所以这不可能是我。
+Eggspert: 嗯...很好。确认过眼神，本侦探保留对你的怀疑。
+Eggspert: 让我记录一下Sir Capybala描述的蛋。
+: (你现在可以在蛋上画出嫌疑人描述的裂痕)
+
+=> END
+
+~ page_4_win
+
+Eggspert: 嗯，很完美的蛋。下一个人。
+Sir Capybala: 皮皮虾，我们走。
+
+=> END
+
+~ page_5_dialogue
+
+Rappit: 哟，Bro！下一个到me了吗？
+Eggspert: 没错。本侦探在卧室边的床头柜上发现了你遗落的手机。
+Eggspert: 让我们一起打开看看这里有没有什么可疑的东西。
+Rappit: Hold on hold on！你不能这样m3！
+Rappit: 这是我的privacy uknow what m3！！你怎么能窥视我和我女友的私密信息！Bro我要diss你！
+Eggspert: 嘿冷静点儿小兔子。要不是我的责任在这儿，谁想看你的这些情话啊？我只是需要找到一切能帮助破案的线索。
+
+set State.ui_command = "close_book_cutscene"
+set unskippable = true
+set turn_visible = false
+: [wait=1]_[next=auto]
+set unskippable = false
+set turn_visible = true
+
+
+
+set State.changes = [{"name":"AddCharacter", "character":"Eggspert", "state":"Focus"}]
+Eggspert: 麻烦把你的手机打开让本座看看。
+set State.changes = [{"name":"AddCharacter", "character":"Rabbit", "state":"Focus"}]
+Rappit: 唉，好吧。
+
+set State.scene_command = "mute_audio"
+set State.ui_command = "open_phone_cutscene"
+
+=> END
+
+~ rap_dialogue
+
+Eggspert: 哈！看看本侦探发现了什么？一段关于蛋的rap！你今天绝对看了蛋然后才能作出这段rap，让我听一下你的demo...
+
+=> END
+
+~ rap_dialogue_2
+
+set State.ui_command = "close_phone_cutscene"
+set State.scene_command = "return_audio"
+
+set State.changes = [{"name":"AddCharacter", "character":"Eggspert", "state":"Focus"}, {"name":"AddCharacter", "character":"Rabbit", "state":"Default"}]
+Eggspert: 根据你这段所写的，你肯定不喜欢蛋。你竟然还想吃掉这蛋！这就是你做案的动机！
+Rappit: 冤枉啊bro！我很喜欢这个蛋... 只不过我今天数学calc考试没考好想发泄一下才写了这个diss。我只是使用了夸大手法并不代表我讨厌这个蛋。
+
+set State.changes = [{"name":"AddCharacter", "character":"Owlivia", "state":"Focus"}]
+Mrs. Owlivia: Eggspert！我向苍天发誓！肯定是Rappit弄裂我的小软糖蛋糕蛋蛋！
+Mrs. Owlivia: 你看看他现在到处挥舞他的胳膊！肯定是他不老实，然后把我的蛋磕坏了！
+Mrs. Owlivia:  哦我的亲亲宝贝蛋蛋，是妈妈没照顾好你让坏人趁虚而入了啊呜呜呜。
+
+set State.changes = [{"name":"RemoveCharacter", "character":"Owlivia"}, {"name":"PlayAnimation", "character":"Rabbit", "animation_name":"focus"}, {"name":"Pose", "character":"Rabbit", "pose":"goofy"}]
+Rappit: Bro 这都是nonsense的指控，把我的心已刺痛！
+Rappit: 你散布谣言是不是嫉妒我的才华！如此污蔑我的清白让我在underground还怎么混！
+
+set State.changes = [{"name":"Pose", "character":"Rabbit", "pose":"thinking"}]
+Rappit: real talk bro这条裂缝在我来之前就已经在这儿！但是我记得那时候的裂缝好像小的多...？
+
+set State.changes = [{"name":"PlayAnimation", "character":"Eggspert", "animation_name":"focus"}]
+Eggspert: 额....嗯...我暂且相信你。让本座通过你的口供记录一下当时蛋的形态。
+
+set State.ui_command = "open_book"
+#set unskippable = true
+#set turn_visible = false
+#: [wait=1]_[next=auto]
+#set unskippable = false
+#set turn_visible = true
+
+=> END
+
+~ page_5_win
+
+Eggspert: 如果你说的是正确的，那么最后的这位嫌疑人将无法摆脱责任。
+Eggspert: 请来这里，Nanny Goose。
+
+=> END
+
+~ page_6_dialogue
+
+Eggspert: Nanny Goose，如果刚刚两位嫌疑人说的都是实话，那么现在所有的矛头都指向第一个进入房子的你。
+Eggspert: 此外，我还在那颗蛋上面发现了一根看起来是从你身上掉下来的羽毛。那么你有什么要解释的吗？
+Nanny Goose: 等等等等。你知道的，我从来到这里开始，猫头鹰夫人就一直在我身边。
+Nanny Goose: 这意味什么呢？这意味着猫头鹰夫人从我进门开始就一直在我身边。
+Nanny Goose: 我确实抱过那几颗蛋。蛋那么漂亮，谁都会想上前亲近。就算羽毛是在那个时候留下的也不能说明什么。
+Nanny Goose: 就像我刚刚说的，猫头鹰夫人在我旁边，我可没机会下手。
+Nanny Goose: 当然！我才没有任何动机去下手。
+
+Mrs. Owlivia: 但她确确实实碰到了我的蛋！！她没办法排除嫌疑！！
+Mrs. Owlivia: 我亲亲可爱还未降世的宝宝啊呜呜呜呜，妈妈不该让任何人触碰你们的！！它还是个宝宝你们却垂涎它！！还我宝宝！！还我宝宝！！
+Nanny Goose: 我知道你很急，但你先别急。我不是这方面的专家，但我还是想要发表一下我的想法。
+Nanny Goose: 经过我对当前状况的长时间分析，思考，和理解，我发现我不知道怎么回答。正如我一开始所说，我不是这方面专家。
+Nanny Goose: 但尽管如此，我想说在我抱这些蛋之前，我确实看到有一颗上面有个小小的裂缝。特别小，像红豆一样小？或者你也可以说像绿豆一样小...
+Mrs. Owlivia: 呜呜呜呜呜怎么可能！！在Nanny Goose来之前我的宝贝蛋上就已经有裂缝了！
+Mrs. Owlivia: 都是我的错！肯定是我的宝宝不喜欢我今天早上跟他们读的书。
+Mrs. Owlivia扑进站在一旁的Mr. Owlbert怀里哭成了泪鹰，卡皮吧啦先生此时的职业病犯了，开始给Rappit量起了尺寸，Nanny Goose此时坐在沙发上直发愣。
+Eggspert: 这真是混乱的场面，不过感谢Nanny Goose你从这么多话中给本侦探提供了一点点小到几乎无法被普通侦探发现的信息，当然那些普通人无法与本侦探相提并论。红豆或者绿豆大小的裂缝...让本座记录一下
+
+=> END
+
+
+~ page_7_dialogue
+
+Eggspert: 现在我有了蛋的裂缝的记录，让本侦探想想……
+
+=> END
+
+
+~ page_7_win
+
+set State.ui_command = "close_book_cutscene"
+Eggspert: 我想有另外一个玩意可以帮我解开这个谜题
+set State.ui_command = "the_choice"
+
+
+=> END
+
+~ egg_book_choice
+
+Eggspert: 这个看上去可以解释这一切！
+set State.ui_command = "choice_done"
+
+=> egg_book_dialogue
+
+
+~ marriage_choice
+
+set record_lines = true
+Eggspert: 这看起来跟蛋的裂痕没什么关系……
+set record_lines = false
+
+=> END
+
+~ portrait_choice
+
+set record_lines = true
+Eggspert: 这看起来跟蛋的裂痕没什么关系……
+set record_lines =  false
+
+=> END
+
+~ breakfast_choice
+
+set record_lines = true
+Eggspert: 这看起来跟蛋的裂痕没什么关系……
+set record_lines = false
+
+=> END
+
+~ egg_book_dialogue
+
+set State.ui_command = "open_egg_book_cutscene"
+set State.ui_command = "enable_egg_book_other_pages"
+Eggspert: 好了，目前最明显也最可疑的问题就是随着时间变化不断扩大的裂缝。
+Eggspert: 这本书或许可以帮助我调查出真相。
+
+=> END
+
+~ egg_book_page_1
+Eggspert: 哦！这或许就是为什么猫头鹰夫人为什么要给蛋们读故事。
+=> END
+
+~ egg_book_page_2
+Eggspert: 当猫头鹰宝宝出生时，蛋壳会裂开，并且随着时间流逝，蛋壳上的裂缝会越来越大。这个蛋慢慢裂开的情景怎么跟当前的状况这么相似...?
+=> END
+
+~ egg_book_page_3
+Eggspert: 这页做了满满的笔记。好吧，看样子猫头鹰夫人有一些喜欢跳着阅读的坏习惯啊。
+=> END
+
+~ new_birth
+set State.ui_command = "close_egg_book_cutscene"
+
+set State.changes = [{"name":"AddCharacter", "character":"Eggspert", "state":"Focus"},{"name": "Pose", "character":"Eggspert", "pose": "thinking"}]
+Eggspert: 嗯...真奇怪。三位嫌疑人都发现了蛋宝宝的裂缝，并且这条裂缝根据时间的流逝也在不断扩大。
+set State.changes = [{"name": "Pose", "character":"Eggspert", "pose": "default"}]
+Eggspert: 大家都安静！本侦探要发表一个...
+set State.changes = [{"name": "RemoveCharacter", "character":"Eggspert"}]
+: _[next=auto]
+#【蛋裂开的声音，一个小猫头鹰出生了】
+#所有人惊呼起来
+#并开始鼓掌。
+set State.scene_command = "egg_crack_scene"
+do State.play_sound("res://assets/sounds/effects/egg_crack.wav")
+
+set unskippable = true
+set turn_visible = false
+: [wait=2]_[next=auto]
+set unskippable = false
+set turn_visible = true
+
+set State.scene_command = "egg_crack_to_birthed"
+
+set unskippable = true
+set turn_visible = false
+: [wait=1]_[next=auto]
+set unskippable = false
+set turn_visible = true
+
+Nanny Goose: 是小猫头鹰!
+Mrs. Owlivia: 哦我的老天奶啊！！是我的宝宝！
+Mrs. Owlivia: 我新鲜出炉的小熊软糖蛋糕好卡哇伊内！快让妈妈亲亲抱抱举高高！
+Mr. Owlbert: 天啊，是啊是啊！我们的孩子出生了！
+Sir Capybala: 我想到了一个词...哈基米哈基米，是形容可爱的对吧？我要给他做十套宝宝西装！ 
+Rappit: damn！太酷啦，一个全新的baby。我要把今天的经历写成一首lyrical rap，作为我专辑的先行曲！yo bro...（开始在旁边freestyle）
+
+set State.ui_command = "open_book"
+Eggspert: 就是这样！这和本侦探预测的一模一样！！
+Eggspert: 在小猫头鹰的成长过程当中，不可或缺的一步便是破壳！这也是为什么小猫头鹰的蛋上的裂缝会越来越大的原因！
+Mrs. Owlivia: 啊！这简直是我的宝宝的出生记录！
+Mrs. Owlivia: 不管花多少钱我们都愿意把这页笔记买下来，挂在客厅墙上供起来！！这样所有客人都能来围观我的宝宝的成长！
+Mrs. Owlivia: 哦，对了！请Eggspert一定要给我们的宝宝取一个名儿！
+Eggspert: 没问题，就让本机智伟大的蛋侦探来想个绝顶好的名字吧...
+set State.ui_command = "close_book_cutscene"
+set State.scene_command = "egg_wall_scene"
+
+set unskippable = true
+set turn_visible = false
+: [wait=1]_[next=auto]
+set unskippable = false
+set turn_visible = true
+
+set name_input = true
+Eggspert: 嗯, 取什么好呢?
+
+
+Mrs. Owlivia: 所以你觉得这个蛋应该叫“{{given_name}}”? 亲爱的，这个名字太糟糕了！
+Mr. Owlbert: 我也觉得！我觉得它可以叫“小鸡”。
+Mrs. Owlivia: 哦，是的！来妈妈这！小鸡！
+Eggspert: ……
+
+Mr. Owlbert: 孩子他妈，快看一下我摆正了吗？
+
+set State.scene_command = "ending"
+
+=> END

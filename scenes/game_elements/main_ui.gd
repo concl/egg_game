@@ -27,8 +27,8 @@ func _process(delta):
 func load_state(ui_state: Dictionary):
     pass
     
-func add_line_to_transcript(line):
-    book.add_line_to_transcript(line)
+func add_line_to_transcript(character, line):
+    book.add_line_to_transcript(character, line)
 
 func disable():
     visible = false

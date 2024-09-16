@@ -12,10 +12,8 @@ func _input(event):
         paused = !paused
         if paused:
             var menu = PAUSE_MENU.instantiate()
-            add_child(menu)
+            get_tree().current_scene.add_child(menu)
             pause_menu = menu
-        else:
-            pause_menu.queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

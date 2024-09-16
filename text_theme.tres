@@ -1,8 +1,15 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dpfv4vfngx12y"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dpfv4vfngx12y"]
 
 [ext_resource type="FontFile" uid="uid://qi573gdsocb1" path="res://assets/chinese_font/chinese_font.ttf" id="1_vv6c3"]
+[ext_resource type="FontFile" uid="uid://3bkojuyuu670" path="res://assets/chinese_font/chinese_bold_font.ttf" id="2_0uyay"]
+[ext_resource type="FontFile" uid="uid://c1l3vvmf2t4s0" path="res://assets/chinese_font/chinese_normal_font.ttf" id="3_4v5aw"]
 
 [resource]
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 25
 Label/fonts/font = ExtResource("1_vv6c3")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/bold_font_size = 32
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/bold_font = ExtResource("2_0uyay")
+RichTextLabel/fonts/normal_font = ExtResource("3_4v5aw")

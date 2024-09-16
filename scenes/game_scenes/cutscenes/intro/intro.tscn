@@ -1,18 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckxgwal6qi36j"]
+[gd_scene load_steps=5 format=3 uid="uid://ckxgwal6qi36j"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/intro.gd" id="1_pbugm"]
-[ext_resource type="Script" path="res://scenes/game_scenes/cutscenes/intro/Part1.gd" id="2_k5ceq"]
-[ext_resource type="PackedScene" uid="uid://deib08mtq18w" path="res://dialogue/special_text.tscn" id="3_0gdyf"]
-[ext_resource type="Theme" uid="uid://dpfv4vfngx12y" path="res://text_theme.tres" id="4_lp4h6"]
-[ext_resource type="Script" path="res://scenes/game_scenes/cutscenes/intro/Final.gd" id="5_ej3gl"]
+[ext_resource type="VideoStream" path="res://assets/output.ogv" id="2_n6w8d"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="5_haqpp"]
 [ext_resource type="AudioStream" uid="uid://dtoxbxgvixp4k" path="res://assets/sounds/music/intro_music.wav" id="7_fxauv"]
-[ext_resource type="VideoStream" path="res://assets/intro.ogv" id="8_6sxlv"]
 
-[node name="Intro" type="Node2D"]
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_pbugm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 grow_horizontal = 2
@@ -20,82 +23,16 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Camera" type="Camera2D" parent="."]
-anchor_mode = 0
-
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1088.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("8_6sxlv")
+stream = ExtResource("2_n6w8d")
 autoplay = true
-
-[node name="Part1" type="Node2D" parent="."]
-visible = false
-script = ExtResource("2_k5ceq")
-
-[node name="SpecialText" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "很久很久以前"
-tick_time = 0.1
-
-[node name="Label" parent="Part1/SpecialText" index="0"]
-offset_left = 960.0
-offset_top = 540.0
-offset_right = 1323.0
-offset_bottom = 598.0
-theme = ExtResource("4_lp4h6")
-metadata/_edit_use_anchors_ = true
-
-[node name="SpecialText2" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "有一个大名鼎鼎的侦探叫蛋哥。哥"
-
-[node name="Label" parent="Part1/SpecialText2" index="0"]
-offset_left = 960.0
-offset_top = 540.0
-offset_right = 1323.0
-offset_bottom = 609.0
-theme = ExtResource("4_lp4h6")
-metadata/_edit_use_anchors_ = true
-
-[node name="SpecialText3" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "它机智聪敏，破获了很多起悬案"
-
-[node name="Label" parent="Part1/SpecialText3" index="0"]
-offset_left = 960.0
-offset_top = 540.0
-offset_right = 1323.0
-offset_bottom = 609.0
-theme = ExtResource("4_lp4h6")
-
-[node name="SpecialText4" parent="Part1" instance=ExtResource("3_0gdyf")]
-text = "使得小镇里的居民都对它有着很高的信任和崇敬。"
-
-[node name="Label" parent="Part1/SpecialText4" index="0"]
-offset_left = 960.0
-offset_top = 540.0
-offset_right = 1323.0
-offset_bottom = 609.0
-theme = ExtResource("4_lp4h6")
-
-[node name="AnimationPlayer" parent="Part1/SpecialText4" index="1"]
-root_node = NodePath("../../SpecialText4")
-
-[node name="Final" type="Node2D" parent="."]
-visible = false
-script = ExtResource("5_ej3gl")
-
-[node name="SpecialText" parent="Final" instance=ExtResource("3_0gdyf")]
-text = "More text"
-
-[node name="Label" parent="Final/SpecialText" index="0"]
-offset_left = 250.0
-offset_top = 200.0
-offset_right = 575.0
-offset_bottom = 269.0
+expand = true
 
 [node name="TransitionManager" parent="." instance=ExtResource("5_haqpp")]
 
@@ -104,18 +41,5 @@ stream = ExtResource("7_fxauv")
 bus = &"Music"
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
-[connection signal="ended" from="Part1" to="." method="_on_part_1_ended"]
-[connection signal="end_click" from="Part1/SpecialText" to="Part1" method="_on_special_text_end_click"]
-[connection signal="end_click" from="Part1/SpecialText2" to="Part1" method="_on_special_text_2_end_click"]
-[connection signal="end_click" from="Part1/SpecialText3" to="Part1" method="_on_special_text_3_end_click"]
-[connection signal="end_click" from="Part1/SpecialText4" to="Part1" method="_on_special_text_4_end_click"]
-[connection signal="ended" from="Final" to="." method="_on_final_ended"]
-[connection signal="end_click" from="Final/SpecialText" to="Final" method="_on_special_text_end_click"]
-[connection signal="transitioned" from="TransitionManager" to="." method="_on_transition_manager_transitioned"]
 
-[editable path="Part1/SpecialText"]
-[editable path="Part1/SpecialText2"]
-[editable path="Part1/SpecialText3"]
-[editable path="Part1/SpecialText4"]
-[editable path="Final/SpecialText"]
 [editable path="TransitionManager"]

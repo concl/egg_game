@@ -1,14 +1,58 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcg4t6806rtns"]
+[gd_scene load_steps=22 format=3 uid="uid://bcg4t6806rtns"]
 
 [ext_resource type="Theme" uid="uid://xycay2vr14mx" path="res://scenes/main_theme.tres" id="1_0rlay"]
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="2_qlo1c"]
 [ext_resource type="Texture2D" uid="uid://o50coucytngs" path="res://assets/images/title_screen.png" id="3_wmt70"]
-[ext_resource type="Texture2D" uid="uid://r4xgnsx6duwi" path="res://assets/images/title.png" id="4_q6jy4"]
+[ext_resource type="FontFile" uid="uid://qi573gdsocb1" path="res://assets/chinese_font/chinese_font.ttf" id="4_gb625"]
 [ext_resource type="AudioStream" uid="uid://cci66yvb4oarx" path="res://assets/sounds/music/loading_sound.wav" id="5_pda6g"]
+[ext_resource type="Script" path="res://scenes/translatable.gd" id="5_qilf5"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="9_m8x2h"]
 
 [sub_resource type="Theme" id="Theme_eplge"]
-default_font_size = 48
+default_font = ExtResource("4_gb625")
+default_font_size = 96
+Button/fonts/font = ExtResource("4_gb625")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyxwt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivw56"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phwr8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfiev"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyecx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwa1v"]
+
+[sub_resource type="Theme" id="Theme_j71v3"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_ivw56")
+Button/styles/focus = SubResource("StyleBoxEmpty_phwr8")
+Button/styles/hover = SubResource("StyleBoxEmpty_nfiev")
+Button/styles/normal = SubResource("StyleBoxEmpty_yyecx")
+Button/styles/pressed = SubResource("StyleBoxEmpty_uwa1v")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwae6"]
+bg_color = Color(0, 0, 0, 0.623529)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64fq0"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb28b"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir63w"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3u7v6"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="Theme" id="Theme_2xkml"]
+Button/styles/disabled = SubResource("StyleBoxFlat_lwae6")
+Button/styles/focus = SubResource("StyleBoxFlat_64fq0")
+Button/styles/hover = SubResource("StyleBoxFlat_lb28b")
+Button/styles/normal = SubResource("StyleBoxFlat_ir63w")
+Button/styles/pressed = SubResource("StyleBoxFlat_3u7v6")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,30 +64,6 @@ grow_vertical = 2
 theme = ExtResource("1_0rlay")
 script = ExtResource("2_qlo1c")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_wmt70")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Title" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -800.0
-offset_right = 800.0
-offset_bottom = 900.0
-grow_horizontal = 2
-pivot_offset = Vector2(800, 0)
-texture = ExtResource("4_q6jy4")
-expand_mode = 5
-
 [node name="Main" type="Control" parent="."]
 z_index = 1
 layout_mode = 1
@@ -54,53 +74,137 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_eplge")
 
+[node name="Background" type="TextureRect" parent="Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.95721
+offset_right = 2.95728
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wmt70")
+expand_mode = 3
+stretch_mode = 4
+
 [node name="PanelContainer" type="PanelContainer" parent="Main"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -414.0
-offset_right = 150.0
-offset_bottom = -88.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 272.0
+offset_top = -148.0
+offset_right = 703.0
+offset_bottom = 348.0
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main/PanelContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="PlayButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="Main/PanelContainer/VBoxContainer" groups=["Translatable"]]
 layout_mode = 2
-text = "New Game"
+text = "开始游戏
+"
+script = ExtResource("5_qilf5")
+chinese_text = "开始游戏"
+english_text = "Start"
 
-[node name="ContinueButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Main/PanelContainer/VBoxContainer" groups=["Translatable"]]
 layout_mode = 2
-text = "Continue"
+text = "设置"
+script = ExtResource("5_qilf5")
+chinese_text = "设置"
+english_text = "Options"
 
-[node name="OptionsButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Main/PanelContainer/VBoxContainer" groups=["Translatable"]]
 layout_mode = 2
-text = "Options"
+text = "离开游戏"
+script = ExtResource("5_qilf5")
+chinese_text = "离开游戏"
+english_text = "Quit"
 
-[node name="QuitButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
-
-[node name="Continue" type="Control" parent="."]
+[node name="Options" type="Control" parent="."]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_eplge")
+
+[node name="PanelContainer" type="PanelContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dyxwt")
+
+[node name="CenterContainer" type="CenterContainer" parent="Options/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Options/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer" groups=["Translatable"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "全屏模式:"
+script = ExtResource("5_qilf5")
+chinese_text = "全屏模式:"
+english_text = "Fullscreen:"
+
+[node name="CheckButton" type="CheckButton" parent="Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_j71v3")
+
+[node name="Label2" type="Label" parent="Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer" groups=["Translatable"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "语言: "
+script = ExtResource("5_qilf5")
+chinese_text = "语言: "
+english_text = "Language:"
+
+[node name="OptionButton" type="OptionButton" parent="Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_2xkml")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+selected = 1
+item_count = 2
+popup/item_0/text = "English"
+popup/item_1/text = "中文"
+popup/item_1/id = 1
+
+[node name="ReturnButton" type="Button" parent="Options/PanelContainer/CenterContainer/VBoxContainer" groups=["Translatable"]]
+layout_mode = 2
+text = "返回"
+script = ExtResource("5_qilf5")
+chinese_text = "返回"
+english_text = "Return"
 
 [node name="TransitionManager" parent="." instance=ExtResource("9_m8x2h")]
 
 [node name="AudioStreamPlayer" parent="TransitionManager" index="2"]
 stream = ExtResource("5_pda6g")
+autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="Main/PanelContainer/VBoxContainer/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main/PanelContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Main/PanelContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="toggled" from="Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="item_selected" from="Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Options/PanelContainer/CenterContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="transitioned" from="TransitionManager" to="." method="_on_transition_manager_transitioned"]
 
 [editable path="TransitionManager"]

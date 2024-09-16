@@ -1,5 +1,7 @@
 extends Node
 
+class_name ArrowButton
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.

@@ -1,17 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://djnmpxg5f3k5j"]
+[gd_scene load_steps=8 format=3 uid="uid://djnmpxg5f3k5j"]
 
-[sub_resource type="Theme" id="Theme_g42m1"]
-default_font_size = 48
+[ext_resource type="Script" path="res://scenes/game_elements/pause_menu.gd" id="1_etpgt"]
+[ext_resource type="Theme" uid="uid://xycay2vr14mx" path="res://scenes/main_theme.tres" id="1_i2x51"]
+[ext_resource type="FontFile" uid="uid://qi573gdsocb1" path="res://assets/chinese_font/chinese_font.ttf" id="2_13ai4"]
+[ext_resource type="Texture2D" uid="uid://r4xgnsx6duwi" path="res://assets/images/title.png" id="3_kt3eh"]
+[ext_resource type="Texture2D" uid="uid://c4pkycxqdxcky" path="res://assets/images/ui_images/button.png" id="5_ciu11"]
 
-[node name="PauseMenu" type="Control"]
+[sub_resource type="Theme" id="Theme_uh8cj"]
+default_font = ExtResource("2_13ai4")
+default_font_size = 96
+Button/fonts/font = ExtResource("2_13ai4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k6dkf"]
+texture = ExtResource("5_ciu11")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[node name="PauseMenu" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_etpgt")
+
+[node name="Holder" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_i2x51")
 
-[node name="Main" type="Control" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Holder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="TextureRect" type="TextureRect" parent="Holder"]
+layout_mode = 0
+offset_left = -168.0
+offset_top = -48.0
+offset_right = 1168.0
+offset_bottom = 696.0
+mouse_filter = 2
+texture = ExtResource("3_kt3eh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Main" type="Control" parent="Holder"]
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -19,41 +59,77 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_g42m1")
+theme = SubResource("Theme_uh8cj")
 
-[node name="PanelContainer" type="PanelContainer" parent="Main"]
+[node name="PanelContainer" type="PanelContainer" parent="Holder/Main"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 272.0
+offset_top = -148.0
+offset_right = 703.0
+offset_bottom = 348.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Holder/Main/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ContinueButton" type="Button" parent="Holder/Main/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "继续游戏
+"
+
+[node name="OptionsButton" type="Button" parent="Holder/Main/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "设置"
+
+[node name="MainMenuButton" type="Button" parent="Holder/Main/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "主界面"
+
+[node name="ConfirmMenu" type="PanelContainer" parent="Holder/Main"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -414.0
-offset_right = 150.0
-offset_bottom = -88.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k6dkf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Holder/Main/ConfirmMenu"]
 layout_mode = 2
 
-[node name="PlayButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Holder/Main/ConfirmMenu/VBoxContainer"]
 layout_mode = 2
-text = "New Game"
+theme_override_colors/font_color = Color(0.160784, 0.105882, 0.0352941, 1)
+theme_override_font_sizes/font_size = 32
+text = "你确定要返回主界面吗？"
 
-[node name="ContinueButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Holder/Main/ConfirmMenu/VBoxContainer"]
 layout_mode = 2
-text = "Continue"
 
-[node name="OptionsButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
+[node name="Yes" type="Button" parent="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Options"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "是"
 
-[node name="QuitButton" type="Button" parent="Main/PanelContainer/VBoxContainer"]
+[node name="No" type="Button" parent="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Quit"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "否"
 
-[node name="MarginContainer" type="MarginContainer" parent="Main/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+[connection signal="pressed" from="Holder/Main/PanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Holder/Main/PanelContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]

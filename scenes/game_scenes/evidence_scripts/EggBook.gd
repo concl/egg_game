@@ -6,6 +6,9 @@ extends "res://scenes/game_scenes/evidence.gd"
 var _dialogue_shown = false
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
+    if not State.first_book_page_solved:
+        return
+    
     if event is InputEventMouseButton:
         if event is InputEventMouseButton:
             if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

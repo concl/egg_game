@@ -11,7 +11,7 @@ extends CanvasLayer
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 @onready var character_sprite: TextureRect = $Balloon/Panel/Dialogue/HBoxContainer/CharacterSprite
-@onready var text_input: VBoxContainer = $Balloon/TextInput
+@onready var text_input: Control = $Balloon/TextInput
 
 var character_names = {
     "侦探蛋哥": preload("res://assets/images/characters/small/eggspert_small.png"),
@@ -19,11 +19,34 @@ var character_names = {
     "猫头鹰老妈": preload("res://assets/images/characters/small/owlivia_small.png"),
     "卡皮巴拉": preload("res://assets/images/characters/small/capybala_small.png"),
     "宝石小兔": preload("res://assets/images/characters/small/rabbit_small.png"),
-    "鹅婆婆": preload("res://assets/images/characters/small/nanny_goose_small.png")
+    "鹅婆婆": preload("res://assets/images/characters/small/nanny_goose_small.png"),
+    "Eggspert": preload("res://assets/images/characters/small/eggspert_small.png"),
+    "Mr. Owlbert": preload("res://assets/images/characters/small/op_small.png"),
+    "Mrs. Owlivia": preload("res://assets/images/characters/small/owlivia_small.png"),
+    "Sir Capybala": preload("res://assets/images/characters/small/capybala_small.png"),
+    "Rappit": preload("res://assets/images/characters/small/rabbit_small.png"),
+    "Nanny Goose": preload("res://assets/images/characters/small/nanny_goose_small.png")
+}
+
+var character_sounds = {
+    "侦探蛋哥": ["res://assets/sounds/effects/character_blabber/eggspert_default.wav","res://assets/sounds/effects/character_blabber/eggspert_2.wav"],
+    "猫头鹰老爸": ["res://assets/sounds/effects/character_blabber/owlbert_default.wav","res://assets/sounds/effects/character_blabber/owlbert_long.wav"],
+    "猫头鹰老妈": ["res://assets/sounds/effects/character_blabber/owlivia_default.wav"],
+    "卡皮巴拉": ["res://assets/sounds/effects/character_blabber/capibara_default.wav","res://assets/sounds/effects/character_blabber/capibara_2.wav","res://assets/sounds/effects/character_blabber/capibara_3.wav"],
+    "宝石小兔": ["res://assets/sounds/effects/character_blabber/rabbit_1.wav","res://assets/sounds/effects/character_blabber/rabbit_2.wav"],
+    "鹅婆婆": ["res://assets/sounds/effects/character_blabber/goose1.wav","res://assets/sounds/effects/character_blabber/goose2.wav","res://assets/sounds/effects/character_blabber/goose3.wav"],
+    "Eggspert": ["res://assets/sounds/effects/character_blabber/eggspert_default.wav","res://assets/sounds/effects/character_blabber/eggspert_2.wav"],
+    "Mr. Owlbert": ["res://assets/sounds/effects/character_blabber/owlbert_default.wav","res://assets/sounds/effects/character_blabber/owlbert_long.wav"],
+    "Mrs. Owlivia": ["res://assets/sounds/effects/character_blabber/owlivia_default.wav"],
+    "Sir Capybala": ["res://assets/sounds/effects/character_blabber/capibara_default.wav","res://assets/sounds/effects/character_blabber/capibara_2.wav","res://assets/sounds/effects/character_blabber/capibara_3.wav"],
+    "Rappit": ["res://assets/sounds/effects/character_blabber/rabbit_1.wav","res://assets/sounds/effects/character_blabber/rabbit_2.wav"],
+    "Nanny Goose": ["res://assets/sounds/effects/character_blabber/goose1.wav","res://assets/sounds/effects/character_blabber/goose2.wav","res://assets/sounds/effects/character_blabber/goose3.wav"]
 }
 
 signal next_message()
 signal ended()
+
+var rng = RandomNumberGenerator.new()
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -39,6 +62,7 @@ var will_hide_balloon: bool = false
 
 var _locale: String = TranslationServer.get_locale()
 
+var record_lines = true
 var unskippable: bool = false
 var turn_visible:
     set(setting):
@@ -46,6 +70,13 @@ var turn_visible:
             balloon.modulate = Color(1, 1, 1, 0)
         else:
             balloon.modulate = Color(1, 1, 1, 1)
+
+var show_text_input = false
+var name_input:
+    set(setting):
+        show_text_input = true
+
+var given_name: String
 
 ## The current line
 var dialogue_line: DialogueLine:
@@ -81,14 +112,16 @@ var dialogue_line: DialogueLine:
         balloon.show()
         will_hide_balloon = false
         
-        
-        
         dialogue_label.show()
         
         if not dialogue_line.character.is_empty():
             character_sprite.custom_minimum_size.x = 160
             character_sprite.custom_minimum_size.y = 192
             character_sprite.texture = character_names[character_label.text]
+            
+            var sound_ind = rng.randi_range(0,len(character_sounds[character_label.text]) - 1)
+            State.play_sound(character_sounds[character_label.text][sound_ind])
+            
         else:
             character_sprite.custom_minimum_size.x = 0
             character_sprite.custom_minimum_size.y = 0
@@ -97,9 +130,13 @@ var dialogue_line: DialogueLine:
         if not dialogue_line.text.is_empty():
             dialogue_label.type_out()
             await dialogue_label.finished_typing
-
         
-
+        if record_lines:
+            get_tree().call_group("UI","add_line_to_transcript", character_label.text, dialogue_line.text)
+        
+        if show_text_input:
+            show_text_input = false
+            text_input.show()
 
         # Wait for input
         if dialogue_line.responses.size() > 0:
@@ -116,8 +153,13 @@ var dialogue_line: DialogueLine:
     get:
         return dialogue_line
 
+func _on_button_pressed() -> void:
+    given_name = $Balloon/TextInput/TextInput/TextEdit.text
+    text_input.hide()
+
 
 func _ready() -> void:
+    rng.seed = 42069
     balloon.hide()
     Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 

@@ -14,6 +14,9 @@ var changes: Array
 var ui_command: String:
     set(command):
         get_tree().call_group("UI",command)
+var scene_command: String:
+    set(command):
+        get_tree().call_group("MainScene",command)
 
 var test = null
 var phase = 0
@@ -42,11 +45,31 @@ var sixth_book_page_solved = false
 
 var seventh_book_page_solved = false
 
+var given_name: String
+
 func _ready():
     if _load_save:
         load_save("nu")
+        # when _ready is called, there might already be nodes in the tree, so connect all existing buttons
+    connect_buttons(get_tree().root)
+    get_tree().connect("node_added", _on_SceneTree_node_added)
 
+func _on_SceneTree_node_added(node):
+    if node is Button:
+        connect_to_button(node)
 
+func _on_Button_pressed():
+    play_sound("res://assets/sounds/effects/click.wav")
+
+# recursively connect all buttons
+func connect_buttons(root):
+    for child in root.get_children():
+        if child is BaseButton:
+            connect_to_button(child)
+        connect_buttons(child)
+
+func connect_to_button(button):
+    button.connect("pressed", _on_Button_pressed)
 
 func load_save(save):
     pass
@@ -114,22 +137,31 @@ func start_dialogue(file, header):
     await balloon.ended
     dialogue_ended.emit()
 
-
+func change_language(language):
+    if language == "chinese":
+        _language = "chinese"
+        get_tree().call_group("Translatable","change_language_chinese")
+    else:
+        _language = "english"
+        get_tree().call_group("Translatable","change_language_english")
 
 func page_1_done():
     first_book_page_solved = true
+    play_sound("res://assets/sounds/effects/win.wav")
     start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_1_win")
 
 
 
 func page_2_done():
     second_book_page_solved = true
+    play_sound("res://assets/sounds/effects/win.wav")
     start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_2_win")
 
 
 
 func page_3_done():
     third_book_page_solved = true
+    play_sound("res://assets/sounds/effects/win.wav")
     start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_3_win")
     await dialogue_ended
     
@@ -138,16 +170,21 @@ func page_3_done():
 
 func page_4_done():
     fourth_book_page_solved = true
+    play_sound("res://assets/sounds/effects/win.wav")
     start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_4_win")
 
 func page_5_done():
     fifth_book_page_solved = true
+    play_sound("res://assets/sounds/effects/win.wav")
     start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_5_win")
 
 func page_6_done():
     sixth_book_page_solved = true
-    start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_6_win")
+    play_sound("res://assets/sounds/effects/win.wav")
+    #start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_6_win")
 
 func page_7_done():
     seventh_book_page_solved = true
+    play_sound("res://assets/sounds/effects/win.wav")
+    
     start_dialogue("res://dialogue/script/scenes_chinese.dialogue","page_7_win")

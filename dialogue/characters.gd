@@ -5,15 +5,8 @@ var char_names = {
     "Eggspert": preload("res://scenes/characters/eggspert.tscn"),
     "Owlivia": preload("res://scenes/characters/mrs_owlivia.tscn"),
     "Rabbit": preload("res://scenes/characters/rapper_rabbit.tscn"),
-    "Op": preload("res://scenes/characters/op.tscn")
-}
-
-
-var blabber = {    
-    "Op": "res://assets/sounds/effects/character_blabber/owlbert_default.wav",
-    "Op_long": "res://assets/sounds/effects/character_blabber/owlbert_long.wav",
-    "Owl": "res://assets/sounds/effects/character_blabber/owlivia_default.wav",
-    "Eggspert": "res://assets/sounds/effects/character_blabber/eggspert_default.wav"
+    "Op": preload("res://scenes/characters/op.tscn"),
+    "Goose": preload("res://scenes/characters/nanny_goose.tscn")
 }
 
 var dimensions: Vector2
@@ -41,14 +34,17 @@ func _process_changes():
             add_child(new_char)
             new_char.global_position.y = dimensions.y
             char_obs.append(new_char)
-            var enter_state = x["state"]
-            if enter_state == "Default":
+            if "state" in x:
+                var enter_state = x["state"]
+                if enter_state == "Default":
+                    new_char.play_animation("enter")
+                elif enter_state == "Focus":
+                    for other_guys in char_obs:
+                        other_guys.unfocus()
+                    new_char.play_animation("enter_focus")
+                    new_char.focused = true
+            else:
                 new_char.play_animation("enter")
-            elif enter_state == "Focus":
-                for other_guys in char_obs:
-                    other_guys.unfocus()
-                new_char.play_animation("enter_focus")
-                new_char.focused = true
             
         elif name == "MoveCharacter":
             var position = characters.find(x["character"])
@@ -74,9 +70,6 @@ func _process_changes():
             var position = characters.find(x["character"])
             char_obs[position].exit_scene()
             char_obs.pop_at(position)
-        
-        elif name == "PlaySound":
-            State.play_sound(blabber[x["sound"]])
         
         elif name == "Pose":
             var position = characters.find(x["character"])

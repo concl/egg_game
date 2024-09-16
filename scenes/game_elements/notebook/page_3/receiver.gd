@@ -27,6 +27,8 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
     return data[0] is Texture
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
+    
+    State.play_sound("res://assets/sounds/effects/notebook_sound_effect.wav")
     if data[1].is_slot:
         if has_item: # swap textures
             data[1].texture = texture
