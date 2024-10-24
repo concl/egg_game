@@ -61,14 +61,17 @@ func _ready():
     get_tree().connect("node_added", _on_SceneTree_node_added)
 
 func _input(event):
-    if event.is_action_pressed("pause"):
+    
+    
+    if event.is_action_pressed("pause") and get_tree().current_scene.scene_file_path != "res://scenes/main_menu.tscn":
         paused = !paused
         if paused:
             var menu = PAUSE_MENU.instantiate()
             get_tree().current_scene.add_child(menu)
             pause_menu = menu
         else:
-            pause_menu.queue_free()
+            if pause_menu != null:
+                pause_menu.queue_free()
 
 func _on_SceneTree_node_added(node):
     if node is Button:

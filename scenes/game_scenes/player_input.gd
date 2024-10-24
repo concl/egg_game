@@ -1,7 +1,6 @@
 extends Node
 
 
-
 const PAUSE_MENU = preload("res://scenes/game_elements/pause_menu.tscn")
 
 func _unhandled_input(event):
@@ -10,7 +9,6 @@ func _unhandled_input(event):
         var menu = PAUSE_MENU.instantiate()
         get_tree()
     
-    pass
 
 
 

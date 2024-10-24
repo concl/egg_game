@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://bm7gnysf0ejgs"]
+[gd_scene load_steps=116 format=3 uid="uid://bm7gnysf0ejgs"]
 
 [ext_resource type="Theme" uid="uid://xycay2vr14mx" path="res://scenes/main_theme.tres" id="1_uxaby"]
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/book.gd" id="2_1kfei"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dxu8yjmr2hke5" path="res://assets/images/ui_images/blurred_red_box_no_margins.png" id="5_palyo"]
 [ext_resource type="Texture2D" uid="uid://ju2f6vgmikj8" path="res://assets/images/timeline_pictures/timeline.png" id="5_q7nkv"]
 [ext_resource type="Script" path="res://scenes/game_elements/notebook/page_1/First.gd" id="6_at4wc"]
+[ext_resource type="Script" path="res://scenes/translatable.gd" id="6_gixqr"]
 [ext_resource type="Texture2D" uid="uid://df43ii81yjt1h" path="res://assets/images/timeline_pictures/capybala_clothes.png" id="7_27sxw"]
 [ext_resource type="Texture2D" uid="uid://bd3rprm8j55ts" path="res://assets/images/ui_images/arrow_bobbing/split_1.png" id="7_oc16w"]
 [ext_resource type="Texture2D" uid="uid://by131j2hg585j" path="res://assets/images/timeline_pictures/capybala_clothes_small.png" id="7_yajqa"]
@@ -108,6 +109,9 @@
 [ext_resource type="Texture2D" uid="uid://cqfsxefj7ulxj" path="res://assets/images/ui_images/arrow_bobbing_red_border/split_28.png" id="64_s3t2t"]
 [ext_resource type="Texture2D" uid="uid://cuo6q3td87ohl" path="res://assets/images/ui_images/arrow_bobbing_red_border/split_29.png" id="65_x6org"]
 [ext_resource type="Texture2D" uid="uid://uqxl80hyyga5" path="res://assets/images/ui_images/arrow_bobbing_red_border/split_30.png" id="66_osujm"]
+[ext_resource type="Texture2D" uid="uid://c2wjyp60rk3or" path="res://assets/images/ui_images/not_valuable.png" id="87_5ixsm"]
+[ext_resource type="Script" path="res://scenes/translatable_image.gd" id="87_ucr40"]
+[ext_resource type="Texture2D" uid="uid://cl4tq2bpa1bff" path="res://assets/images/ui_images/valuable.png" id="89_5nvfx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mjdy6"]
 animations = [{
@@ -354,13 +358,16 @@ offset_bottom = 769.0
 [node name="CenterContainer" type="CenterContainer" parent="Page0/VBoxContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="Page0/VBoxContainer/CenterContainer"]
+[node name="Title" type="Label" parent="Page0/VBoxContainer/CenterContainer" groups=["Translatable"]]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("5_ds1sc")
 theme_override_font_sizes/font_size = 48
 text = "刚刚的对话"
 horizontal_alignment = 1
+script = ExtResource("6_gixqr")
+chinese_text = "刚刚的对话"
+english_text = "Previous Dialogue"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Page0/VBoxContainer"]
 layout_mode = 2
@@ -659,7 +666,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("25_v08l5")
 
-[node name="Text" type="TextureRect" parent="Page2"]
+[node name="NotValuableText" type="TextureRect" parent="Page2" groups=["Translatable"]]
+visible = false
+layout_mode = 0
+offset_left = 364.0
+offset_top = 227.0
+offset_right = 719.0
+offset_bottom = 305.08
+texture = ExtResource("87_5ixsm")
+expand_mode = 5
+script = ExtResource("87_ucr40")
+
+[node name="ValuableText" type="TextureRect" parent="Page2" groups=["Translatable"]]
+visible = false
+layout_mode = 0
+offset_left = 1208.0
+offset_top = 223.0
+offset_right = 1504.0
+offset_bottom = 315.294
+texture = ExtResource("89_5nvfx")
+expand_mode = 5
+script = ExtResource("87_ucr40")
+
+[node name="Text" type="TextureRect" parent="Page2" groups=["Translatable"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -668,6 +697,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("28_hw48o")
 expand_mode = 3
+script = ExtResource("87_ucr40")
+is_chinese = true
 
 [node name="NotValuable" type="Control" parent="Page2"]
 anchors_preset = 0

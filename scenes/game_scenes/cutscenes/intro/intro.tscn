@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckxgwal6qi36j"]
+[gd_scene load_steps=7 format=3 uid="uid://ckxgwal6qi36j"]
 
 [ext_resource type="Script" path="res://scenes/game_scenes/intro.gd" id="1_pbugm"]
-[ext_resource type="VideoStream" path="res://assets/output.ogv" id="2_n6w8d"]
+[ext_resource type="Script" path="res://scenes/game_scenes/cutscenes/intro/video.gd" id="2_upwle"]
+[ext_resource type="VideoStream" path="res://assets/output_video_muted.ogv" id="3_ce4i6"]
+[ext_resource type="AudioStream" uid="uid://b48xhagqqpv2g" path="res://assets/output_audio.mp3" id="4_oogej"]
 [ext_resource type="PackedScene" uid="uid://273jjweunsd3" path="res://scenes/transition_manager.tscn" id="5_haqpp"]
 [ext_resource type="AudioStream" uid="uid://dtoxbxgvixp4k" path="res://assets/sounds/music/intro_music.wav" id="7_fxauv"]
 
@@ -23,16 +25,27 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="Video" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("2_n6w8d")
-autoplay = true
+script = ExtResource("2_upwle")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_ce4i6")
 expand = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Video"]
+stream = ExtResource("4_oogej")
 
 [node name="TransitionManager" parent="." instance=ExtResource("5_haqpp")]
 
@@ -40,6 +53,6 @@ expand = true
 stream = ExtResource("7_fxauv")
 bus = &"Music"
 
-[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="finished" from="Video/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 
 [editable path="TransitionManager"]

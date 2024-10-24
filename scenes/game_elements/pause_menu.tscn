@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://djnmpxg5f3k5j"]
+[gd_scene load_steps=23 format=3 uid="uid://djnmpxg5f3k5j"]
 
 [ext_resource type="Script" path="res://scenes/game_elements/pause_menu.gd" id="1_etpgt"]
 [ext_resource type="Theme" uid="uid://xycay2vr14mx" path="res://scenes/main_theme.tres" id="1_i2x51"]
 [ext_resource type="FontFile" uid="uid://qi573gdsocb1" path="res://assets/chinese_font/chinese_font.ttf" id="2_13ai4"]
 [ext_resource type="Texture2D" uid="uid://r4xgnsx6duwi" path="res://assets/images/title.png" id="3_kt3eh"]
+[ext_resource type="Script" path="res://scenes/translatable.gd" id="5_bi3ge"]
 [ext_resource type="Texture2D" uid="uid://c4pkycxqdxcky" path="res://assets/images/ui_images/button.png" id="5_ciu11"]
 
 [sub_resource type="Theme" id="Theme_uh8cj"]
@@ -17,6 +18,52 @@ texture_margin_left = 24.0
 texture_margin_top = 24.0
 texture_margin_right = 24.0
 texture_margin_bottom = 24.0
+
+[sub_resource type="Theme" id="Theme_1bvqp"]
+default_font = ExtResource("2_13ai4")
+default_font_size = 96
+Button/fonts/font = ExtResource("2_13ai4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1hxo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivw56"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phwr8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfiev"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyecx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwa1v"]
+
+[sub_resource type="Theme" id="Theme_5q3ai"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_ivw56")
+Button/styles/focus = SubResource("StyleBoxEmpty_phwr8")
+Button/styles/hover = SubResource("StyleBoxEmpty_nfiev")
+Button/styles/normal = SubResource("StyleBoxEmpty_yyecx")
+Button/styles/pressed = SubResource("StyleBoxEmpty_uwa1v")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwae6"]
+bg_color = Color(0, 0, 0, 0.623529)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64fq0"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb28b"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir63w"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3u7v6"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="Theme" id="Theme_tdm6i"]
+Button/styles/disabled = SubResource("StyleBoxFlat_lwae6")
+Button/styles/focus = SubResource("StyleBoxFlat_64fq0")
+Button/styles/hover = SubResource("StyleBoxFlat_lb28b")
+Button/styles/normal = SubResource("StyleBoxFlat_ir63w")
+Button/styles/pressed = SubResource("StyleBoxFlat_3u7v6")
 
 [node name="PauseMenu" type="CanvasLayer"]
 layer = 128
@@ -76,18 +123,27 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="ContinueButton" type="Button" parent="Holder/Main/PanelContainer/VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="Holder/Main/PanelContainer/VBoxContainer" groups=["Translatable"]]
 layout_mode = 2
 text = "继续游戏
 "
+script = ExtResource("5_bi3ge")
+chinese_text = "继续游戏"
+english_text = "Continue"
 
-[node name="OptionsButton" type="Button" parent="Holder/Main/PanelContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Holder/Main/PanelContainer/VBoxContainer" groups=["Translatable"]]
 layout_mode = 2
 text = "设置"
+script = ExtResource("5_bi3ge")
+chinese_text = "设置"
+english_text = "Options"
 
-[node name="MainMenuButton" type="Button" parent="Holder/Main/PanelContainer/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="Holder/Main/PanelContainer/VBoxContainer" groups=["Translatable"]]
 layout_mode = 2
 text = "主界面"
+script = ExtResource("5_bi3ge")
+chinese_text = "主界面"
+english_text = "Main Menu"
 
 [node name="ConfirmMenu" type="PanelContainer" parent="Holder/Main"]
 visible = false
@@ -108,28 +164,109 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_k6dkf")
 [node name="VBoxContainer" type="VBoxContainer" parent="Holder/Main/ConfirmMenu"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Holder/Main/ConfirmMenu/VBoxContainer"]
+[node name="Label" type="Label" parent="Holder/Main/ConfirmMenu/VBoxContainer" groups=["Translatable"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.160784, 0.105882, 0.0352941, 1)
 theme_override_font_sizes/font_size = 32
 text = "你确定要返回主界面吗？"
+script = ExtResource("5_bi3ge")
+chinese_text = "你确定要返回主界面吗？"
+english_text = "Are you sure you want to exit to the main menu?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Holder/Main/ConfirmMenu/VBoxContainer"]
 layout_mode = 2
 
-[node name="Yes" type="Button" parent="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer"]
+[node name="Yes" type="Button" parent="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer" groups=["Translatable"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "是"
+script = ExtResource("5_bi3ge")
+chinese_text = "是"
+english_text = "Yes"
 
-[node name="No" type="Button" parent="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer"]
+[node name="No" type="Button" parent="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer" groups=["Translatable"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "否"
+script = ExtResource("5_bi3ge")
+chinese_text = "否"
+english_text = "No"
+
+[node name="Options" type="Control" parent="Holder"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1bvqp")
+
+[node name="PanelContainer" type="PanelContainer" parent="Holder/Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e1hxo")
+
+[node name="CenterContainer" type="CenterContainer" parent="Holder/Options/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Holder/Options/PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Holder/Options/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="Holder/Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer" groups=["Translatable"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "全屏模式:"
+script = ExtResource("5_bi3ge")
+chinese_text = "全屏模式:"
+english_text = "Fullscreen:"
+
+[node name="CheckButton" type="CheckButton" parent="Holder/Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_5q3ai")
+
+[node name="Label2" type="Label" parent="Holder/Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer" groups=["Translatable"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "语言: "
+script = ExtResource("5_bi3ge")
+chinese_text = "语言: "
+english_text = "Language:"
+
+[node name="OptionButton" type="OptionButton" parent="Holder/Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_tdm6i")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+selected = 1
+item_count = 2
+popup/item_0/text = "English"
+popup/item_1/text = "中文"
+popup/item_1/id = 1
+
+[node name="ReturnButton" type="Button" parent="Holder/Options/PanelContainer/CenterContainer/VBoxContainer" groups=["Translatable"]]
+layout_mode = 2
+text = "返回"
+script = ExtResource("5_bi3ge")
+chinese_text = "返回"
+english_text = "Return"
 
 [connection signal="pressed" from="Holder/Main/PanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Holder/Main/PanelContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Holder/Main/PanelContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="Holder/Main/ConfirmMenu/VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]
+[connection signal="toggled" from="Holder/Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="item_selected" from="Holder/Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Holder/Options/PanelContainer/CenterContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

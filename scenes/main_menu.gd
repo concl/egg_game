@@ -1,9 +1,10 @@
 extends Control
 
 @onready var main: Control = $Main
-@onready var return_button = $Main/PanelContainer/VBoxContainer/ReturnButton
 @onready var transition_manager = $TransitionManager
 @onready var options = $Options
+@onready var option_button = $Options/PanelContainer/CenterContainer/VBoxContainer/GridContainer/OptionButton
+
 # panels:
 # 0: Main
 # 1: Continue (select saves)
@@ -15,6 +16,11 @@ const intro_scene = "res://scenes/game_scenes/cutscenes/intro/intro.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready():
     transition_manager.fade_in()
+    if State._language == "chinese":
+        option_button.selected = 1
+    elif State._language == "english":
+        option_button.selected = 0
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

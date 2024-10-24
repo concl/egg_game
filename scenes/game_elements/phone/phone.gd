@@ -15,8 +15,8 @@ var music_open = false
 
 var rap_dialogue = false
 
-func _ready():
-    open_homescreen()
+#func _ready():
+    #open_homescreen()
 
 func open_homescreen():
     animation_player.play("homescreen")

@@ -15,44 +15,44 @@ Button/fonts/font = ExtResource("4_gb625")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyxwt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivw56"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7yoqq"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phwr8"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4bae"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfiev"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04h2n"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyecx"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iqn65"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwa1v"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3kk1"]
 
 [sub_resource type="Theme" id="Theme_j71v3"]
-Button/styles/disabled = SubResource("StyleBoxEmpty_ivw56")
-Button/styles/focus = SubResource("StyleBoxEmpty_phwr8")
-Button/styles/hover = SubResource("StyleBoxEmpty_nfiev")
-Button/styles/normal = SubResource("StyleBoxEmpty_yyecx")
-Button/styles/pressed = SubResource("StyleBoxEmpty_uwa1v")
+Button/styles/disabled = SubResource("StyleBoxEmpty_7yoqq")
+Button/styles/focus = SubResource("StyleBoxEmpty_j4bae")
+Button/styles/hover = SubResource("StyleBoxEmpty_04h2n")
+Button/styles/normal = SubResource("StyleBoxEmpty_iqn65")
+Button/styles/pressed = SubResource("StyleBoxEmpty_p3kk1")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwae6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7h22e"]
 bg_color = Color(0, 0, 0, 0.623529)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64fq0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6l18"]
 bg_color = Color(0, 0, 0, 0.501961)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb28b"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chudr"]
 bg_color = Color(0, 0, 0, 0.501961)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir63w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2x84"]
 bg_color = Color(0, 0, 0, 0.501961)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3u7v6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u60k"]
 bg_color = Color(0, 0, 0, 0.501961)
 
 [sub_resource type="Theme" id="Theme_2xkml"]
-Button/styles/disabled = SubResource("StyleBoxFlat_lwae6")
-Button/styles/focus = SubResource("StyleBoxFlat_64fq0")
-Button/styles/hover = SubResource("StyleBoxFlat_lb28b")
-Button/styles/normal = SubResource("StyleBoxFlat_ir63w")
-Button/styles/pressed = SubResource("StyleBoxFlat_3u7v6")
+Button/styles/disabled = SubResource("StyleBoxFlat_7h22e")
+Button/styles/focus = SubResource("StyleBoxFlat_g6l18")
+Button/styles/hover = SubResource("StyleBoxFlat_chudr")
+Button/styles/normal = SubResource("StyleBoxFlat_p2x84")
+Button/styles/pressed = SubResource("StyleBoxFlat_7u60k")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
